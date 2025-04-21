@@ -1,4 +1,4 @@
-from turtle import textinput
+#from turtle import textinput
 from django.contrib.auth.forms import UserCreationForm  
 try:
     from django.contrib.auth import get_user_model
