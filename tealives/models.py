@@ -17,6 +17,7 @@ import datetime
 from datetime import timedelta
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.conf import settings
+from cloudinary.models import CloudinaryField
 User = settings.AUTH_USER_MODEL
 
 
@@ -90,6 +91,14 @@ class Post(models.Model):
    def __str__(self):
        return '%s' % (self.p_id)
   
+  
+def generate_random_filename():
+    # Generate a random UUID and append the file extension
+    return f"{uuid.uuid4()}"
+
+class photos(models.Model):
+    title = models.CharField(_(""), max_length=100, default=generate_random_filename())
+    image = CloudinaryField('image')
 
 class Comments(models.Model):
     c_post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="+")

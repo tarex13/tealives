@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
@@ -47,6 +50,7 @@ INSTALLED_APPS = [
     "ads",
     "accounts",
     "django.contrib.admindocs",
+    "cloudinary",
 ]
 
 MIDDLEWARE = [
@@ -147,6 +151,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+cloudinary.config(
+    cloud_name = "tealives",
+    api_key = "478284933824842",
+    api_secret = "z10Dzs7s91MO2wtxphm18n8WALA"
+)
 
 EMAIL_USE_TLS = True  
 EMAIL_HOST = 'smtp.office365.com'  
