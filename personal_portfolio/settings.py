@@ -91,10 +91,6 @@ DATABASES = {
         "ENGINE": "django.db.backends.sqlite3",
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'new': dj_database_url.config(
-        default="postgresql://placeholder:placeholder@localhost:5432/placeholder_db",
-        conn_max_age=600
-    )
     
 }
 
