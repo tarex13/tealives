@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="116" viewBox="0 0 54 116">
+  <defs>
+    <path id="a" d="M24.85,58.483 L12.684,58.483 C5.708,58.483 0,52.775 0,45.798 L0,12.683 C0,5.708 5.708,-2.27373675e-13 12.684,-2.27373675e-13 L24.85,-2.27373675e-13 C31.827,-2.27373675e-13 37.535,5.708 37.535,12.683 L37.535,45.798 C37.535,52.775 31.827,58.483 24.85,58.483 Z"/>
+    <path id="c" d="M24.85,58.483 L12.684,58.483 C5.708,58.483 0,52.775 0,45.798 L0,12.683 C0,5.708 5.708,-2.27373675e-13 12.684,-2.27373675e-13 L24.85,-2.27373675e-13 C31.827,-2.27373675e-13 37.535,5.708 37.535,12.683 L37.535,45.798 C37.535,52.775 31.827,58.483 24.85,58.483 Z"/>
+    <path id="e" d="M24.85,58.483 L12.684,58.483 C5.708,58.483 0,52.775 0,45.798 L0,12.683 C0,5.708 5.708,-2.27373675e-13 12.684,-2.27373675e-13 L24.85,-2.27373675e-13 C31.827,-2.27373675e-13 37.535,5.708 37.535,12.683 L37.535,45.798 C37.535,52.775 31.827,58.483 24.85,58.483 Z"/>
+    <linearGradient id="g" x1="50%" x2="50%" y1="83.341%" y2="22.018%">
+      <stop offset="0%" stop-color="#B191CD" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#79589F"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g fill-rule="nonzero" transform="translate(1 37)">
+      <path fill="#000" d="M7.0507961,0 L0,0 L0,12.3027252 C0,21.486478 7.5354563,29 16.7460194,29 L35.2549903,29 C44.4645437,29 52,21.486478 52,12.3027252 L52,0 L44.9492039,0"/>
+      <path fill="#FFF" stroke="#79589F" stroke-width="2" d="M7.0507961,0 L0,0 L0,12.3027252 C0,21.486478 7.5354563,29 16.7460194,29 L35.2549903,29 C44.4645437,29 52,21.486478 52,12.3027252 L52,0 L44.9492039,0"/>
+    </g>
+    <g transform="translate(8 1)">
+      <g fill-rule="nonzero">
+        <path fill="#000" d="M24.85,58.483 L12.684,58.483 C5.708,58.483 0,52.775 0,45.798 L0,12.683 C0,5.708 5.708,-2.27373675e-13 12.684,-2.27373675e-13 L24.85,-2.27373675e-13 C31.827,-2.27373675e-13 37.535,5.708 37.535,12.683 L37.535,45.798 C37.535,52.775 31.827,58.483 24.85,58.483 Z"/>
+        <path fill="#FFF" stroke="#79589F" stroke-width="2" d="M24.85,58.483 L12.684,58.483 C5.708,58.483 0,52.775 0,45.798 L0,12.683 C0,5.708 5.708,-2.27373675e-13 12.684,-2.27373675e-13 L24.85,-2.27373675e-13 C31.827,-2.27373675e-13 37.535,5.708 37.535,12.683 L37.535,45.798 C37.535,52.775 31.827,58.483 24.85,58.483 Z"/>
+      </g>
+      <mask id="b" fill="#fff">
+        <use xlink:href="#a"/>
+      </mask>
+      <g stroke="#79589F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" mask="url(#b)">
+        <path d="M6.7123,0.873 L6.7123,4.237 M0.602,0.873 L0.602,4.237 M12.8227,0.873 L12.8227,4.237 M18.933,0.873 L18.933,4.237" transform="translate(9 -1)"/>
+      </g>
+      <mask id="d" fill="#fff">
+        <use xlink:href="#c"/>
+      </mask>
+      <g stroke="#79589F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" mask="url(#d)">
+        <path d="M6.7109,0.063 L6.7109,3.609 M0.601,0.063 L0.601,3.609 M12.8212,0.063 L12.8212,3.609 M18.9316,0.063 L18.9316,3.609" transform="translate(9 55)"/>
+      </g>
+      <mask id="f" fill="#fff">
+        <use xlink:href="#e"/>
+      </mask>
+      <g mask="url(#f)">
+        <g transform="rotate(90 16.509 25.008)">
+          <rect width="2.532" height="15" fill="#000" fill-rule="nonzero" rx="1.266" transform="translate(6 27)"/>
+          <rect width="2.532" height="15" fill="#79589F" fill-rule="nonzero" rx="1.266" transform="translate(6 27)"/>
+          <g opacity=".259" transform="translate(12 18)">
+            <rect width="2.532" height="24" x=".156" fill="#000" fill-rule="nonzero" rx="1.266"/>
+            <rect width="2.532" height="24" x=".156" fill="#79589F" fill-rule="nonzero" rx="1.266"/>
+          </g>
+          <rect width="2.532" height="21" x=".234" fill="#000" fill-rule="nonzero" rx="1.266" transform="translate(18)"/>
+          <rect width="2.532" height="21" x=".234" fill="#79589F" fill-rule="nonzero" rx="1.266" transform="translate(18)"/>
+          <rect width="2.532" height="15.5" x=".39" fill="#000" fill-rule="nonzero" rx="1.266" transform="translate(30 26)"/>
+          <rect width="2.532" height="15.5" x=".39" fill="#79589F" fill-rule="nonzero" rx="1.266" transform="translate(30 26)"/>
+          <g opacity=".259" transform="translate(0 34)">
+            <rect width="2.532" height="6.5" y=".5" fill="#000" fill-rule="nonzero" rx="1.266"/>
+            <rect width="2.532" height="6.5" y=".5" fill="#79589F" fill-rule="nonzero" rx="1.266"/>
+          </g>
+          <g opacity=".259" transform="translate(0 4)">
+            <rect width="2.532" height="6.5" fill="#000" fill-rule="nonzero" rx="1.266"/>
+            <rect width="2.532" height="6.5" fill="#79589F" fill-rule="nonzero" rx="1.266"/>
+          </g>
+          <rect width="2.532" height="21" x=".234" fill="#000" fill-rule="nonzero" rx="1.266" transform="translate(18 24)"/>
+          <rect width="2.532" height="21" x=".234" fill="#79589F" fill-rule="nonzero" rx="1.266" transform="translate(18 24)"/>
+          <g opacity=".259" transform="translate(24 11)">
+            <rect width="2.532" height="31" x=".312" y=".75" fill="#000" fill-rule="nonzero" rx="1.266"/>
+            <rect width="2.532" height="31" x=".312" y=".75" fill="#79589F" fill-rule="nonzero" rx="1.266"/>
+          </g>
+          <g opacity=".259" transform="translate(36 4)">
+            <rect width="2.532" height="5.5" x=".468" fill="#000" fill-rule="nonzero" rx="1.266"/>
+            <rect width="2.532" height="5.5" x=".468" fill="#79589F" fill-rule="nonzero" rx="1.266"/>
+          </g>
+          <g opacity=".259" transform="translate(36 35)">
+            <rect width="2.532" height="7" x=".5" fill="#000" fill-rule="nonzero" rx="1.266"/>
+            <rect width="2.532" height="7" x=".5" fill="#79589F" fill-rule="nonzero" rx="1.266"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <rect width="2" height="49" x="26" y="67" fill="url(#g)"/>
+  </g>
+</svg>

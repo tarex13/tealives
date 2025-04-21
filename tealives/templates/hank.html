@@ -1,0 +1,968 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="author" content="Tealives" />
+    <title>Tealives</title>
+</head>
+<body>
+  <nav class="fixed-nav-bar">
+    <div class="menu" id="menu">
+        <a class="sitename" href="{% url 'lin' %}"><img class="kissmemore" src="{% static 'tealives/lin.authorized/img.png' %}""></a>
+        <input type="text" name="search" class="search" autocomplete="off" auto-capitalize="off" auto-correct="off" maxlength="75">
+        <!-- Example responsive navigation menu  -->
+        <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu">Menu</a>
+
+        <ul class="menu-items">
+            <li><a href="{% url 'lin' %}">
+ <svg class="svg-icon" width="24" height="24" viewBox="0 0 20 20">
+                            <path d="M18.121,9.88l-7.832-7.836c-0.155-0.158-0.428-0.155-0.584,0L1.842,9.913c-0.262,0.263-0.073,0.705,0.292,0.705h2.069v7.042c0,0.227,0.187,0.414,0.414,0.414h3.725c0.228,0,0.414-0.188,0.414-0.414v-3.313h2.483v3.313c0,0.227,0.187,0.414,0.413,0.414h3.726c0.229,0,0.414-0.188,0.414-0.414v-7.042h2.068h0.004C18.331,10.617,18.389,10.146,18.121,9.88 M14.963,17.245h-2.896v-3.313c0-0.229-0.186-0.415-0.414-0.415H8.342c-0.228,0-0.414,0.187-0.414,0.415v3.313H5.032v-6.628h9.931V17.245z M3.133,9.79l6.864-6.868l6.867,6.868H3.133z"></path>
+                        </svg>
+                </a></li>
+            <li><svg aria-label="Like" class="hey" class="_8-yf5 " fill="#ff0000" height="24" viewBox="0 0 50 50" width="24">
+                <path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
+            </svg></li>
+            <li><a href="{% url 'dm' %}">Chat</a></li>
+            <li><a href="//sixrevisions.com/contact/">Contact</a></li>
+            <li><a href="//twitter.com/sixrevisions">Twitter</a></li>
+            <li><a href="{% url 'settings' %}">Settings</a></li>
+            <li id="tiptip" class="tiptip" onclick="tiptip()"><a url="{% url 'lin' %}"><img class="small1" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"></a>
+                        <ul class="tiptiptext" id="tiptiptext">
+                                <li class="cd-nav__sub-item"><a href="{% url 'edit' %}"><?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" class="small1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+    <g>
+        <path d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256c2.581,0,5.099-0.32,7.68-0.384l0.896,0.171
+            c0.704,0.128,1.387,0.213,2.091,0.213c0.981,0,1.984-0.128,2.923-0.405l1.195-0.341C405.056,503.509,512,392.171,512,256
+            C512,114.837,397.163,0,256,0z M408.149,434.325c-1.003-3.264-3.264-6.016-6.549-7.104l-56.149-18.688
+            c-19.605-8.171-28.736-39.552-30.869-52.139c14.528-13.504,27.947-33.621,27.947-51.797c0-6.187,1.749-8.555,1.408-8.619
+            c3.328-0.832,6.037-3.2,7.317-6.379c1.045-2.624,10.24-26.069,10.24-41.877c0-0.875-0.107-1.749-0.32-2.581
+            c-1.344-5.355-4.48-10.752-9.173-14.123v-49.664c0-30.699-9.344-43.563-19.243-51.008c-2.219-15.275-18.581-44.992-76.757-44.992
+            c-59.477,0-96,55.915-96,96v49.664c-4.693,3.371-7.829,8.768-9.173,14.123c-0.213,0.853-0.32,1.728-0.32,2.581
+            c0,15.808,9.195,39.253,10.24,41.877c1.28,3.179,2.965,5.205,6.293,6.037c0.683,0.405,2.432,2.795,2.432,8.96
+            c0,18.176,13.419,38.293,27.947,51.797c-2.112,12.565-11.157,43.925-30.144,51.861l-56.896,18.965
+            c-3.264,1.088-5.611,3.776-6.635,7.04C53.376,391.189,21.291,327.317,21.291,256c0-129.387,105.28-234.667,234.667-234.667
+            S490.624,126.613,490.624,256C490.667,327.339,458.56,391.253,408.149,434.325z"/>
+    </g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+Edit Profile</a></li>
+                                <li class="cd-nav__sub-item"><a href="#0"><svg xmlns="http://www.w3.org/2000/svg" class="small1" viewBox="0 0 2048 2048" width="24" height="24">
+  <path d="M1783 988v18q0 9 1 18v18q0 9-1 18l259 161-159 383-297-68q-24 26-50 50l68 297-383 159-161-259h-18q-9 0-18 1h-18q-9 0-18-1l-161 259-383-159 68-297q-26-24-50-50l-297 68L6 1221l259-161v-18q0-9-1-18v-18q0-9 1-18L6 827l159-383 297 68q24-26 50-50l-68-297L827 6l161 259h18q9 0 18-1h18q9 0 18 1L1221 6l383 159-68 297q26 24 50 50l297-68 159 383-259 161zm-117 130q2-24 4-47t2-48q0-23-2-47t-4-47l236-147-86-208-271 63q-31-38-63-70t-71-64l63-271-208-86-148 236q-23-2-47-4t-47-2q-24 0-47 2t-48 4L782 146l-208 86 63 271q-38 31-70 63t-64 71l-271-63-86 208 236 148q-2 24-4 47t-2 48q0 23 2 47t4 47l-236 147 86 208 271-63q31 38 63 70t71 64l-63 271 208 86 148-236q23 2 47 4t47 2q24 0 47-2t48-4l147 236 208-86-63-271q38-31 70-63t64-71l271 63 86-208-236-148zm-642-470q78 0 146 29t120 81 80 119 30 147q0 78-29 146t-81 120-119 80-147 30q-78 0-146-29t-120-81-80-119-30-147q0-78 29-146t81-120 119-80 147-30zm0 640q55 0 103-20t84-57 56-84 21-103q0-55-20-103t-57-84-84-56-103-21q-55 0-103 20t-84 57-56 84-21 103q0 55 20 103t57 84 84 56 103 21z" fill="#323130"/>
+</svg>Settings</a></li>
+<li><a href=""><svg xmlns="http://www.w3.org/2000/svg" class="small1" viewBox="0 0 512 512"><path d="M512 176.001C512 273.203 433.202 352 336 352c-11.22 0-22.19-1.062-32.827-3.069l-24.012 27.014A23.999 23.999 0 0 1 261.223 384H224v40c0 13.255-10.745 24-24 24h-40v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24v-78.059c0-6.365 2.529-12.47 7.029-16.971l161.802-161.802C163.108 213.814 160 195.271 160 176 160 78.798 238.797.001 335.999 0 433.488-.001 512 78.511 512 176.001zM336 128c0 26.51 21.49 48 48 48s48-21.49 48-48-21.49-48-48-48-48 21.49-48 48z"/></svg>Change Password</a></li>
+                                <li class="cd-nav__sub-item"><a href="#0"><svg xmlns="http://www.w3.org/2000/svg" class="small1" viewBox="0 0 512 512"><path d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z"/></svg>Log Out</a></li>
+                        </ul>
+            </li>
+        </ul>
+        </div>
+</nav>
+
+<div class="height">
+  <div id="content">
+<div class="dive">
+<div class="blip">
+    <div class="sidebar">
+        <span class="chat">tarex_13<svg class="feather feather-chevron-down" fill="none" stroke="black" stroke-linecap="round" width="14" height="14" stroke-linejoin="round" stroke-width="2" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline transform="matrix(1.7072 0 0 1.7538 -8.5187 -9.0369)" points="6 9 12 15 18 9"></polyline></svg>
+</span>
+        <a class="active" href="{% url 'blog_index' %}">Home</a>
+        <a class="bling" href="#about">Feedback</a>
+        <a class="bling" href="#about">Login</a>
+        <a class="md-trigger bling" data-modal="modal-10" href="#">Sign-Up</a>
+        <a class="bling" href="#about">Terms</a>
+        <a class="bling" href="#about">Help</a>
+        <hr>
+        <small>
+            <b class="rec">Recommended For you</b>
+        </small>
+        <a class="bling" href="#about">Trending Posts</a>
+        <a class="bling" href="#about">Top Accounts</a>
+        <span id="closing">© {{ yearr }} Tealives</span>
+    </div>
+</div>
+<div class="base-container">
+  <center>
+  <article class="hank">
+ <div class="pro-web-des">
+  <h1>My profile</h1>
+   <button type="file" name=""><img class="prof_pic"></button></br></br>
+  <form auto-complete="off" auto-capitalize="off" auto-correct="off"><div id="bodiv"></br></br>
+    <label>Personal Information</label></br></br>
+    <label for="19iuw" class="label">Username</label></br></br>
+  <input type="text" name="username" id="19iuw" aria-label="Username" placeholder="Username" auto-complete="off" auto-capitalize="off" auto-correct="off"></br></br>
+  <label>The username appears to everyone. You can change it through the form above. You can only change your username twice a week.</label></br></br>
+  <input type="text" name="f_name" aria-label="First Name" auto-complete="off" auto-capitalize="off" auto-correct="off"></br></br>
+  <input type="text" name="l_name" aria-label="Last Name" auto-complete="off" auto-capitalize="off" auto-correct="off"></br></br>
+  <input type="date" name="dob" aria-label="Date Of Birth"></br></br>
+  <select>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Others</option>
+  </select></br></br>
+  <label>Other Information</label></br></br>
+  <input type="email" name="email" aria-label="Email" auto-complete="off" auto-capitalize="off" auto-correct="off"></br></br>
+  <input type="number" name="p_no">
+  
+  <input type="checkbox">Email me information about my account.</br></br>
+  <input type="checkbox">I agree to receive email concerning tealives and our products.</br></br>
+</div>
+</form>
+</div>
+</article>
+</center></div>
+</div></div></div>
+</center>
+</div>
+</div>
+</center>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  /*   outline: 1px solid white; */
+}
+
+body {
+  background: #efefef;
+  width: 100%;
+  display: flex;
+  height: 10px;
+  justify-content: center;
+  padding-top: 1rem;
+  overflow: auto;
+}
+.hank{
+width: 900px;
+overflow: hidden;
+/*box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);*/
+border: 0.1px solid #cac6c6;
+padding: 1px;
+background-color: white;
+left: 0;
+height: 100%;
+overflow: auto;
+padding: 1px solid black;
+display: flex;
+flex-flow: column;
+
+  
+}
+.base-container{
+    line-height: 90%;
+display: flex;
+}
+.friend-text-div {
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+.friend-text-div > img {
+  height: 2rem;
+  align-self: flex-end;
+}
+
+.friend-text-container {
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.friend-text {
+  background: #262626;
+  border-radius: 0.5rem;
+  color: #fff;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin: 0.12rem 0.5rem;
+}
+
+.my-text-div {
+  display: flex;
+  justify-content: flex-end;
+}
+.my-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.my-text {
+  background: linear-gradient(
+      180deg,
+      rgba(139, 47, 184, 1) 0%,
+      rgba(103, 88, 205, 1) 51%,
+      rgba(89, 116, 219, 1) 92%
+    )
+    no-repeat center;
+  background-attachment: fixed;
+  color: #fff;
+  border-radius: 0.5rem 0.2rem 0.2rem 0.5rem;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin: 0.12rem 0.5rem;
+}
+
+.my-text-container > div:first-child {
+  border-radius: 0.5rem 1rem 0.2rem 0.5rem;
+}
+.my-text-container > div:last-child {
+  border-radius: 0.5rem 0.2rem 1rem 0.5rem;
+}
+.friend-text-container > div:first-child {
+  border-radius: 1rem 0.5rem 0.2rem 0.5rem;
+}
+.friend-text-container > div:last-child {
+  border-radius: 0.5rem 0.2rem 0.5rem 1rem;
+}
+</style>
+<style>
+    body{
+        background-color: #efefef;
+        overflow: auto;
+
+
+    }
+    .dive{
+        background-color: white;
+box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);
+width: 100%;
+display: flex;
+    }
+    .body{
+
+           width: 100%;
+           padding-top:40px;
+           display: flex;
+           justify-content: center;
+
+           align-items: center;
+           margin: 0 auto;
+    }
+
+
+
+        .navbar {
+            box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+        }
+
+                #tory img{
+
+            border-radius: 50%;
+            min-width: 60px;
+            height: 60px;
+            padding: 1px;
+            margin: 10px;
+                            }
+    #tory img{
+        border-style: solid;
+  border-width: 2px;
+  border-image: linear-gradient(circle, 45deg, rgb(0,120,140), rgb(255,524,566)) 1;
+    }
+
+        #tory {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            display: flex;
+            width: 100%;
+            margin-left:  100px;
+            margin-right:  1000px;
+            justify-content: center;
+            scrollbar-height: 10px;
+
+        }
+
+        .sanpad {
+            width: 614px;
+            height: 100%;
+            overflow: hidden;
+                        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);
+            border:  0.1px solid #cac6c6;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            position: flex;
+            justify-content: center;
+            padding: 1px;
+            background-color: white;
+            left: 0;
+            overflow: auto;
+              }
+
+        #hey{
+            align-items: right;
+            justify-content: right;
+            float: right;
+        }
+        .hey{
+            margin: 10px;
+            fill: black;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+
+
+        .body ul {
+            background-color: white;
+            display: flex;
+            flex-flow: row;
+            font-size: 100%;
+        }
+
+        .body a {
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        .text {
+            text-align: left;
+        }
+
+        .body li {
+            list-style: none;
+            color: #171313;
+            text-transform: uppercase;
+            display: flex;
+        }
+        .line{
+            border-bottom: 1px grey solid;
+
+        }
+        .posts {
+            width: 100%;
+            box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);
+            border:  0.1px solid #cac6c6;
+            align-item: center;
+            background-color: white;
+            cursor: pointer;
+            user-select: none;
+            margin-bottom: 30px;
+}
+
+        .mainpost{
+            width: 100%;
+        }
+
+
+    #posts{
+            width: 614px;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            bottom: 0;
+        }
+        aside {
+            float: right;
+            display: flex;
+            top: 0;
+        }
+        .small{
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            float: left;
+            vertical-align: middle;
+
+        border-style: solid;
+  border-width: 2px;
+  border-image: linear-gradient(circle, 45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+
+        }
+        .small1{
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            padding: 3px;
+            vertical-align: middle;
+
+        }
+
+        .uname{
+            vertical-align: bottom;
+            padding: 5px;
+            font-size: 24px;
+            float: left;
+            margin-top: -14px;
+        }
+        .textt{
+                padding-top: 7px;
+                line-height: 60px;
+                padding-bottom: 14px;
+                margin-left: 10px;
+        }
+        .put{
+            width: 100%;
+            margin-left: 1px;
+            border: none;
+            outline: none;
+
+        }
+        .post{
+            float: right;
+            color: #132f83;
+        }
+        .post:hover{
+            color: blue;
+        }
+        .j3d{
+            display: flex;
+            line-height: 2px;
+        }
+        .j3d input{
+            padding-left: 2%;
+            font-size: 90%;
+        }
+
+
+
+
+
+
+
+
+
+</style>
+<style>
+
+:root {
+  --tealives-blue: #2336b6;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "YouTube Noto",Roboto,Arial,Helvetica,sans-serif;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+
+.hidden {
+  display: none;
+}
+
+svg {
+  cursor: pointer;
+}
+.svg1{
+    display: : flex;
+    fill: black;
+    float: right;
+    margin-top: 5px;
+      width: 28px;
+  height: 28px;
+  stroke: #fff;
+  cursor: pointer;
+    vertical-align: bottom;
+}
+@media only screen and (max-width: 800px) {
+.video-controls {
+    display: none;
+}
+}
+
+
+
+
+
+
+</style>
+<style>
+.fixed-nav-bar {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 55px;
+  background-color: #ffffff;
+}
+
+/* The element at the top of the page right after the fixed navigation bar
+   MUST have sufficient top margin or else it will be covered by the bar */
+#content {
+display: flex;
+justify-content: center;
+margin-top: 65px;
+height: 90%;
+}
+
+/* Example responsive navigation menu  */
+.fixed-nav-bar li, .fixed-nav-bar a {
+  height: 50px;
+  line-height: 50px;
+}
+.menu {
+  width: 90%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.menu a, .menu a:visited {
+  color: #fffff;
+}
+.menu a:hover, .menu a:target {
+  color: #ebebeb;
+}
+.menu-items {
+  display: inline-block;
+}
+.menu-items li{
+    display:  flex;
+}
+.sitename {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 11px;
+}
+a.sitename, a:visited.sitename {
+  color: #ff0000;
+}
+.menu-items li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.menu-items a {
+  text-decoration: none;
+}
+.show, .hide {
+  display: none;
+  padding-left: 15px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center left;
+  color: #dde1e2;
+}
+.show {
+  background-image: url(assets/down-arrow-icon.png);
+}
+.hide {
+  background-image: url(assets/up-arrow-icon.png);
+}
+
+@media only screen and (max-width: 800px) {
+  .menu {
+    position: relative;
+    width: 100%;
+  }
+  .sitename {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    margin-left: 0px;
+  }
+  .menu-items {
+    display: none;
+    width: 100%;
+    margin-top: 50px;
+    background-color: #008378;
+  }
+  .menu-items li {
+    display: block;
+    text-align: center;
+  }
+  .show, .hide {
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+  .show {
+    display: inline-block;
+  }
+  .hide {
+    display: none;
+  }
+  #menu:target .show {
+    display: none;
+  }
+  #menu:target .hide, #menu:target .menu-items {
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 220px) {
+  .sitename, .show, .hide {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+</style>
+<style>
+    /* WEB FONT */
+@import url(http://fonts.googleapis.com/css?family=Signika:600|Varela+Round);
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* BASIC */
+
+h1, h2 {
+  font-family: "Signika", sans-serif;
+  font-weight: 600;
+}
+h1 {
+  font-size: 36px;
+  line-height: 46px;
+  color: #e0e0e0;
+}
+h2 {
+  font-size: 24px;
+  line-height: 33px;
+  margin-bottom: -20px;
+}
+p {
+  margin: 20px 0;
+}
+.kissmemore{
+    width: 100%;
+    height: 85%;
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+/* LAYOUT */
+.fixed-nav-bar {
+  box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.6);
+}
+
+.content {
+  position: relative;
+  background: #464646 url(59H-from-gratisography.jpg) no-repeat center center fixed;
+  background-size: cover;
+ }
+.description, .some-related-articles {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.description {
+  padding-top: 100px;
+  min-height: 250px;
+  text-align: center;
+}
+.some-related-articles {
+  color: #747474;
+}
+.some-related-articles h1 {
+  color: #384e56;
+  margin-top: 60px;
+  text-transform: uppercase;
+}
+.some-related-articles h2 a:link, .some-related-articles h2 a:visited  {
+  color: #464646;
+  transition: color 0.1s ease;
+}
+.some-related-articles h2 a:hover {
+  color: #000000;
+  transition: color 0.3s ease;
+}
+/* SPECIAL */
+.summary {
+  color: #d9dee2;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+.button, .button:visited, .button-dark {
+  display: inline-block;
+  max-width: 200px;
+  margin: 50px 10px 30px 10px;
+  padding: 10px;
+  font-family: "Signika", sans-serif;
+  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  text-transform: capitalize;
+  text-align: center;
+  transition: all 0.1s ease;
+}
+.button-dark, .button-dark:visited {
+  margin: 20px 10px 30px 0;
+  color: #464646;
+  border-color: #464646;
+
+}
+.button:hover, .button-dark:hover {
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.button-dark:hover {
+  color: #ffffff;
+  background-color: rgba(70, 70, 70, 0.9);
+}
+.navsvg{
+    color: black;
+    fill: black;
+    stroke: black;
+    height: 22px;
+    width: 22px;
+}
+
+
+
+.real{
+    float: right;
+    vertical-align: middle;
+}
+
+.svgs{
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+</style>
+<style>
+.blip{
+justify-content: left;
+display: flex;
+font-size: small;
+overflow: auto;
+line-height: 90%;
+}
+.height{
+display: flex;
+line-height: 90%;
+height: 90%;
+min-height: 90%;
+max-height: 90%;}
+/* The side navigation menu */
+.sidebar {
+  width: 200px;
+  display: flex;
+  flex-flow: column;
+  border-right: 1px solid black;
+}
+.chat{
+    text-align: center;
+    
+}
+.hi {
+  display: block;
+  color: black;
+  padding: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+}
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.rec{
+      display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar span{
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #212529;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div#content {
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+
+div#content {
+  margin-right: 0;
+  padding: 0;
+}
+  #content{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+
+.bling::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.bling:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.bling::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: #989898;;
+  z-index: -1;
+  transition: transform .3s ease;
+}
+.bling {
+  position: relative;
+}
+.typing-demo {
+  width: 9ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+</style>
+<script src="{% static 'tealives/index.js' %}"></script>
+<style type="text/css">
+
+    .tiptip {
+  position: relative;
+}
+.tiptiptext{
+
+  display: flex;
+  flex-direction: column;
+  top:  55px;
+}
+
+/* Tooltip text */
+.tiptip .tiptiptext {
+  visibility: hidden;
+  min-width: 200px;
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);
+  border:  0.1px solid #cac6c6;
+  right:  0;
+  color: #fff;
+  background-color: white;
+  text-align: left;
+  font-family: Candara, Courier new, sans-serif, Lucida Console;
+  font-size: 17px;
+  padding: 5px 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tiptip:hover .tiptiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.plex{
+    display: absolute;
+}
+</style>
+</body>
+</html>

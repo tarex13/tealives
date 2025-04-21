@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+<!--
+    function formatText (tag) {
+        var selectedText = document.selection.createRange().text;
+
+        if (selectedText != "") {
+            var newText = "<" + tag + ">" + selectedText + "</" + tag + ">";
+            document.selection.createRange().text = newText;
+        }
+    }
+//-->
+</script>
+
+<form name="my_form">
+    <textarea name="my_textarea"></textarea><br />
+    <input type="button" value="bold" onclick="formatText ('b');" />
+    <input type="button" value="italic" onclick="formatText ('i');" />
+    <input type="button" value="underline" onclick="formatText ('u');" />
+</form>
+</body>
+</html>

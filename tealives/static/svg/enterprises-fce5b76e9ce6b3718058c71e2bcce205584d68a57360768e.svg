@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124">
+  <defs>
+    <linearGradient id="a" x1="50%" x2="50%" y1="59.05%" y2="77.028%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(20 7)">
+    <polyline fill="url(#a)" points="37 111 0 90 .001 89 0 69.004 20.786 57 21 57 21 29.009 41.785 17 63 29 63 71.578 63.103 71.578 83.361 83.004 83.372 86.011 38 111"/>
+    <path stroke="#7A589E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M41.5,41 L41.5,108.5957"/>
+    <path stroke="#CEC2DB" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M45.5 44L45.5 105.5957M67 90L67 97"/>
+    <polyline stroke="#7A589E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="21 82.336 21 29.009 41.785 17 63 29 63 75"/>
+    <polyline stroke="#7A589E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="63.103 71.578 83.361 83.004 83.372 93.011"/>
+    <polyline stroke="#7A589E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points=".001 96 0 69.004 20.786 57"/>
+    <polyline stroke="#7A589E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="21 29.001 41.785 41.001 62.571 29"/>
+    <path stroke="#7A589E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M63,74.4208984 L63,100"/>
+    <path fill="#F1ECF3" stroke="#7A589E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.271,83 C17.807,83 15,85.808 15,89.271 C15,92.733 17.807,95.542 21.271,95.542 C24.734,95.542 27.542,92.733 27.542,89.271 C27.542,85.808 24.734,83 21.271,83 Z"/>
+    <path stroke="#7A589E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M41.5,26.003 L41.5,-1.24344979e-13"/>
+  </g>
+</svg>

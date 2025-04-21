@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="templates">
+
+        <div class="temp temp1">
+            <div class="single"></div>
+        </div>
+
+        <div class="temp temp2">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+
+        <div class="temp temp3">
+            <div class="left"></div>
+            <div class="right" style="
+">
+                <div class="right-up"></div>
+                <div class="right-down"></div>
+            </div>
+        </div>
+
+
+
+        <div class="temp temp4">
+            <div class="left">
+                <div class="right-up"></div>
+                <div class="right-down"></div>
+            </div>
+            <div class="right">
+                <div class="right-up"></div>
+                <div class="right-down"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .temp1 .single {
+            width: 200px;
+            height: 100px;
+            border: 4px solid black;
+            border-radius: 5px;
+        }
+
+        .temp2 {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+            .temp2 .left, .temp2 .right {
+                width: 90px;
+                height: 100px;
+                border: 4px solid black;
+                border-radius: 5px;
+            }
+
+        .temp3, .temp4 {
+            display: flex;
+            gap: 10px;
+        }
+
+            .temp3 .left {
+                width: 100px;
+                height: 80px;
+                border: 4px solid black;
+                border-radius: 5px;
+            }
+
+            .temp3 .right,.temp4 .left, .temp4 .right {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+                .temp3 .right .right-down, .temp3 .right .right-up,.temp4 .right .right-down, .temp4 .right .right-up,.temp4 .left .right-down, .temp4 .left .right-up {
+                    width: 80px;
+                    height: 30px;
+                    border: 4px solid black;
+                    border-radius: 5px;
+                }
+
+        #templates {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            align-items: center;
+        }
+
+    </style>
+</body>
+</html>

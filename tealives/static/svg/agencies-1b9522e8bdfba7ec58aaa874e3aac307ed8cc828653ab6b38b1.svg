@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124">
+  <g fill="none" fill-rule="evenodd" transform="translate(11 16)">
+    <path stroke="#CEC2DB" stroke-width="2" d="M1 80L1 89.5C1 90.3284271 1.67157288 91 2.5 91 3.32842712 91 4 90.3284271 4 89.5L4 80 1 80zM99 80L99 89.5C99 90.3284271 99.6715729 91 100.5 91 101.328427 91 102 90.3284271 102 89.5L102 80 99 80z"/>
+    <path fill="#FFF" fill-rule="nonzero" stroke="#7A589E" stroke-width="2" d="M1,1 L1,75 C1,76.6568542 2.34314575,78 4,78 L99,78 C100.656854,78 102,76.6568542 102,75 L102,1 L1,1 Z" transform="matrix(1 0 0 -1 0 79)"/>
+    <path fill="#F1ECF3" fill-rule="nonzero" stroke="#7A589E" stroke-width="2" d="M1,83 L102,83 L102,81 C102,79.3431458 100.656854,78 99,78 L4,78 C2.34314575,78 1,79.3431458 1,81 L1,83 Z" transform="matrix(1 0 0 -1 0 161)"/>
+    <path stroke="#CEC2DB" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5.5L98 5.5M10 90.5L94.0634766 90.5"/>
+    <path stroke="#CEC2DB" stroke-width="2" d="M16.8914532,17.8914532 L26.8914532,17.8914532 C28.5483075,17.8914532 29.8914532,19.234599 29.8914532,20.8914532 L29.8914532,34.8914532 C29.8914532,36.5483075 28.5483075,37.8914532 26.8914532,37.8914532 L12.8914532,37.8914532 C11.234599,37.8914532 9.89145323,36.5483075 9.89145323,34.8914532 L9.89145323,24.4772397 L16.4772397,17.8914532 L16.8914532,17.8914532 Z" transform="rotate(-6 19.891 27.891)"/>
+    <path fill="#CEC2DB" fill-rule="nonzero" d="M11.2971511,19.5514926 L16.2971511,19.5514926 L10.2971511,25.5514926 L10.2971511,20.5514926 C10.2971511,19.9992079 10.7448663,19.5514926 11.2971511,19.5514926 Z" transform="rotate(174 13.297 22.551)"/>
+    <path stroke="#7A589E" stroke-linecap="round" stroke-width="2" d="M42 19L54.7407848 19M42 25L92.6278553 25"/>
+    <path stroke="#CEC2DB" stroke-linecap="round" stroke-width="2" d="M49,31 L71.1925951,31"/>
+    <path stroke="#7A589E" stroke-linecap="round" stroke-width="2" d="M42 44L64.1925951 44M42 44L64.1925951 44M42 51L57 51M42 44L64.1925951 44M42 44L64.1925951 44"/>
+    <path stroke="#CEC2DB" stroke-linecap="round" stroke-width="2" d="M62,51 L82,51"/>
+    <path stroke="#7A589E" stroke-linecap="round" stroke-width="2" d="M49,38 L92.5070658,38"/>
+    <path stroke="#CEC2DB" stroke-linecap="round" stroke-width="2" d="M49,64 L79.6864516,64"/>
+    <path stroke="#7A589E" stroke-linecap="round" stroke-width="2" d="M49,58 L92.5070658,58"/>
+    <path stroke="#CEC2DB" stroke-linecap="round" stroke-width="2" d="M61,19 L86.0664563,19"/>
+    <path fill="#FFF" fill-rule="nonzero" stroke="#CEC2DB" stroke-width="2" d="M23.6706088,44.5834531 L29.6706088,44.5834531 C31.3274631,44.5834531 32.6706088,45.9265988 32.6706088,47.5834531 L32.6706088,57.5834531 C32.6706088,59.2403073 31.3274631,60.5834531 29.6706088,60.5834531 L19.6706088,60.5834531 C18.0137546,60.5834531 16.6706088,59.2403073 16.6706088,57.5834531 L16.6706088,51.1692395 L23.2563953,44.5834531 L23.6706088,44.5834531 Z" transform="rotate(5 24.67 52.583)"/>
+    <path fill="#CEC2DB" fill-rule="nonzero" d="M19.034453,44.2500513 L24.034453,44.2500513 L18.034453,50.2500513 L18.034453,45.2500513 C18.034453,44.6977666 18.4821683,44.2500513 19.034453,44.2500513 Z" transform="rotate(-175 21.034 47.25)"/>
+  </g>
+</svg>

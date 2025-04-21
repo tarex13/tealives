@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1634 2240 16 16">
+  <g id="mailBlack" transform="translate(1442 2159)">
+    <rect id="Fill1" fill="#e6e6e6" width="15" height="9" transform="translate(192.5 84.5)"/>
+    <path id="Fill2" fill="#fff" d="M207.5,84.5h-15v.766L200,89l7.5-3.734Z"/>
+    <path id="Contour" d="M16-13.812v10H0v-10Zm-14.883,1L8-9.367l6.883-3.445ZM15-4.812V-11.75L8-8.258,1-11.75v6.938Z" transform="translate(192 97.813)"/>
+  </g>
+</svg>

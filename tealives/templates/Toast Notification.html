@@ -1,0 +1,93 @@
+
+   <style type="text/css">
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');  
+ * {  
+  box-sizing: border-box;  
+ }  
+
+ .toastbtn {  
+  background-color: #ffffff;  
+  color: rebeccapurple;  
+  font-family: inherit;  
+  font-weight: bold;  
+  padding: 1rem;  
+  border-radius: 5px;  
+  border: none;  
+  cursor: pointer;  
+ }  
+ .toastbtn:focus {  
+  outline: none;  
+ }  
+ .toastbtn:active {  
+  transform: scale(0.98);  
+ }  
+ #toasttoasts {  
+  position: fixed;  
+  top: 55px;   
+  left: 0;
+  right: 0;
+  display: flex;  
+  justify-content: center;
+  flex-direction: column;  
+  align-items: center;  
+ }  
+ .toasttoast {  
+  border-radius: 5px;  
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 3rem 4rem;  
+  margin: 0.5rem;  
+ }  
+ .toasttoast.info { 
+  padding: 30px; 
+  font-size: 20px;
+  color: black;  
+
+ }  
+ .toasttoast.success {  
+  padding: 30px;
+  font-size: 20px;
+  color: black;  
+ }  
+ .toasttoast.error { 
+  padding: 10px;
+  font-size: 20px;
+  color: black;  
+ }  
+   </style>
+   <script>
+        const button = document.getElementById('toastbutton')  
+ const toasts = document.getElementById('toasttoasts')  
+ const messages = [  
+   'Message One',  
+   'Message Two',  
+   'Message Three',  
+   'Message Four',  
+ ]  
+ const background = ""
+ const types = ['info', 'success', 'error']  
+ button.addEventListener('click', () => createNotification())  
+ function createNotification(message, type) {  
+   message = message.toString()
+   type = type.toString()
+   const notif = document.createElement('div')  
+   notif.classList.add('toasttoast')  
+   notif.classList.add(type ? type : getRandomType())  
+   notif.innerText = message ? message : getRandomMessage()  
+   notif.style = "background: white;padding: 10px;color:black-webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 8px 3px rgba(0,0,0,0);box-shadow: 0px 10px 13px -7px #000000, 0px 0px 8px 3px rgba(0,0,0,0);:"
+   toasts.appendChild(notif)  
+      setTimeout(() => {  
+     notif.remove();
+   }, 4000)  
+
+ }  
+ function getRandomMessage() {  
+   return messages[Math.floor(Math.random() * messages.length)]  
+ }  
+ function getRandomType() {  
+   return types[Math.floor(Math.random() * types.length)]  
+ }
+
+
+   </script>  

@@ -1,0 +1,300 @@
+        {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Up - Tealives</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="csrf_token" content="{{ csrf_token }}">
+    <meta name="author" content="Tealives" />
+</head>
+
+<body>
+    <div class="body">
+        <div class="wrapper">
+            <h1 class="header">
+                <a class="sitename" href="{% url 'sup' %}">
+                    <img class="kissmemore" src="{% static 'tealives/lin.authorized/no-bg.png' %}">
+                </a>
+            </h1>
+            <p class="headerText">Sign Up</p>
+            <form method="post" autocomplete="off">
+                {% csrf_token %}
+                <div class="inputWrapper">
+                    <label for="uname">Username</label>
+                    {{regform.username}}
+                    <div class="alert"></div>
+                </div>
+                <div class="inputWrapper">
+                    <label for="email">E-mail</label>
+                    {{regform.email}}
+                </div>
+                <div class="inputWrapper">
+                    <label for="pass">Password</label>
+                    {{regform.password}}
+                </div>
+                <div class="terms"> By clicking Sign Up, you agree to our <a class="blark" href="about">Terms</a>, <a class="blark" href="about">Data Policy</a> and <a class="blark" href="about">Cookie Policy</a>.</div>
+                <button type="submit" class="submitButton">Sign Up</button>
+            </form>
+        </div>
+        <div id="from">
+            <div class="account">
+                <span class="span">
+                    Have An Account? <b><a href="{% url 'lin' %}" class="meta1">Log In</a></b>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+        {% include 'form_footer.html' %}
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            .body {
+                padding-top: 40px;
+                height: 100%;
+                margin: 0;
+                width: 100%;
+                background: #a2caff;
+                color: #576d95;
+                font-family: Arial;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(40deg, #155263 9%, #155263 43%, #FF6F3C calc(43% + 1px), #FF6F3C 52%, #FF9A3C calc(52% + 1px), #FF9A3C 80%, #FFC93C calc(80% + 1px), #FFC93C 100%);
+                flex-direction: column;
+            }
+
+            .wrapper {
+                max-width: 400px;
+                width: 100%;
+                padding: 30px;
+                border-radius: 30px;
+                background: #fff;
+                box-shadow: 0 35px 68px 0 rgba(136, 174, 222, 0.42), inset 0 -8px 16px 0 #b9d1f1;
+            }
+
+            .terms {
+                padding: 10px;
+            }
+
+            .header {
+                font-size: 36px;
+                font-weight: 500;
+                margin: 0 0 12px;
+                text-align: center;
+            }
+
+            .headerText {
+                font-size: 25px;
+                margin: 0 0 24px 0;
+                text-align: left;
+            }
+
+            .inputWrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                width: 100%;
+                margin: 0 0 16px 0;
+            }
+
+                .inputWrapper label {
+                    margin: 0 0 4px 0;
+                }
+
+                .inputWrapper input {
+                    width: 100%;
+                    height: 40px;
+                    padding: 8px 16px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    border: 1px solid #b5d4ff;
+                    color: #576d95;
+                    outline-color: #236eb9;
+                }
+
+            .alert {
+                width: 100%;
+                text-align: center;
+            }
+
+            .submitButton {
+                border: none;
+                padding: 12px 30px;
+                margin: 0 auto;
+                display: block;
+                font-size: 16px;
+                color: #fff;
+                border-radius: 8px;
+                background-image: linear-gradient(90deg, #5fc7ff 50%, #43a8ff 100%);
+                background-size: 200% 100%;
+                background-position: 100% 100%;
+                transition: background-position 256ms;
+                will-change: background-position;
+                cursor: pointer;
+            }
+
+                .submitButton:hover {
+                    background-position: 0% 200%;
+                }
+
+            .kissmemore {
+                width: 50%;
+            }
+
+            .link {
+                font-size: 16px;
+                margin: 50px 0 0 0;
+                display: block;
+                max-width: 400px;
+                width: 100%;
+                padding: 50px;
+                text-align: center;
+                color: #576d95;
+                border-radius: 30px;
+                background: #fff;
+                box-shadow: 0 35px 68px 0 rgba(136, 174, 222, 0.42), inset 0 -8px 16px 0 #b9d1f1;
+            }
+
+            #from {
+                padding: 10px;
+                max-width: 400px;
+                text-align: center;
+                border-radius: 10px;
+                margin-top: 25px;
+            }
+
+            .account {
+                border-bottom-width: 20px;
+                border-top-width: 20px;
+                border-left-width: 20px;
+                border-right-width: 20px;
+                border-radius: 10px;
+                padding: 5px 0;
+                padding-top: 5%;
+                padding-bottom: 5%;
+            }
+
+            .span {
+                font-size: 20px;
+                max-width: 400px;
+                width: 100%;
+                text-transform: uppercase;
+                font-family: 'Arial Special G2';
+                color: white;
+            }
+
+                .span a {
+                    color: #FFC93C;
+                }
+
+            @media (prefers-color-scheme: dark){
+                .body {
+                    background: linear-gradient(40deg, #181d2f 9%, #181D3e 43%, #181d4d calc(43% + 1px), #181d5c 52%, #181d6b calc(52% + 1px), #181D7A 81%, #181D7F calc(80% + 1px), #181d9f 100%);
+                    box-shadow: none;
+                }
+            }
+        </style>
+        <script>
+            'use strict'
+            let uname = document.getElementById("uname");
+            let email = document.getElementById("email");
+            let pass = document.getElementById("pass");
+            var alert = document.querySelector(".alert");
+            var response;
+            //uname.addEventListener('input', () => {
+            //    console.log(uname.value.length)
+            //})
+            uname.addEventListener('blur', () => {
+                if (uname.value.length < 1) {
+                    alert.innerHTML = "Username can't be empty.";
+                    alert.style = "padding-top: 10px;color: #ff3b00;";
+                } else if (uname.value.length < 6) {
+                    alert.innerHTML = "Username is too short.";
+                    alert.style = "padding-top: 10px;color: #ff3b00;";
+                } else {
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function (resposeText) {
+                        if (this.readyState == 4 && this.status == 200) {
+                            response = JSON.parse(this.responseText)[0];
+                            if (response.return) {
+                                alert.innerHTML = response.result;
+                                alert.style = "padding-top: 10px;color: #4BB543;";
+                            }
+                            else {
+                                alert.innerHTML = response.result;
+                                alert.style = "padding-top: 10px;color: #ff3b00;";
+                            }
+                        }
+                    };
+                    var val = uname.value;
+
+                    xhttp.open("GET", `http://127.0.0.1:8000/api/v1/user/search?q=${val}&src=s_u_p&lg=en&ip=192.168.2.0.1&client=tealives`);
+                    // SUP: sign up
+                    xhttp.send();
+                }
+                setTimeout(function () {
+                    alert.style = "display: none;"
+                }, 3000)
+            })
+        </script>
+</body>
+
+</html>
+<!--             <!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocation DB - javascript example</title>
+</head>
+<body>
+    <div>Country: <span id="country"></span>
+    <div>State: <span id="state"></span>
+    <div>City: <span id="city"></span>
+    <div>Latitude: <span id="latitude"></span>
+    <div>Longitude: <span id="longitude"></span>
+    <div>IP: <span id="IPv4"></span>
+    <script>
+
+    var country = document.getElementById('country');
+    var state = document.getElementById('state');
+    var city = document.getElementById('city');
+    var postal = document.getElementById('postal');
+    var latitude = document.getElementById('latitude');
+    var longitude = document.getElementById('longitude');
+    var ip = document.getElementById('ipv4');
+
+    function callback(data)
+    {
+        country.innerHTML = data.country_name;
+        state.innerHTML = data.state;
+        city.innerHTML = data.city;
+        postal.innerHTML = data.postal;
+        latitude.innerHTML = data.latitude;
+        longitude.innerHTML = data.longitude;
+        ip.innerHTML = data.IPv4;
+    }
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://geolocation-db.com/jsonp';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(script, h);
+
+    </script>
+</body>
+</html>
+                 -->

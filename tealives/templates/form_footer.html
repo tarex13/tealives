@@ -1,0 +1,53 @@
+        <div class="footer">
+            <footer>
+                <div class="center">
+                    <div class="footer_container">
+                        
+                        <div class="element"><a class="black" href="about">About</a></div>
+                        <div class="element"><a class="black" href="about">Help</a></div>
+                        <div class="element"><a class="black" href="about">Privacy</a></div>
+                        <div class="element"><a class="black" href="about">Terms</a></div>
+                        <div class="element"><a class="black" href="{% url 'sup' %}">Sign Up</a></div>
+                        <div class="element"><a class="black" href="about">Feedback</a></div>
+                        <div class="element"><a class="black" href="{% url 'blog_index' %}">Blog</a></div>
+                        <div class="element"><a class="black" href="about">Ad service</a></div>
+                        
+                    </div>
+                </div>
+                <div id="closing">&copy; {{ yearr }} Tealives</div>
+                
+            </footer>
+        </div>
+        <style>
+            .footer {
+                margin-top: -1%;
+                justify-content: center;
+                display: flex;
+                padding: 1%;
+                padding-top: 30px;
+                margin-top: auto;
+            }
+            .footer_container{
+                display: flex;
+                flex-direction: row;
+                padding: 15px;
+                gap: 8px;
+            }
+            .black {
+                color: #1d1b1b;
+                font-size: 18px;
+                text-decoration: none;
+            }
+            #closing {
+                text-align: center;
+                font-size: 17px;
+            }
+            a {
+                text-decoration: none;
+                cursor: pointer;
+            }
+            
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>

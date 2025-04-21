@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Groove</title>
+   <script type="text/javascript" src="jsmediatags-master/dist/jsmediatags.js"></script>
+   <script type="text/javascript">
+var jsmediatags = window.jsmediatags;
+</script>
+</head>
+<body>
+<video src="you.mp3" id="vid" controls>
+</video>
+<script type="text/javascript">
+
+// Simple API - will fetch all tags
+var jsmediatags = require("jsmediatags");
+
+jsmediatags.read("./you.mp3", {
+  onSuccess: function(tag) {
+    console.log(tag);
+  },
+  onError: function(error) {
+    console.log(':(', error.type, error.info);
+  }
+});
+</script>
+</body>
+</html>

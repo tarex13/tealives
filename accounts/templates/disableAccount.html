@@ -1,0 +1,177 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Disable Account</title>
+</head>
+<body>
+    <!--{% include 'topbar.html' %}-->
+    <div id="content">
+        <div class="cont">
+            <h1>Confirm Your Password</h1>
+            <form onsubmit="return disableConfimation()" method="POST">
+                {% csrf_token %}
+                <div class="formed-control">
+                    <input type="password" id="password" name="password" required>
+                    <label>Confirm Password</label>
+                    <span class="look">show</span>
+                </div>
+
+                <p class="textt">Your account won't be visible until re-enabled !</p>
+                <p class="textt">You will not receive any message from tealives !</p>
+                <p class="textt">To re-activate your account you have to login !</p>
+                <button class="btn2">Disable</button>
+
+            </form>
+        </div>
+    </div>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #efefef;
+            color: #fff;
+            font-family: 'Muli', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .cont {
+            padding: 20px 40px;
+            border-radius: 5px;
+        }
+
+            .cont h1 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .cont a {
+                text-decoration: none;
+                color: lightblue;
+            }
+
+        .btn2 {
+            cursor: pointer;
+            display: inline-block;
+            width: 100%;
+            background: lightblue;
+            padding: 15px;
+            font-family: inherit;
+            font-size: 16px;
+            border: 0;
+            border-radius: 5px;
+        }
+
+            .btn2:focus {
+                outline: 0;
+            }
+
+            .btn2:active {
+                transform: scale(0.98);
+            }
+
+        .textt {
+            margin-top: 30px;
+        }
+
+        .formed-control {
+            position: relative;
+            margin: 20px 0 40px;
+            width: 300px;
+        }
+
+            .formed-control input {
+                background-color: transparent;
+                border: 0;
+                border-bottom: 2px #fff solid;
+                display: block;
+                width: 100%;
+                padding: 15px 0;
+                font-size: 18px;
+                color: #fff;
+            }
+
+                .formed-control input:focus,
+                .formed-control input:valid {
+                    outline: 0;
+                    border-bottom-color: lightblue;
+                }
+
+            .formed-control label {
+                position: absolute;
+                top: 15px;
+                left: 0;
+                pointer-events: none;
+            }
+
+                .formed-control label span {
+                    display: inline-block;
+                    font-size: 18px;
+                    min-width: 5px;
+                    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                }
+
+            .formed-control input:focus + label span,
+            .formed-control input:valid + label span {
+                color: lightblue;
+                transform: translateY(-30px);
+            }
+
+        .look {
+            position: absolute;
+            top: 15px;
+            right: 0;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+const labels = document.querySelectorAll('.formed-control label');
+                    var pass = document.querySelector("#password");
+
+                    var look = document.querySelector(".look");
+labels.forEach(label => {
+            label.innerHTML = label.innerText
+                .split('')
+                .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
+                .join('')
+})
+function disableConfimation() {
+            var as = confirm('You are about to de-activate your account.')
+            if (as == false) {
+                return false;
+            }
+}
+look.addEventListener("click", () => {
+            if (pass.type == "password") {
+                pass.type = "text";
+                look.innerHTML = "hide";
+            } else {
+                pass.type = "password";
+                look.innerHTML = "show";
+            }
+}
+)
+
+var abb = Math.random().toString(10).slice(3, 4);
+var bt = 'url('
+var ur = "{% static 'genre/' %}"
+var rem = "' %})";
+var jp = ".jpg";
+var bbt = ")"
+var cd = bt + ur + abb + jp + bbt;
+document.querySelector('.cont').style.background = cd;
+
+    </script>
+</body>
+</html>

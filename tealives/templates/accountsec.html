@@ -1,0 +1,636 @@
+        {% load static %}
+
+        {% if user.is_authenticated %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="{% static 'tealives/bootstrap.min.css' %}" rel="stylesheet" />
+    <title>Tealives</title>
+    <link rel="icon" href="{% static 'tealives/tli.png' %}" type="image/x-icon">
+</head>
+<body>
+    {% include 'topbar.html' %}
+
+    {% include 'feedback.html' %}
+    <center>
+        <div class="height">
+            <div id="content">
+                <div class="dive">
+                    {% include 'sidebar.html' %}
+                    <div class="base-container">
+                        <article class="hank">
+                            <form auto-complete="off" auto-capitalize="off" auto-correct="off">
+                                <div id="bodiv">
+
+                                    <div class="container">
+                                        <div class="cover"><span class="gradundie">Account Security</span></div>
+                                        <div class="sire">
+                                            <p class="label">Account Type</p>
+                                            <form>
+                                                <div class="bttn">
+
+                                                    <input type="radio" name="type" class="likei" id="Public">
+                                                    <label for="Public">Public</label>
+
+                                                </div>
+                                                <div class="bttn">
+
+                                                    <input type="radio" name="type" class="likei" id="Private">
+                                                    <label for="Private">Private</label>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div></br></br>
+                                    <div class="container">
+                                        <div class="sire">
+                                            <p class="label">Two-step Verification</p>
+                                            <form>
+                                                <div class="bttn2">
+
+                                                    <input type="radio" class="likei" name="type" id="On">
+                                                    <label for="On">Enable</label>
+
+                                                </div>
+                                                <div class="bttn2">
+
+                                                    <input type="radio" class="likei" name="type" id="Off">
+                                                    <label for="Off">Disable</label>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div></br></br>
+                                    <label for="19iub" class="label">Security Question</label></br></br>
+                                    <select id="19iud" class="gend">
+                                        <option class="opt" value="-1">Security Question</option>
+                                        <option class="opt">What is your middle name?</option>
+                                        <option class="opt">What is your favourite food?</option>
+                                        <option class="opt">What is your favourite day of the week?</option>
+                                        <option class="opt">What is your first Nickname?</option>
+                                        <option class="opt">What is your pet's name?</option>
+                                    </select></br></br>
+                                    <input type="text" name="recovans" placeholder="Answer"><br><br>
+                                    <label for="19iub" class="label">No of logins per account</label></br></br>
+                                    <select id="19iud" class="gend">
+                                        <option class="opt" value="-1">Logins per account</option>
+                                        <option class="opt">1</option>
+                                        <option class="opt">2</option>
+                                        <option class="opt">3</option>
+                                        <option class="opt">4 or more</option>
+                                    </select></br></br>
+                                    <label for="19iub" class="label">Logout when inactive after</label></br></br>
+                                    <select id="19iud" class="gend">
+                                        <option class="opt">Never</option>
+                                        <option class="opt">5 min</option>
+                                        <option class="opt">10 min</option>
+                                        <option class="opt">30 min</option>
+                                    </select></br></br>
+                                    <button id="a9">
+                                        Save
+                                    </button>
+                                </div>
+                            </form>
+                            <!--<div class="class20">
+        <div class="acctips">
+            <ul>
+                <p><h1 class="underl">Security Tips</h1></p>
+                <p>
+                <li>Logout of account when not in use.</li></p>
+                <p>
+                <li>Do not share account password.</li></p>
+                <p>
+                <li>Enable two verification authentication.</li></p>
+                <p>
+                <li>Report any activity that is against our community guidelines.</li></p>
+                <p></p>
+            </ul>
+        </div>
+    </div>-->
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </center>
+    <div class="md-overlay"></div><!-- the overlay element -->
+    <style>
+        .base-container {
+            line-height: 90%;
+            display: flex;
+        }
+
+        .hank {
+            width: 900px;
+            overflow: hidden;
+            /*box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);*/
+            border: 0.1px solid #cac6c6;
+            padding: 10px;
+            background-color: white;
+            left: 0;
+            height: 100%;
+            overflow: auto;
+            padding: 1px solid black;
+            display: flex;
+            flex-flow: column;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Montserrat", sans-serif;
+            /*   outline: 1px solid white; */
+        }
+
+        body {
+            background: #efefef;
+            width: 100%;
+            display: flex;
+            height: 10px;
+            justify-content: center;
+            padding-top: 1rem;
+            overflow: auto;
+        }
+
+        .bodiv {
+            padding: 20px;
+        }
+
+        body {
+            background-color: #efefef;
+            overflow: auto;
+        }
+
+        .dive {
+            background-color: white;
+            box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);
+            width: 100%;
+            display: flex;
+        }
+
+        .body {
+            width: 100%;
+            padding-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+
+        form {
+            line-height: 10px;
+        }
+
+
+
+        .body ul {
+            background-color: white;
+            display: flex;
+            flex-flow: row;
+            font-size: 100%;
+        }
+
+        .body a {
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        .text {
+            text-align: left;
+        }
+
+        .body li {
+            list-style: none;
+            color: #171313;
+            text-transform: uppercase;
+            display: flex;
+        }
+
+        .line {
+            border-bottom: 1px grey solid;
+        }
+
+        .small {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            float: left;
+            vertical-align: middle;
+            border-style: solid;
+            border-width: 2px;
+            border-image: linear-gradient(circle, 45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+        }
+
+        .uname {
+            vertical-align: bottom;
+            padding: 5px;
+            font-size: 24px;
+            float: left;
+            margin-top: -14px;
+        }
+
+        .textt {
+            padding-top: 7px;
+            line-height: 60px;
+            padding-bottom: 14px;
+            margin-left: 10px;
+        }
+
+        .put {
+            width: 100%;
+            margin-left: 1px;
+            border: none;
+            outline: none;
+        }
+    </style>
+
+    <style>
+        #content {
+            display: flex;
+            justify-content: center;
+            margin-top: 55px;
+            height: 99%;
+        }
+    </style>
+    <style>
+        .height {
+            display: flex;
+            line-height: 90%;
+            height: 90%;
+            min-height: 90%;
+            max-height: 90%;
+        }
+    </style>
+    <script src="{% static 'tealives/index.js' %}"></script>
+    <style type="text/css">
+        .gend {
+            width: 40%;
+            height: 30px;
+            padding-left: 6px;
+            margin: 1px;
+            margin-left: 1px;
+            margin-left: 10rem;
+            background-color: white;
+        }
+
+        .hank input:not(.likei,.classy) {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .accr {
+            text-decoration: none;
+        }
+
+        .label {
+            box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);
+            padding: 10px;
+            width: 215px;
+            margin-left: -50%;
+            text-align: center;
+            border-bottom: 5px solid #ff4b0a;
+            border-radius: 2px;
+            line-height: 1;
+        }
+
+        #\31 9iug:focus-visible {
+            outline: none !important;
+        }
+
+        .kissmeless {
+            width: 200px;
+            height: 70px;
+        }
+
+        .kissmeles {
+            width: 200px;
+            height: 70px;
+            rotate: 90deg;
+        }
+
+        .together {
+            font-size: 120%;
+            padding: 5px;
+        }
+
+        .infoadd {
+            float: right !important;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .hank .classy {
+            width: 20px;
+            padding: 0;
+            margin-left: 20px;
+            height: 20px;
+            margin-right: 50px;
+            float: right;
+        }
+
+        .addinfo {
+            float: left;
+            margin-left: 50px;
+        }
+
+        #closing {
+            font-size: 30px;
+            font-family: Gabriola;
+        }
+
+        .textarea::placeholder {
+            font-size: 20px;
+        }
+
+        .userpic {
+            border-radius: 50%;
+            min-width: 60px;
+            height: 60px;
+            float:;
+            padding: 1px;
+            margin: 10px;
+            cursor: pointer;
+            border-style: solid;
+            border-width: 2px;
+            background: radial-gradient(circle at 30% 107%, #321ad6 0%, #d40bdb 5%, #ec1919 45%,#f08cc5 60%,#ff1e33 90%);
+            color: Maroon;
+            margin-right: 10px;
+        }
+
+        .opt:hover {
+            padding: 10px solid black;
+            background-color: white;
+        }
+
+        #picname {
+            font-family: 'elephant','gabriola','Lucida Console';
+            font-size: 250%;
+            margin: 10px;
+            width: 60%;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .opt {
+            background-color: white;
+        }
+
+        .myhidden {
+            display: none;
+        }
+    </style>
+    <style type="text/css">
+
+        .hank input:not(.likei,.classy), .textarea, select, .gend {
+            width: 50%;
+            height: 40px;
+            padding: 10px;
+            margin: 1px;
+            margin-left: 1px;
+            margin-left: 1px;
+            margin-left: 10rem;
+            border-radius: 30px;
+            border: 1px dotted #ff4b0a;
+        }
+
+        .list a:hover {
+            background: #795548;
+            color: white;
+        }
+
+        .edit:focus-visible {
+            outline: none;
+        }
+
+        .edit {
+            cursor: text;
+        }
+
+        .underl {
+            text-decoration: underline;
+        }
+
+        .acctips {
+            margin-top: 30px;
+            font-size: x-large;
+            width: 50%;
+            line-height: 2;
+            text-align: left;
+            list-style: linear-gradient(to right, #095548, #195548, #295548, #395548, #495548, #595548, #695548, #795548, #895548, #995545);
+        }
+    </style>
+    <style type="text/css">
+
+        .bttn {
+            width: 100px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin-top: 1.2em;
+            padding: 0 0.5em;
+        }
+
+            .bttn input {
+                position: relative;
+                cursor: pointer;
+                appearance: none;
+                -webkit-appearance: none;
+            }
+
+                .bttn input::before,
+                .bttn input::after {
+                    content: '';
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50px;
+                }
+
+                .bttn input:checked::before {
+                    background: #ff4b0a;
+                    transform: translate(-50%,-50%);
+                }
+
+                .bttn input::after {
+                    width: 10px;
+                    height: 10px;
+                    background: none;
+                    border: 2px solid #ff4b0a;
+                    border-radius: 50px;
+                    transform: translate(-80%, -50%);
+                    transition: all .4s;
+                }
+
+                .bttn input:checked::after {
+                    width: 100px;
+                    height: 40px;
+                    border-radius: 10px;
+                    transform: translate(-15%, -50%);
+                    z-index: 10;
+                }
+
+            .bttn label {
+                margin-left: 0.5em;
+                cursor: pointer;
+                font-size: 1.3pc;
+            }
+
+        .bttn2 {
+            width: 100px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin-top: 1.2em;
+            padding: 0 0.5em;
+        }
+
+            .bttn2 input {
+                position: relative;
+                cursor: pointer;
+                appearance: none;
+                -webkit-appearance: none;
+            }
+
+                .bttn2 input::before,
+                .bttn2 input::after {
+                    content: '';
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50px;
+                }
+
+                .bttn2 input:checked::before {
+                    background: #ff4b0a;
+                    transform: translate(-50%,-50%);
+                }
+
+                .bttn2 input::after {
+                    width: 10px;
+                    height: 10px;
+                    background: none;
+                    border: 2px solid #ff4b0a;
+                    border-radius: 50px;
+                    transform: translate(-80%, -50%);
+                    transition: all .4s;
+                }
+
+                .bttn2 input:checked::after {
+                    width: 100px;
+                    height: 40px;
+                    border-radius: 10px;
+                    transform: translate(-15%, -50%);
+                    z-index: 10;
+                }
+
+            .bttn2 label {
+                margin-left: 0.5em;
+                cursor: pointer;
+                font-size: 1.3pc;
+            }
+
+        .gradundie {
+            position: relative;
+            font-size: 50px;
+            font-weight: 100;
+            background-color: white;
+            text-align: left;
+            background: #ff4b0a;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+            .gradundie::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0px;
+                background: #ff4b0a;
+                height: 4px;
+                width: 50%;
+            }
+
+        .cover {
+            padding: 50px 0;
+        }
+
+        .sire {
+            font-size: 18px;
+    </style>
+    <style type="text/css">
+        #a9 {
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            margin: 30px;
+            background-color: white;
+            padding: 0.7em 2em;
+            border: 3px solid #ff4b0a;
+            border-radius: 2px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+            color: #ff4b0a;
+            text-decoration: none;
+            transition: 0.3s ease all;
+            z-index: 1;
+        }
+
+            #a9:before {
+                transition: 0.5s all ease;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                right: 50%;
+                bottom: 0;
+                opacity: 0;
+                content: '';
+                background-color: #ff4b0a;
+                z-index: -1;
+            }
+
+            #a9:hover, button:focus {
+                color: white;
+            }
+
+                #a9:hover:before, button:focus:before {
+                    transition: 0.5s all ease;
+                    left: 0;
+                    right: 0;
+                    opacity: 1;
+                }
+
+            #a9:active {
+                transform: scale(0.9);
+            }
+    </style>
+    <script src="{% static 'tealives/assets/js/modalEffects.js' %}"></script>
+    <script type="text/javascript">
+        document.querySelectorAll('.bling')[3].classList.add('active')
+        document.querySelectorAll('.bling')[3].classList.remove('bling')
+    </script>
+    <!-- for the blur effect -->
+    <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+
+</body>
+</html>
+        {% else %}
+        {% block page_content %}{% endblock %}
+
+        {% endif %}

@@ -1,0 +1,93 @@
+Blue Vertico
+background: radial-gradient(100% 225% at 0% 100%, #FF04F5 0%, #001AFF 100%), linear-gradient(270deg, #FB00A5 50%, #0400CB 100%), linear-gradient(300deg, #8DADA4 0%, #32DE81 100%), linear-gradient(7deg, #1DADFE 0%, #16009A 50%);
+background-blend-mode: color-dodge, color-burn, color-burn, normal;
+
+
+Surface Shifting
+background: linear-gradient(180deg, #0C003C 0%, #BFFFAF 100%), linear-gradient(165deg, #480045 25%, #E9EAAF 100%), linear-gradient(145deg, #480045 25%, #E9EAAF 100%), linear-gradient(300deg, rgba(233, 223, 255, 0) 0%, #AF89FF 100%), linear-gradient(90deg, #45EBA5 0%, #45EBA5 30%, #21ABA5 30%, #21ABA5 60%, #1D566E 60%, #1D566E 70%, #163A5F 70%, #163A5F 100%);
+background-blend-mode: overlay, overlay, overlay, multiply, normal;
+
+
+
+X-gate
+background: linear-gradient(235deg, #FFFFFF 0%, #000F25 100%), linear-gradient(180deg, #6100FF 0%, #000000 100%), linear-gradient(235deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%), linear-gradient(125deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%);
+background-blend-mode: soft-light, screen, darken, normal;
+
+
+Execute Pink
+background: linear-gradient(125deg, #FFFFFF 0%, #000000 100%), linear-gradient(200deg, #FFD9E8 0%, #FFD9E8 50%, #DE95BA calc(50% + 1px), #DE95BA 60%, #7F4A88 calc(60% + 1px), #7F4A88 75%, #4A266A calc(75% + 1px), #4A266A 100%), linear-gradient(113deg, #FFD9E8 0%, #FFD9E8 40%, #DE95BA calc(40% + 1px), #DE95BA 50%, #7F4A88 calc(50% + 1px), #7F4A88 70%, #4A266A calc(70% + 1px), #4A266A 100%);
+background-blend-mode: overlay, overlay, normal;
+
+
+Candy Bar
+background: linear-gradient(123deg, #2E99B0 0%, #2E99B0 40%, #FCD77F calc(40% + 1px), #FCD77F 60%, #FF2E4C calc(60% + 1px), #FF2E4C 75%, #1E1548 calc(75% + 1px), #1E1548 100%);
+
+Coffee script
+background: linear-gradient(123deg, #FFFCAC 0%, #FFFFFF 67%), linear-gradient(180deg, #D8D8D8 0%, #6B0000 100%), linear-gradient(142deg, #F9F5F0 0%, #F9F5F0 33%, #F2EAD3 calc(33% + 1px), #F2EAD3 56%, #F4991A calc(56% + 1px), #F4991A 62%, #321313 calc(62% + 1px), #321313 100%);
+background-blend-mode: multiply, overlay, normal;
+
+
+Enjoyable anxiety
+background: linear-gradient(121deg, #FF0000 0%, #ff0000 100%), linear-gradient(140deg, #ff5454 27%, #223DCB 100%), linear-gradient(140deg, #4E9C51 0%, #001AFF 72%), linear-gradient(64deg, #6e00ff 0%, #0038FF 100%), radial-gradient(52% 101.79% at 50% 50%, #707300 0%, #ff0000 100%), radial-gradient(100% 100% at 70% 0%, #7A3B00 0%, #1DAC92 100%);
+background-blend-mode: overlay, overlay, difference, difference, color-burn, exclusion;
+
+
+Secret wave
+background: linear-gradient(121deg, #AD00FF 0%, #0C0056 100%), linear-gradient(121deg, #FA00FF 0%, rgba(0, 255, 71, 0) 100%), linear-gradient(127deg, #00F0FF 0%, #A80000 100%), radial-gradient(107% 142% at 15% 104%, #F3D0FC 0%, #1700A4 100%), radial-gradient(100% 100% at 50% 0%, #7300A9 0%, #00FFE0 100%), radial-gradient(100% 100% at 50% 0%, #7300A9 0%, #00FFE0 100%), linear-gradient(127deg, #B7D500 0%, #2200AA 100%);
+background-blend-mode: overlay, color, overlay, difference, color-dodge, difference, normal;
+
+
+
+Unmatched Eclipse
+background: linear-gradient(55deg, #212121 0%, #212121 40%, #323232 calc(40% + 1px), #323232 60%, #008F95 calc(60% + 1px), #008F95 70%, #14FFEC calc(70% + 1px), #14FFEC 100%);
+
+
+Own Pattern
+background: radial-gradient(100% 225% at 100% 0%, #FAFF00 0%, #000000 100%), linear-gradient(235deg, #DB00FF 0%, #000000 100%), linear-gradient(45deg, #241E92 0%, #241E92 40%, #5432D3 40%, #5432D3 50%, #7B6CF6 50%, #7B6CF6 70%, #E5A5FF 70%, #E5A5FF 100%), linear-gradient(180deg, #01024E 0%, #01024E 43%, #543864 43%, #543864 62%, #8B4367 62%, #8B4367 80%, #FF6464 80%, #FF6464 100%);
+background-blend-mode: overlay, hard-light, overlay, normal;
+
+
+Abstract Leaves
+background: linear-gradient(235deg, #BABC4A 0%, #000000 100%), linear-gradient(235deg, #0026AC 0%, #282534 100%), linear-gradient(235deg, #00FFD1 0%, #000000 100%), radial-gradient(120% 185% at 25% -25%, #EEEEEE 0%, #EEEEEE 40%, #7971EA calc(40% + 1px), #7971EA 50%, #393E46 calc(50% + 1px), #393E46 70%, #222831 calc(70% + 1px), #222831 100%), radial-gradient(70% 140% at 90% 10%, #F5F5C6 0%, #F5F5C6 30%, #7DA87B calc(30% + 1px), #7DA87B 60%, #326765 calc(60% + 1px), #326765 80%, #27253D calc(80% + 1px), #27253D 100%);
+background-blend-mode: overlay, lighten, overlay, color-burn, normal;
+
+
+Fable Wave
+background: linear-gradient(115deg, rgb(211, 255, 215) 0%, rgb(0, 0, 0) 100%), radial-gradient(90% 100% at 50% 0%, rgb(200, 200, 200) 0%, rgb(22, 0, 45) 100%), radial-gradient(100% 100% at 80% 0%, rgb(250, 255, 0) 0%, rgb(36, 0, 0) 100%), radial-gradient(150% 210% at 100% 0%, rgb(112, 255, 0) 0%, rgb(20, 175, 125) 0%, rgb(0, 10, 255) 100%), radial-gradient(100% 100% at 100% 30%, rgb(255, 77, 0) 0%, rgba(0, 200, 255, 1) 100%), linear-gradient(60deg, rgb(255, 0, 0) 0%, rgb(120, 86, 255) 100%);
+background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+
+J shine
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(18, 194, 233), rgb(196, 113, 237), rgb(246, 79, 89)) repeat scroll 0% 0%
+
+Grade Grey
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(189, 195, 199), rgb(44, 62, 80)) repeat scroll 0% 0%
+
+Cool Blues
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(33, 147, 176), rgb(109, 213, 237)) repeat scroll 0% 0%
+
+Moonlit Asteroid
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100)) repeat scroll 0% 0%
+
+Cool Sky
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(41, 128, 185), rgb(109, 213, 250), rgb(255, 255, 255)) repeat scroll 0% 0%
+
+Yoda
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(255, 0, 153), rgb(73, 50, 64)) repeat scroll 0% 0%
+
+Amin
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(142, 45, 226), rgb(74, 0, 224)) repeat scroll 0% 0%
+
+Sublime Vivid
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(252, 70, 107), rgb(63, 94, 251)) repeat scroll 0% 0%
+
+Lawrencium
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(15, 12, 41), rgb(48, 43, 99), rgb(36, 36, 62)) repeat scroll 0% 0%
+
+Orange Fun
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(252, 74, 26), rgb(247, 183, 51)) repeat scroll 0% 0%
+
+Argon
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(3, 0, 30), rgb(115, 3, 192), rgb(236, 56, 188), rgb(253, 239, 249)) repeat scroll 0% 0%
+
+Coal
+Background: rgba(0, 0, 0, 0) linear-gradient(to left, rgb(235, 87, 87), rgb(0, 0, 0)) repeat scroll 0% 0%

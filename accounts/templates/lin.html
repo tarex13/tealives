@@ -1,0 +1,965 @@
+<!--Hello Josh-->
+{% load static %}
+
+<!DOCTYPE html>
+<!--Try maybe getting the images from a database to mak things more sucure-->
+<html lang=en-US>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="author" content="Tealives" />
+    <title>Tealives | Login</title>
+    <link rel="icon" href="{% static 'tealives/tli.png' %}" type="image/x-icon">
+    <!-- <link href="{% static 'tealives/lin.css' %}" type="text/css" rel="stylesheet"> -->
+</head>
+
+
+<body class="d-flex flex-column h-100">
+
+    <center>
+        <div id="body">
+            <center>
+                <div class="bgcolor">
+                    <div id="form">
+                        <div class="half">
+                            <div class="moji">
+                                <div class="Ok right-side">❤️</div>
+                                <div class="Ok left-side">🙈</div>
+                                <div class="Ok right-side">🤩</div>
+                                <div class="Ok left-side">🎶</div>
+                            </div>
+                            <div class="img">
+                                <div class="inside">
+                                    <div class="outside">
+                                        <span class="gradundie">Tealives</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="form1" autocomplete="off" auto-capitalize="off" auto-correct="off" method="post" action="{% url 'lin' %}" id="form1">
+                            {% csrf_token %}
+                            <span class="logo l2"><img class="kissmemore" src="{% static 'tealives/lin.authorized/no-bg.png' %}"></span>
+                            {% for message in messages %}
+                            <span class="messages">{{ message }}</span>
+                            {% endfor %}
+                            <br />
+                            <div id="alert"></div>
+                            <div>
+                                <div class="class" onchange="validateInput()">
+                                    {{ loginform.userid }} <br />
+                                    <div class="bbn">
+                                        {{ loginform.userpass }}<span class="look">show</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lin-button">
+                                <div id="btw">
+                                    <button name="lin" id="bttw" class="button" disabled>Login</button>
+                                </div>
+                                <span class="login-span">
+                                    <a class="blue" href="{% url 'fp' %}">Forgot Password</a>
+                                </span>
+                            </div>
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                            <div class="box4"></div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <div id="from">
+                    <div class="account">
+                        <span class="span">
+                            Don't Have An Account? <b><a href="{% url 'sup' %}" class="meta">Sign Up</a></b>
+                        </span>
+                    </div>
+                </div>
+
+            </center>
+        </div>
+    </center>
+    {% include 'form_footer.html' %}
+    <style>
+
+        body {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+            font-size: 23px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            color: #1c1e21;
+            margin: 0;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        #body {
+            padding-bottom: 112px;
+            padding-top: 10px;
+            text-align: center;
+            align-content: center;
+            border: 0;
+            border: 0;
+            background: linear-gradient(40deg, #155263 9%, #155263 43%, #FF6F3C calc(43% + 1px), #FF6F3C 52%, #FF9A3C calc(52% + 1px), #FF9A3C 80%, #FFC93C calc(80% + 1px), #FFC93C 100%);
+            justify-items: center;
+            background-color: #efefef;
+        }
+
+        #alert {
+            color: #333131;
+        }
+
+        .peaches {
+            display: none;
+        }
+
+        .span {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-family: 'Arial Special G2';
+            color: white;
+        }
+
+            .span a {
+                color: #FFC93C;
+            }
+
+        #form {
+            border-radius: 0;
+            justify-content: space-between;
+            margin-top: 1%;
+            line-height: 200%;
+            text-align: center;
+            display: flex;
+        }
+
+        form {
+            position: relative;
+            background: rgba( 255, 255, 255, 0.3 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 0px );
+            -webkit-backdrop-filter: blur( 0px );
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            padding: 30px 0;
+            text-align: center;
+            width: 35%;
+            line-height: 3;
+        }
+
+        .account {
+            border-bottom-width: 20px;
+            border-top-width: 20px;
+            border-left-width: 20px;
+            border-right-width: 20px;
+            border-radius: 10px;
+            padding: 5px 0;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        #sage {
+            border: 10px solid #dbdbdb;
+            color: white;
+            padding: 20px;
+            background-color: dimgrey;
+            font-size: 20px;
+            text-align: left;
+            max-width: 20%;
+            margin-top: -10px;
+            height: 50px;
+            margin-left: -10px;
+        }
+
+        .input {
+            padding: 5px;
+            border-radius: 5px;
+            width: 60%;
+            height: 45px;
+            font-size: 80%;
+            margin-bottom: 20px;
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .look {
+            position: absolute;
+            cursor: pointer;
+            font-size: 80%;
+            margin: 10px -50px;
+            color: white;
+            user-select: none;
+        }
+
+        .input:focus-visible {
+            outline: none !important;
+        }
+
+        button {
+            border-radius: inherit;
+            padding: 10px;
+            width: 40%;
+            cursor: pointer;
+            line-height: 120%;
+            color: white;
+            font-size: 100%;
+            text-align: center;
+        }
+
+        #bttw {
+            background: #ff9a3c;
+            border: 2px solid white;
+        }
+
+        .butt {
+            background: linear-gradient(40deg, #FF9A3C 50%, #FFC93C calc(30% + 1px));
+            border: 2px solid white;
+        }
+
+        .blue {
+            color: #2b73d0;
+        }
+
+        #from {
+            padding: 10px;
+            width: 40%;
+            text-align: center;
+            margin-left: -5%;
+            background: rgba( 255, 255, 255, 0.3 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 0px );
+            -webkit-backdrop-filter: blur( 0px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            margin-top: 35px;
+        }
+
+        #line {
+            border-bottom: 1.5px solid black;
+            margin: 10px 30% -5px 30%;
+            display: flex;
+        }
+
+        span {
+            font-size: 100%;
+        }
+
+
+
+        /*@keyframes mymove {
+                from {
+                    border-bottom-color: #dbdbdb;
+                }
+
+                to {
+                    border-left-color: #cacaca;
+                }
+
+                to {
+                    border-top-color: #bab8b8;
+                }
+
+                to {
+                    border-right-color: #b2b2b2;
+                }
+            }
+            */
+        .img {
+            background: #0078D7;
+            align-self: center;
+        }
+
+        .half {
+            width: 65%;
+            align-self: center;
+        }
+
+        .span {
+            font-size: 90%;
+        }
+
+        .messages {
+            display: flow-root;
+            background: linear-gradient(40deg, #FF9A3C 1%, #FF9A3C99 calc(50% + 1px), #FFC93CAB 50%, #FFC93C 100%);
+            padding-top: 3%;
+            padding-bottom: 3%;
+            margin-top: -1%;
+            margin-bottom: -5%;
+            background-color: black;
+            text-decoration-color: white;
+            color: white;
+        }
+
+        @media (max-width:600px) {
+
+            #form {
+                width: 80%;
+            }
+
+            .half {
+                display: none;
+            }
+        }
+
+        @media (max-width:462px) {
+            body {
+                width: 100%;
+            }
+
+            .account {
+                padding: 0px;
+            }
+
+            form {
+                box-shadow: none;
+            }
+
+            #form {
+                width: 80%;
+            }
+
+            .half {
+                display: none;
+            }
+        }
+
+        @media (max-width:250px) {
+            #body {
+                background-color: #fff;
+            }
+
+            button {
+                padding: 0;
+                width: 110%;
+                font-size: small;
+            }
+
+            #line {
+                display: none;
+            }
+
+            #form {
+                width: 80%;
+            }
+
+            .half {
+                display: none;
+            }
+        }
+
+        @media (max-width:100px) {
+            #body {
+                width: 120%;
+            }
+
+            form {
+                justify-items: right;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                box-shadow: none;
+            }
+
+            button {
+                font-size: 30%;
+            }
+
+            .account {
+                background-color: white;
+            }
+
+            #form {
+                width: 80%;
+            }
+
+            .half {
+                display: none;
+            }
+        }
+
+        @media (max-width:960px) {
+            .half {
+                display: none;
+            }
+
+            #form {
+                text-align: center;
+                justify-items: right;
+                width: 80%;
+            }
+
+            form {
+                width: 100%;
+            }
+
+            .span {
+                font-size: 70%;
+            }
+        }
+        /*
+            @media (min-width:1760px){
+                form{
+                    width: 900px;
+                    height: 100%;
+                    line-height: 4;
+                    margin-top: 30px;
+                }
+                .input{
+                    height: 50px;
+                    margin: 20px;
+                    font-size: 40px;
+                }
+                button{
+                    font-size: 40px;
+                }
+                .blue{
+                    font-size: 50px;
+                }
+                .l2{
+                    width: 520px;
+                }
+                .span{
+                    font-size: 60px;
+                }
+            }
+            */
+
+        .kissmemore {
+            width: 40%;
+        }
+
+        .eye {
+            height: 25px;
+            width: 25px;
+            margin: 23px 0 0 -35px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .no {
+            display: none;
+        }
+
+        .gradundie {
+            position: relative;
+            font-size: 80px;
+            padding: 17px;
+            font-weight: 100;
+            background-color: white;
+            text-align: left;
+            background: linear-gradient(40deg, #fff 9%, #24bfea 43%, #FF6F3C calc(43% + 1px), #FF6F3C 52%, #FF9A3C calc(52% + 1px), #FF9A3C 80%, #FFC93C calc(80% + 1px), #FFC93C 100%);
+            border: 2px solid #ff9a3c;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+            .gradundie::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0px;
+                background: linear-gradient(to right, #97ff00, #0dd3ae);
+                height: 4px;
+                width: 100%;
+            }
+
+        div.Ok:nth-child(1) {
+            top: 348px;
+            left: 650px;
+        }
+
+        Inline #0
+        .Ok {
+            top: 48px;
+            top: 80px;
+        }
+
+        div.Ok:nth-child(2) {
+            top: 348px;
+            left: 52px;
+        }
+
+        div.Ok:nth-child(3) {
+            top: 80px;
+            left: 650px;
+        }
+
+        .Ok {
+            top: 48px;
+            left: 52px;
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: absolute;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            transform: translateX(60px) translateY(60px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid hsla(0,0%,100%,.18);
+            -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+            border-radius: 10px;
+            font-size: xx-large;
+            background: -webkit-radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            background: radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .box2, .box1 {
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform: translateX(60px) translateY(60px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid hsla(0,0%,100%,.18);
+            -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+            border-radius: 10px;
+            font-size: xx-large;
+            background: -webkit-radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            background: radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            display: flex;
+            content: '';
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .box1 {
+            top: 0;
+            left: 0;
+        }
+
+        .box2 {
+            bottom: 0;
+            left: 0;
+        }
+
+        .Ok.left-side::before {
+            content: '';
+            top: -40px;
+            left: 68px;
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: absolute;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            transform: translateX(60px) translateY(60px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid hsla(0,0%,100%,.18);
+            -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+            border-radius: 10px;
+            font-size: xx-large;
+            border-radius: 50%;
+            background: -webkit-radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            background: radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .box4 {
+            bottom: 0;
+            right: 0;
+        }
+
+        .box3 {
+            top: 0;
+            right: 0;
+        }
+
+        .box3, .box4 {
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform: translateX(60px) translateY(60px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid hsla(0,0%,100%,.18);
+            -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+            border-radius: 10px;
+            font-size: xx-large;
+            background: -webkit-radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            background: radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            display: flex;
+            content: '';
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .Ok.right-side::before {
+            content: '';
+            top: -40px;
+            left: -68px;
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: absolute;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            transform: translateX(60px) translateY(60px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid hsla(0,0%,100%,.18);
+            -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+            border-radius: 10px;
+            font-size: xx-large;
+            border-radius: 50%;
+            background: -webkit-radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            background: radial-gradient(circle,hsla(0,0%,100%,.27) 0,hsla(0,0%,100%,.05) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .terms {
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+    <style type="text/css">
+        @media only screen and (max-width: 600px) {
+            body {
+                height: 100%;
+                line-height: 2;
+                padding: 0;
+            }
+
+            .meta {
+                font-size: small;
+            }
+
+            .bbn {
+                padding: 0;
+                margin: 0;
+            }
+
+            #body {
+                font-size: large;
+                margin: 0;
+                padding: 0;
+            }
+
+            #form form {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+                border: none;
+            }
+
+            .box1, .box2, .box3, .box4 {
+                display: none;
+            }
+
+            .look {
+                font-size: xx-small;
+                margin: 17px -30px;
+            }
+
+            .bgcolor {
+                margin: 0;
+                padding: 0;
+            }
+
+            #form {
+                margin: 0;
+                padding: 10px 0;
+                box-shadow: none;
+                width: 80%;
+                display: flex;
+                justify-content: center
+            }
+
+                #form input {
+                    font-size: x-small;
+                    height: 10px;
+                    width: 50%;
+                    padding: 10px;
+                    margin: 10px 0;
+                    border: 1px solid white;
+                    border-radius: 30px;
+                }
+
+            .button {
+                width: 20%;
+                padding: 10px;
+                border: none;
+                font-size: small;
+            }
+
+            .eye {
+                display: none;
+            }
+
+            .span {
+                color: black;
+                font-size: x-small;
+                line-height: 2;
+                padding: 0;
+            }
+
+            #from {
+                box-shadow: none;
+                text-align: center;
+                width: 70%;
+                padding: 10px 0;
+                margin: 0;
+            }
+
+            .account {
+                padding: 0;
+                border: none;
+            }
+
+            .blue {
+                font-size: small;
+                color: #085bf7;
+            }
+
+            #from {
+                background: none;
+                border: none;
+            }
+
+            #bttw {
+                border: none;
+            }
+
+            #butt {
+                border: none;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            #body {
+                background: linear-gradient(40deg, #181d2f 9%, #181D3e 43%, #181d4d calc(43% + 1px), #181d5c 52%, #181d6b calc(52% + 1px), #181D7A 81%, #181D7F calc(80% + 1px), #181d9f 100%);
+            }
+
+            .blue {
+                color: white;
+            }
+
+            #bttw {
+                background: #181d52;
+            }
+
+            .butt {
+                background: #0e1478;
+            }
+
+            .input, .input::placeholder {
+                color: white;
+            }
+
+            .messages {
+                background: linear-gradient(40deg, #181d5c 52%, #181d6b calc(52% + 1px), #181D7A 81%, #181D7F calc(80% + 1px), #181d9f 100%)
+            }
+        }
+        /*@media only screen and (min-width: 1200px){
+                .input {
+                    padding: 40px;
+                    margin: 40px 0;
+                }
+                .account {
+                    font-size: xxx-large;
+                }
+                #from{
+                    width: 30%;
+                }
+                button{
+                    font-size: calc(100% + 20px);
+                    margin: 40px 0;
+                }
+                .gradundie{
+                    font-size: calc(100% + 200px);
+                }
+                .ok{
+                    font-size: calc(100% + 100px);
+                    width: 200px;
+                    height: 200px;
+                }
+                div.Ok:nth-child(2) {
+                    top: 770px;
+                }
+                .Ok.left-side::before {
+                    top: -50px;
+                    left: 142px;
+                }
+                #form1 {
+                    font-size: xxx-large;
+                }
+                .eye {
+                    display: none;
+                }
+            }*/
+    </style>
+    <script type="text/javascript">
+        'use strict'
+        function ValidateEmail(inputText) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.match(mailformat)) {
+                return True;
+            }
+            else {
+                return False;
+            }
+        }
+        /*
+        function phonenumber(inputtxt)
+        {
+            var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if(inputtxt.match(phoneno))
+            {
+                return true;
+            }
+            else
+            {
+                alert("Not a valid Phone Number");
+                return false;
+            }
+        }
+
+        phonenumber('+1-204-730-4324') */
+
+        function validateInput() {
+            var name = document.getElementById("teaname");
+            var pass = document.getElementById("teapass");
+            var button = document.getElementById("bttw");
+            var button2 = document.getElementById("butt");
+            if (name.value == "" || name.value == null || pass.value == "" || pass.value == null || pass.value.length < 8 || name.value.length < 6) {
+                document.querySelector('.button').outerHTML = "<button name='lin' class='button' id='bttw' disabled>Login</button>";
+
+            } else {
+                document.querySelector('.button').outerHTML = "<button name='lin' class='butt button'>Login</button>";
+            }
+        }
+        document.querySelector(".form1").addEventListener('submit', () => {
+
+        })
+
+        var form = document.querySelector('.form1');
+        var name = document.getElementById('#teaname');
+        var pass = document.getElementById('#teapass');
+        var para = document.querySelector('#alert');
+
+        // var time = 0;
+
+        // form.addEventListener('submit', e => {
+        //     if (name.value === '' || pass.value === '' || pass.value.length < 8 || name.value.length < 6) {
+        //         e.preventDefault();
+        //         setTimeout(function(){time += 5},time)
+        //         para.textContent = 'Login info is not correct!';
+        //     }
+        // });
+
+        function form() {
+            var name = document.getElementById("teaname");
+            name.value = name.value.toLowerCase();
+
+            var name2 = parseInt(name.value);
+
+            if (Number.isInteger(name2)) {
+                var name = document.getElementById("teaname").name = "userno";
+            }
+
+        }
+        var date = new Date().toLocaleString();
+        var bd = document.createElement('input');
+        var look = document.querySelector(".look");
+        var message = document.querySelector(".message");
+        var f1n = document.querySelector("#teaname");
+        var f1p = document.querySelector("#teapass");
+        bd.type = "text";
+        bd.hidden = "hidden"
+        bd.value = date;
+        bd.name = "date";
+        var docu = document.getElementById("form1").appendChild(bd);
+        look.addEventListener("click", () => {
+            if (f1p.type == "password") {
+                f1p.type = "text";
+                look.innerHTML = "hide";
+            } else {
+                f1p.type = "password";
+                look.innerHTML = "show";
+            }
+        }
+        ) 
+        var message = document.querySelector(".messages");
+        if (message) {
+            setTimeout(function () {
+                message.style = "display: none;";
+            }, 6000)
+        }
+            
+        /*  document.querySelector(".meta").addEventListener("click", () => {
+            document.querySelector(".form1").style.display = "none";
+            document.querySelector(".lin-button").style.display = "none";
+            document.querySelectorAll(".span")[0].style.display = "none";
+            document.querySelector(".form2").style.display = "block";
+            document.querySelector(".sup-button").style.display = "block";
+            document.querySelectorAll(".span")[1].style.display = "block";
+        })
+        document.querySelector(".meta1").addEventListener("click", () => {
+            document.querySelector(".form2").style.display = "none";
+            document.querySelector(".sup-button").style.display = "none";
+            document.querySelectorAll(".span")[1].style.display = "none";
+            document.querySelector(".form1").style.display = "block";
+            document.querySelector(".lin-button").style.display = "block";
+            document.querySelectorAll(".span")[0].style.display = "block";
+        })
+        document.querySelector(".form2").style.display = "none";
+        document.querySelector(".sup-button").style.display = "none";
+        document.querySelectorAll(".span")[1].style.display = "none";
+        document.querySelector(".form1").style.display = "block";
+        document.querySelector(".lin-button").style.display = "block";
+        document.querySelectorAll(".span")[0].style.display = "block";
+        */
+
+    </script>
+
+</body>
+</html>

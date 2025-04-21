@@ -1,0 +1,172 @@
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'tealives/assets/css/component.css' %}" />
+        <script src="{% static 'tealives/assets/js/modernizr.custom.js' %}"></script>
+                    <div class="md-modal md-effect-7" id="modal-7">
+<div id="content">
+   <div class="cont">  
+    <h1>Confirm Your Password</h1>  
+    <form class="myfor" onsubmit="return whitney()" method="POST"> 
+        {% csrf_token %}
+     <div class="formed-control">  
+      <input class="pass" type="password" required>  
+      <label>Confirm Password</label>  
+     </div>  
+     <p class="text">Your account won't be visible until re-activated !</p>  
+     <p class="text">You will not receive any message from tealives !</p>  
+     <p class="text">To re-activate your account you have to login !</p>
+     <button class="btn2">Disable</button>  
+
+    </form>  
+   </div>  
+</div>
+        </div>
+                
+                
+  <style type="text/css">
+       @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');  
+ * {  
+  box-sizing: border-box;  
+ }  
+ 
+ .cont {  
+  padding: 20px 40px;  
+  border-radius: 5px;
+  color: white;  
+ }  
+ .cont h1 {  
+  text-align: center;  
+  margin-bottom: 30px;  
+ }  
+ .cont a {  
+  text-decoration: none;  
+  color: lightblue;  
+ }  
+ .myfor{
+    flex-direction: column;
+ }
+ .btn2 {  
+  cursor: pointer;  
+  display: inline-block;  
+  width: 100%;  
+  background: lightblue;  
+  padding: 15px;  
+  font-family: inherit;  
+  font-size: 16px;  
+  border: 0;  
+  border-radius: 5px;  
+ }  
+ .btn2:focus {  
+  outline: 0;  
+ }  
+ .btn2:active {  
+  transform: scale(0.98);  
+ }  
+ .text {  
+  margin-top: 30px;  
+ }  
+ .formed-control {  
+  position: relative;  
+  margin: 20px 0 40px;  
+  width: 300px;  
+ }  
+ .formed-control input {  
+  background-color: transparent;  
+  border: 0;  
+  border-bottom: 2px #fff solid;  
+  display: block;  
+  width: 100%;  
+  padding: 15px 0;  
+  font-size: 18px;  
+  color: #fff;  
+ }  
+ .formed-control input:focus,  
+ .formed-control input:valid {  
+  outline: 0;  
+  border-bottom-color: lightblue;  
+ }  
+ .formed-control label {  
+  position: absolute;  
+  top: 15px;  
+  left: 0;  
+  pointer-events: none;  
+ }  
+ .formed-control label span {  
+  display: inline-block;  
+  font-size: 18px;  
+  min-width: 5px;  
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);  
+ }  
+ .formed-control input:focus + label span,  
+ .formed-control input:valid + label span {  
+  color: lightblue;  
+  transform: translateY(-30px);  
+ } 
+     .md-effect-7{
+        top:  55px;
+        width:  80% !important;
+        overflow: auto !important;
+    }
+    .md-overlay{
+        background: rgba(206, 206, 206, 0.8) !important;
+    }
+    .md-content{
+        color: black !important;
+background: white !important;
+    }
+    .md-content button {
+    display: block !important;
+    margin: 0 auto !important;
+    font-size: 0.8em !important;
+    color: black !important;
+    border-bottom: 5px solid black !important;
+}
+    md-content input{
+        width: 50%;
+    height: 40px;
+    padding: 10px;
+    margin: 1px;
+        margin-left: 1px;
+    margin-left: 10rem;
+    border-radius: 30px;
+    
+    border:  1px double #323232;
+    }
+    md-content input{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+   </style>
+           <script>
+            // this is important for IEs
+            var polyfilter_scriptpath = '/js/';
+        </script>
+
+                <script src="{% static 'tealives/assets/js/classie.js' %}"></script>
+        <script src="{% static 'tealives/assets/js/cssParser.js' %}"></script>
+        <script src="{% static 'tealives/assets/js/css-filters-polyfill.js' %}"></script>
+   <script>
+       const labels = document.querySelectorAll('.formed-control label')  
+ labels.forEach(label => {  
+   label.innerHTML = label.innerText  
+     .split('')  
+     .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)  
+     .join('')  
+ })  
+ function whitney(){
+    var as = confirm('Are you sure you want to de-activate your account.')
+    if (as == false){
+        return false;
+    }
+ }
+
+ var abb =  Math.random().toString(10).slice(3, 4);
+ var bt = 'url('
+ var ur = "{% static 'genre/' %}"
+ var rem = "' %})";
+ var jp = ".jpg";
+ var bbt = ")";
+ var cd = bt + ur + abb + jp + bbt;
+ document.querySelector('.cont').style.background = cd;
+
+   </script>

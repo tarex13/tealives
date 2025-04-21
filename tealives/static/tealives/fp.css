@@ -1,0 +1,176 @@
+﻿body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 23px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color: #1c1e21;
+    margin: 0;
+}
+
+#body {
+    padding-bottom: 112px;
+    padding-top: 40px;
+    background-color: #efefef;
+}
+
+.span {
+    text-transform: uppercase;
+    color: #282727;
+    word-spacing: 1px;
+}
+#span {
+    text-transform: uppercase;
+    color: #282727;
+    word-spacing: 1px;
+}
+#th{
+    padding-bottom: 15px;
+    font-family: 'Javanese Text';
+}
+form {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    background-color: white;
+    padding: 40px 0;
+    text-align: center;
+    width: 40%;
+    line-height: 100%;
+    /*animation: mymove 5s infinite;*/
+    background-color: white;
+}
+
+.account {
+    background-color: #fff;
+    padding: 5px 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width:  40%;
+}
+
+#sage {
+    border: 10px solid #dbdbdb;
+    color: white;
+    padding: 20px;
+    background-color: dimgrey;
+    text-align: left;
+    max-width: 20%;
+    margin-top: -10px;
+    height: 50px;
+    margin-left: -10px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 3%;
+    border: 2px solid #8e8c8c;
+    width: 60%;
+    height: 30px;
+    font-size: 20px;
+    background-color: #f7f6f6;
+    text-align: center;
+}
+
+button {
+    padding: 15px;
+    margin: 10px;
+    border-radius: inherit;
+    width: 40%;
+    background-color: #3d40d1;
+    color: white;
+    text-align: center;
+    font-size: 70%;
+}
+
+    button:hover {
+        background-color: #0000ca;
+    }
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.blue {
+    color: #2b73d0;
+}
+
+#from {
+    background-color: white;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+#line {
+    border-bottom: 1.5px solid black;
+    margin: 10px 30% -5px 30%;
+    display: flex;
+}
+
+.footer {
+    margin-top: -1%;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 1%;
+}
+
+span {
+}
+
+ul {
+    text-align: center;
+    display: flex;
+    flex-flow: row;
+    margin-left: -8%;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    color: #171313;
+    padding: 3px;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.black {
+    color: #1d1b1b;
+}
+
+#closing {
+    font-size: x-large;
+}
+
+
+
+/*@keyframes mymove {
+    from {
+        border-bottom-color: #dbdbdb;
+    }
+
+    to {
+        border-left-color: #cacaca;
+    }
+
+    to {
+        border-top-color: #bab8b8;
+    }
+
+    to {
+        border-right-color: #b2b2b2;
+    }
+}
+    */
+
+
+.l2{
+    width: 103px;
+    margin-top: -5%;
+    margin-bottom: 5%;
+}

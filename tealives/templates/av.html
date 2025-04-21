@@ -1,0 +1,43 @@
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <script src="jquery-2.1.4.js"></script>
+  <script src="push.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+<button onclick="notifyMe()">Notify me!</button>
+
+  <script>
+function notifyMe() {
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+  else if (Notification.permission === "granted") {
+        var options = {
+                body: "This is the body of the notification",
+                icon: "crop-167.jpg",
+                dir : "ltr"
+             };
+          var notification = new Notification("Hi there",options);
+  }
+  else if (Notification.permission !== 'denied') {
+    Notification.requestPermission(function (permission) {
+      if (!('permission' in Notification)) {
+        Notification.permission = permission;
+      }
+
+      if (permission === "granted") {
+        var options = {
+              body: "This is the body of the notification",
+              icon: "icon.jpg",
+              dir : "ltr"
+          };
+        var notification = new Notification("Hi there",options);
+      }
+    });
+  }
+}
+  </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>会员icon/24PX/紫色</title>
+    <desc>Created with Sketch.</desc>
+    <g id="会员icon/24PX/紫色" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(1.500000, 4.000000)">
+            <polygon id="路径-3" fill="#B079FF" points="-1.67623062e-13 5.0025177 10.5031586 17.5021874 21 5.0025177 17.0063171 0 4 -4.71844785e-16"></polygon>
+            <path d="M15.001087,5.0025177 C15.001087,5.0025177 17.001087,5.0025177 21.001087,5.0025177 L17.0063171,0 C15.669497,3.3350118 15.001087,5.0025177 15.001087,5.0025177 Z" id="路径-17备份-2" fill="#F0E7FF" opacity="0.355050223"></path>
+            <path d="M0,5.0025177 C0,5.0025177 2,5.0025177 6,5.0025177 L2.00523012,0 C0.668410039,3.3350118 0,5.0025177 0,5.0025177 Z" id="路径-17备份-4" fill="#EBDEFF" opacity="0.410179501" transform="translate(3.000000, 2.501259) scale(-1, 1) translate(-3.000000, -2.501259) "></path>
+            <path d="M6.001087,5.0025177 C6.001087,5.0025177 9.001087,5.0025177 15.001087,5.0025177 L11.9997964,-4.4408921e-16 L9.00334167,-4.4408921e-16 C7.00183856,3.3350118 6.001087,5.0025177 6.001087,5.0025177 Z" id="路径-17备份-3" fill="#F8F4FF" opacity="0.698102679"></path>
+            <polygon id="路径-18" fill="#FFFFFF" opacity="0.175757999" points="6.001087 5.0025177 10.5 17.5021874 15.001087 5.0025177"></polygon>
+            <polygon id="路径-19" fill="#FFFFFF" opacity="0.464006696" points="4 0 9.00334167 0 6.001087 5.0025177"></polygon>
+            <polygon id="路径-19备份" fill="#FFFFFF" opacity="0.391527182" points="12 0 17.0033417 0 15.001087 5.0025177"></polygon>
+        </g>
+    </g>
+</svg>

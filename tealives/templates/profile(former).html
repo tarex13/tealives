@@ -1,0 +1,566 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="author" content="Tealives" />
+    <link href="{% static 'tealives/bootstrap.min.css' %}" rel="stylesheet"/>
+    <title>Tealives</title>
+    <link rel="icon" href="{% static 'tealives/tli.png' %}" type="image/x-icon">
+</head>
+<body>
+    
+    {% include 'topbar.html' %}
+    <div id="content">
+        
+        <center>
+            <div class="combo">
+                <div class="bgstr">
+                    <img class="imgg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}">
+                </div>
+                <div class="me"><span class="uname">@{{ db.username }}</span><br><span class="name">{% if db.first_name %}{{ db.first_name}}{% endif %}{% if db.last_name %} {{ db.last_name }}{% endif %}</span><br><span class="bio"><div class="ap">{{ db.bio | linebreaksbr}}</div></span><span class="url"><a href="{{ db.url }}">{{ db.url }}</a></span></div>
+                <center>
+                    <div class="stronger">
+                        <div class="follower-class"><span class="mine">{{ len }} {% if len > 1 %}Posts{% else %}Post{% endif %}</span></div>
+                        <div class="follower-class"><span class="mine">500 M Followers</span></div>
+                        <div class="follower-class"><span class="mine">20 Following</span></div>
+                    </div></div>
+                </center>
+            </center>
+            
+            
+        </div> 
+        
+        <center>
+            <!--                                                 <div class="heading">
+                <div class="yemi"> Zoom</div>
+                <div class="sanpad">
+                    <div id="tory">
+                        <img class="tory" src="{% static 'tealives/lin.authorized/1797389.jpg' %}"/>
+                        <img class="tory" src="{% static 'tealives/lin.authorized/198238847_537959754118283_106066093587599761_n.jpg' %}"/>
+                        <img class="tory" src="{% static 'tealives/lin.authorized/renamed.jpg' %}"/>
+                        <img class="tory" src="{% static 'tealives/lin.authorized/alan_walker_wallpaper_by_kormild_dcgr43y-fullview.jpg' %}"/>
+                        <img class="tory" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/>                    <img class="tory" src="{% static 'tealives/lin.authorized/1797389.jpg' %}"/>
+                        <img class="tory" src="{% static 'tealives/lin.authorized/198238847_537959754118283_106066093587599761_n.jpg' %}"/>
+                        <img class="tory" src="{% static 'tealives/lin.authorized/renamed.jpg' %}"/>
+                        <img class="tory" src="{% static 'tealives/lin.authorized/alan_walker_wallpaper_by_kormild_dcgr43y-fullview.jpg' %}"/>
+                        <img class="tory" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/>
+                    </div>
+                </div></div> -->
+                <section class="below">
+                    <div class="cover"><span class="gradundie">Posts</span><span class="gradundiee">Tagged</span><span class="gradundieee">Flip</span></div>
+                    <div id="accpost">
+                        <div class="accpost"><div id="overlay"></div><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>+
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                        <div class="accpost"><img class="accimg" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"/><div class="acc-text-cont"><span class="acctext">@tarex_13</span><span class="acctext">12/06/2019</span><span class="acctext">12.5 Views</span></div></div>
+                    </div>
+                    <button class="button-dark"></button>
+                    
+                </section>
+            </center>
+            <style>
+                body{
+                    background-color: #efefef;
+                    
+                }
+                #body{
+                    
+                    width: 100%;
+                    padding-top:40px;
+                    margin: 0 auto;
+                }
+                #body ul {
+                    background-color: white;
+                    display: flex;
+                    flex-flow: row;
+                    font-size: 100%;
+                }
+                
+                #body a {
+                    padding: 20px;
+                    text-decoration: none;
+                }
+                
+                #body li {
+                    list-style: none;
+                    color: #171313;
+                    text-transform: uppercase;
+                    display: flex;
+                }
+                
+                aside {
+                    float: right;
+                    display: flex;
+                    top: 0;
+                }
+                .small{
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    float: left;
+                    vertical-align: middle;
+                    
+                    border-style: solid;
+                    border-width: 2px;
+                    background: radial-gradient(circle at 30% 107%, #bfb01a 0%, #ffe900 5%, #bd473b 45%,#ececec29 60%,#3FE6EF 90%);
+                    
+                    padding: 1px;
+                    background: #f94eff;
+                    color:  #18041b;
+                    
+                }
+                .put{
+                    width: 100%;
+                    margin-left: 1px;
+                    border: none;
+                    outline: none;
+                    
+                }
+                .j3d{
+                    display: flex;
+                    line-height: 2px;
+                }
+                .j3d input{
+                    padding-left: 2%;
+                    font-size: 90%;
+                }
+            </style>
+            
+            <style>
+                
+            </style>
+            <style>
+                /* WEB FONT */
+                @import url(http://fonts.googleapis.com/css?family=Signika:600|Varela+Round);
+                
+                /* RESET */
+                * {
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                }
+                /* BASIC */
+                
+                h1, h2 {
+                    font-family: "Signika", sans-serif;
+                    font-weight: 600;
+                }
+                h1 {
+                    font-size: 36px;
+                    line-height: 46px;
+                    color: #e0e0e0;
+                }
+                h2 {
+                    font-size: 24px;
+                    line-height: 33px;
+                    margin-bottom: -20px;
+                }
+                p {
+                    margin: 20px 0;
+                }
+                .btn, .form-control, .link, .reset {
+                    background-color: transparent;
+                    padding: 0;
+                    border: 0;
+                    border-radius: 0;
+                    color: inherit;
+                    line-height: inherit;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                }
+                .button, .button:visited, .button-dark {
+                    display: inline-block;
+                    max-width: 200px;
+                    margin: 50px 10px 30px 10px;
+                    padding: 10px;
+                    font-family: "Signika", sans-serif;
+                    color: #ffffff;
+                    background-color: transparent;
+                    border: 2px solid #ffffff;
+                    border-radius: 3px;
+                    text-transform: capitalize;
+                    text-align: center;
+                    transition: all 0.1s ease;
+                }
+                .button-dark, .button-dark:visited {
+                    margin: 20px 10px 30px 0;
+                    color: #464646;
+                    border-color: #464646;
+                    
+                }
+                .button:hover, .button-dark:hover {
+                    transition: all 0.3s ease;
+                }
+                .button:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+                .button-dark:hover {
+                    color: #ffffff;
+                    background-color: rgba(70, 70, 70, 0.9);
+                }
+            </style>
+            <style type="text/css">
+                .imgg{
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    margin-right: 30px;
+                    object-fit: cover;
+                    position: absolute;
+                    left: 0;
+                    top: 20px;
+                    left: 20px;
+                    z-index: 2;
+                }
+                
+                .uname{
+                    vertical-align: middle;
+                    font-size: 200%;
+                    
+                }
+                .bio{
+                    vertical-align: middle;
+                    font-size: 100%;
+                    
+                }
+                .url{
+                    vertical-align: middle;
+                    font-size: 100%;
+                    
+                }
+                .name{
+                    vertical-align: middle;
+                    font-size: 150%;
+                    
+                }
+                .follower-class{
+                    margin: 5px 40px;
+                }
+                .post{
+                    position: absolute;
+                }
+                .stronger{
+                    display: flex;
+                }
+                .mine{
+                    font-size: medium;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                }
+                .me{
+                    display: inline-table;
+                    vertical-align: middle;
+                }
+                #tory img{
+                    border-radius: 50%;
+                    padding: 1px;
+                    margin: 0 10px;
+                    cursor: pointer;
+                    max-height: 60px;
+                    min-height: 60px;
+                    width: 60px;
+                    object-fit: cover;
+                    min-width: 60px;
+                }
+                #tory img{
+                    border-style: solid;
+                    border-width: 2px;
+                    background: radial-gradient(circle at 30% 107%, #bfb01a 0%, #ffe900 5%, #bd473b 45%,#ececec29 60%,#3FE6EF 90%);
+                    background: #f94eff;
+                    color:  #18041b;
+                }
+                
+                #tory {
+                    border-radius: 0px;
+                    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+                    box-shadow:  5px 5px 10px #c7c7c7,
+                    -5px -5px 10px #f9f9f9;
+                    padding: 1px;
+                    display: flex;
+                    width: 100%;
+                    overflow: auto;
+                    overflow: auto;
+                    
+                }
+                
+                /*.sanpad {
+                    width: 80%;
+                    overflow: hidden;
+                    padding: 10px 0;
+                    margin-right: -83px;
+                }*/
+                .combo{
+                    top: 30px;
+                    margin-bottom: 30px;
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    background-image: linear-gradient(to bottom right,
+                    #4affde 0%, #5b9dff 40%, #d06bff 60%, #ff34d2 100%
+                    );
+                    position: relative;
+                    border-radius: 90px;
+                    margin-left: 0;
+                    color: white;
+                    background-image: linear-gradient(to bottom right, #4affde 0%, #5b9dff 40%, #d06bff 60%, #ff34d2 100% );
+                    background-blend-mode: overlay, normal, overlay, color-burn, screen, overlay, difference, difference, normal;
+                    background-size: 200% 200%;
+                    animation: movingGradient 5s linear infinite alternate;
+                }
+                @keyframes movingGradient{
+                    from{ background-position: 0 0; }
+                    to { background-position: 100% 100%; }
+                }
+                .below{
+                    background-color: white;
+                }
+                .side img{
+                    width: 150px;
+                    transform: rotate(90deg);
+                    position: absolute;
+                    right: 0;
+                }
+                .side{
+                    position: fixed;
+                }
+                .accpost img{
+                    width: 160px;
+                    width: 164px;
+                    height: 164px;
+                    object-fit: cover;
+                }
+                .below{
+                    width: 1030px;
+                    margin-top: 40px;
+                    display: flex;
+                    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.1);
+                    border: 1px double rgba(0, 0, 0, 0.1);
+                    flex-direction: column;
+                }
+                .accpost{
+                    padding: 30px;
+                    padding: 22px 20px;
+                    
+                }
+                #accpost{
+                    display: flex;
+                    flex-flow: wrap;
+                    padding: 10px;
+                    padding: 2px;
+                    background-color: white;
+                }
+                .heading{
+                    width: 1024px;
+                    margin: 20px auto;
+                    box-sizing: content-box;
+                    box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.5), 0 6px 20px -3px rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    
+                    align-items: center;
+                }
+                
+                .title{
+                    float: left;
+                    color: white;
+                    font-size: 40px;
+                    
+                    
+                }
+                .title2{
+                    justify-content: right;
+                    color: white;
+                    font-size: 20px;
+                    display: flex;
+                    margin-top: 10px;
+                }
+                .line{
+                    border-bottom: 1px solid black;
+                }
+                .yemi{
+                    font-size: 65px;
+                    color: white;
+                    width: 20%;
+                    text-align: start;
+                    height: 100%;
+                    background-color: black;
+                }
+                .brow{
+                    width: 80%;
+                }
+                .gradundie{
+                    position: relative;
+                    display: inline;
+                    font-size: 50px;
+                    font-weight: 100;
+                    background-color: white;
+                    text-align: left;
+                    display:inline-block;
+                    background: linear-gradient(to right, #fc0142, #FBD786);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-transform: uppercase;
+                }.gradundie::before{
+                    content: ""; 
+                    position: absolute;
+                    left: 0; 
+                    bottom: 0px;
+                    background: linear-gradient(to right, #fc0142, #FBD786);
+                    height: 4px;
+                    width:50%;
+                }
+                .gradundiee{
+                    position: relative;
+                    display: inline;
+                    font-size: 50px;
+                    font-weight: 100;
+                    background-color: white;
+                    text-align: left;
+                    display:inline-block;
+                    background: none;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    --stroke: min(0.25vmin, 2px) var(--text-color);
+                    color: var(--bg-color);
+                    -webkit-text-stroke: var(--stroke);
+                    text-stroke: var(--stroke);
+                    text-transform: uppercase;
+                }
+                .gradundieee{
+                    position: relative;
+                    display: inline;
+                    font-size: 50px;
+                    font-weight: 100;
+                    background-color: white;
+                    text-align: left;
+                    display:inline-block;
+                    background: none;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    --stroke: min(0.25vmin, 2px) var(--text-color);
+                    color: var(--bg-color);
+                    -webkit-text-stroke: var(--stroke);
+                    text-stroke: var(--stroke);
+                    text-transform: uppercase;
+                    right: 0;
+                }
+                .cover{
+                    width: 100%;
+                    text-align: left;
+                    display: flex;
+                    background-color: whitesmoke;
+                    justify-content: space-around;
+                    
+                }
+                body{
+                    --text-color: hsl(0 95% 60%);
+                    --bg-color: hsl(0 0% 100%);
+                    --bg-size: 200px;
+                    font-family: "Dela Gothic One", sans-serif;
+                }
+                .acc-text-cont{
+                    display: none;
+                }
+                .accpost:hover .acc-text-cont{
+                    position: absolute;
+                    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+                    width: 164px;
+                    background-color: white;
+                    display: flex;
+                    flex-direction: column;
+                    transform: translateY(-68px);
+                    height: 82px;
+                    background: auto;
+                    font-size: 15px;
+                    text-transform: lowercase;
+                }
+                #overlay {
+                    position: fixed; /* Sit on top of the page content */
+                    display: none; /* Hidden by default */
+                    width: 100%; /* Full width (cover the whole page) */
+                    height: 100%; /* Full height (cover the whole page) */
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+                    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+                    cursor: pointer; /* Add a pointer on hover */}
+                    .bgstr {
+                        width: 240px;
+                        height: 240px;
+                        position: relative;
+                        background-color: #efefef;
+                        border-radius: 50%;
+                        left: -30px;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    .ap > textarea {
+                        resize: none;
+                        background: transparent;
+                        overflow: hidden;
+                        color: white;
+                    }
+                    .me {
+                        height: 100%;
+                        margin-left: 10px;
+                    }
+                    .bio {
+                        height: 100%;
+                    }
+                </style>
+                <script type="text/javascript">
+                    
+                    function tiptip(){
+                        var a  = document.querySelector('.tiptiptext');
+                        if (a.style.visibility == "visible" && a.style.opacity == "1"){
+                            a.style.visibility = "hidden";
+                            a.style.opacity = "0";
+                            
+                        }else{
+                            a.style.visibility = "visible";
+                            a.style.opacity = "1";
+                        }
+                    }
+                    
+                </script>
+            </body>
+            </html>

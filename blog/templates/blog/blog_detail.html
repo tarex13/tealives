@@ -1,0 +1,145 @@
+
+{% load static %}
+{% block page_content %}
+<link rel="icon" href="{% static 'tealives/tli.png' %}" type="image/x-icon">
+
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
+<div class="sidebar">
+  <a class="active" href="{% url 'blog_index' %}">Home</a>
+  <a class="bling" href="#about">Feedback</a>
+  <a class="bling" href="#about">Login</a>
+  <a class="bling" href="#about">Sign-Up</a>
+  <a class="bling" href="#about">Terms</a>
+  <a class="bling" href="#about">Help</a>
+    <hr />
+    <small><b class="rec">Recommended For you</b></small>
+  <a class="bling" href="#about">Trending Posts</a>
+  <a class="bling" href="#about">Top Accounts</a>
+    <span id="closing">&copy; {{ yearr }} Tealives</span>
+</div>
+
+<div class="content">
+<div class="col-md-8 offset-md-2">
+    <h1>{{ post.title }}</h1>
+    <small>
+        {{ post.created_on.date }}&nbsp;|&nbsp;Category:
+        {% for category in post.categories.all %}
+        <a href="{% url 'blog_category' category.name %}">
+            {{ category.name }}
+        </a>
+        {% endfor %}| {% for user in post.user.all %}{{ user.name }} {% endfor %}
+    </small>
+    <p>{{ post.body | linebreaks }}</p>
+    <h3>Leave a comment:</h3>
+    <form action="/blog/{{ post.pk }}/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.author }}
+        </div>
+        <div class="form-group">
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p><h3><center>Comments</center></h3></p>
+    {% for comment in comments %}
+    <p>
+        On {{comment.created_on.date }}
+        <b>{{ comment.author }}</b> wrote:
+    </p>
+    <p>{{ comment.body }}</p>
+    <hr>
+    {% endfor %}
+</div>
+</div>
+<style>
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  font-size: small;
+  overflow: auto;
+  z-index: 9999;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.rec{
+      display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar span{
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #212529;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 100px;
+  padding: 1px 10px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  .sidebar span {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+  .sidebar span {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+//<![CDATA[
+  bkLib.onDomLoaded(function() {
+        new nicEditor().panelInstance('area1');
+        new nicEditor({fullPanel : true}).panelInstance('area2');
+        new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
+        new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area4');
+        new nicEditor({maxHeight : 100}).panelInstance('area5');
+  });
+  //]]>
+  </script>
+{% endblock %}

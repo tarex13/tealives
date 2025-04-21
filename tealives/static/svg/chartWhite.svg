@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1754 872 16 16">
+  <g id="chartWhite" transform="translate(1562 792)">
+    <path id="Fill1" fill="#13a10e" d="M192.992,92.654l6.514-6.542,2.99,3.017,2.983-3h.54v8.99H192.992Z"/>
+    <path id="Contour" fill="#fff" d="M14-.875v-9h1v9Zm-10,0v-5.5l1-1v6.5Zm-2,0v-3.5l1-1v4.5Zm4,0v-7.5l1-1v8.5ZM8-.883V-9.375l1,1V-.883Zm2-6.492.5.5.5-.5v6.5H10Zm2,6.5v-7.5l1-1v8.5Zm-12,0v-1.5l1-1v2.5Zm12-14h4v4H15v-2.289L10.5-8.672l-3-3L0-4.164V-5.586l7.5-7.492,3,3,3.789-3.8H12Z" transform="translate(192 96)"/>
+  </g>
+</svg>

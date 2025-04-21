@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 1</title>
+</head>
+<body>
+    <button id="a1"> Button
+  <span></span>
+</button>
+<style type="text/css">
+
+#a1 {
+ border: none;
+ display: block;
+ position: relative;
+ padding: 0.7em 2.4em;
+ font-size: 18px;
+ background: transparent;
+ cursor: pointer;
+ user-select: none;
+ overflow: hidden;
+ color: royalblue;
+ z-index: 1;
+}
+
+#a1 span {
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ background: transparent;
+ z-index: -1;
+ border: 4px solid royalblue;
+}
+
+#a1 span::before {
+ content: "";
+ display: block;
+ position: absolute;
+ width: 8%;
+ height: 500%;
+ background: #e8e8e8;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%) rotate(-60deg);
+ transition: all 0.3s;
+}
+
+#a1:hover span::before {
+ transform: translate(-50%, -50%) rotate(-90deg);
+ width: 100%;
+ background: royalblue;
+}
+
+#a1:hover {
+ color: white;
+}
+
+#a1:active span::before {
+ background: #2751cd;
+}    
+</style>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 2</title>
+</head>
+<body>
+    <button class="cta">
+  <span>Hover me</span>
+  <svg width="15px" height="10px" viewBox="0 0 13 10">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg>
+</button>
+<style type="text/css">
+    .cta {
+ position: relative;
+ margin: auto;
+ padding: 12px 18px;
+ transition: all 0.2s ease;
+ border: none;
+ background: none;
+}
+
+.cta:before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ display: block;
+ border-radius: 50px;
+ background: #b1dae7;
+ width: 45px;
+ height: 45px;
+ transition: all 0.3s ease;
+}
+
+.cta span {
+ position: relative;
+ font-family: "Ubuntu", sans-serif;
+ font-size: 18px;
+ font-weight: 700;
+ letter-spacing: 0.05em;
+ color: #234567;
+}
+
+.cta svg {
+ position: relative;
+ top: 0;
+ margin-left: 10px;
+ fill: none;
+ stroke-linecap: round;
+ stroke-linejoin: round;
+ stroke: #234567;
+ stroke-width: 2;
+ transform: translateX(-5px);
+ transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+ width: 100%;
+ background: #b1dae7;
+}
+
+.cta:hover svg {
+ transform: translateX(0);
+}
+
+.cta:active {
+ transform: scale(0.95);
+}
+</style>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 3</title>
+</head>
+<body>
+<button id="a2"> Button
+</button>
+<style type="text/css">
+    #a2 {
+ padding: 10px;
+ font-size: 15px;
+ outline: none;
+ border: 2px solid black;
+ background-color: white;
+ color: white;
+ position: relative;
+ letter-spacing: 1px;
+}
+
+#a2::before {
+ content: 'Button';
+ /*Button's value/text-content */
+ position: absolute;
+ top: -14%;
+ left: 7%;
+ background-color: black;
+ width: 100%;
+ height: 100%;
+ color: white;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transition: 0.15s ease-in-out;
+ font-weight: bold;
+}
+
+#a2:hover::before {
+ top: 0;
+ left: 0;
+}
+</style>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 3</title>
+</head>
+<body>
+<button id="a3"> Button
+</button>
+<style type="text/css">
+    #a3 {
+ background: linear-gradient(-45deg, #3f00b5, #9f69fe, #27c8b7, #3f00b5);
+ background-size: 800% 400%;
+ padding: 1em 2em;
+ display: inline-block;
+ border: none;
+ border-radius: 10px;
+ font-size: 17px;
+ font-weight: 700;
+ color: white;
+ transition: all .5s ease-in-out;
+ animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+}
+
+#a3:hover {
+ animation: gradient 3s infinite;
+ transform: scale(1.05);
+}
+
+#a3:active {
+ animation: gradient 3s infinite;
+ transform: scale(0.8);
+}
+
+@keyframes gradient {
+ 0% {
+  background-position: 0% 50%;
+ }
+
+ 50% {
+  background-position: 100% 50%;
+ }
+
+ 100% {
+  background-position: 0% 50%;
+ }
+}
+</style>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 4</title>
+</head>
+<body>
+<button  id="a4"> Button
+</button>
+<style type="text/css">
+    #a4 {
+ position: relative;
+ display: inline-block;
+ margin: 15px;
+ padding: 15px 30px;
+ text-align: center;
+ font-size: 18px;
+ letter-spacing: 1px;
+ text-decoration: none;
+ color: #725AC1;
+ background: transparent;
+ cursor: pointer;
+ transition: ease-out 0.5s;
+ border-radius: 30px;
+ border: 2px solid #725AC1;
+ border-radius: 10px;
+ box-shadow: inset 0 0 0 0 #725AC1;
+}
+
+#a4:hover {
+ color: white;
+ box-shadow: inset 0 -100px 0 0 #725AC1;
+}
+
+#a4:active {
+ transform: scale(0.9);
+}
+</style>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 5</title>
+</head>
+<body>
+<button id="a5"> Neon Button
+</button>
+<style type="text/css">
+    #a5 {
+ padding: 22px 28px;
+ color: #03e9f4;
+ font-size: 13px;
+ text-decoration: none;
+ text-transform: uppercase;
+ transition: 0.5s;
+ letter-spacing: 3px;
+ background: none;
+ border: 1px solid #03e9f4;
+}
+
+#a5:hover {
+ background: #03e9f4;
+ color: #050801;
+ box-shadow: 0 0 5px #03e9f4,
+              0 0 20px #03e9f4,
+              0 0 20px #03e9f4,
+              0 0 20px #03e9f4;
+ transform: rotate(360deg);
+}
+</style>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 6</title>
+</head>
+<body>
+<button id="a6"> AVAILABLE NOW
+</button>
+<style type="text/css">
+    #a6,
+#a6::after {
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+ border: 0;
+ color: #fff;
+ letter-spacing: 3px;
+ line-height: 1;
+ box-shadow: 6px 0px 0px #00e6f6;
+ outline: transparent;
+ position: relative;
+}
+
+#a6::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "AVAILABLE NOW";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+ clip-path: var(--slice-0);
+}
+
+#a6:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
+}
+
+</style>
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 7</title>
+</head>
+<body>
+<button id="a7">
+  <span class="text">Button</span>
+</button>
+<style type="text/css">
+    #a7 {
+ align-items: center;
+ background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+ border: 0;
+ border-radius: 8px;
+ box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ display: flex;
+ font-family: Phantomsans, sans-serif;
+ font-size: 18px;
+ justify-content: center;
+ line-height: 1em;
+ max-width: 100%;
+ min-width: 140px;
+ padding: 3px;
+ text-decoration: none;
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ white-space: nowrap;
+ cursor: pointer;
+ transition: all .3s;
+}
+
+#a7:active,
+button:hover {
+ outline: 0;
+}
+
+#a7 span {
+ background-color: rgb(5, 6, 45);
+ padding: 16px 24px;
+ border-radius: 6px;
+ width: 100%;
+ height: 100%;
+ transition: 300ms;
+}
+
+#a7:hover span {
+ background: none;
+}
+
+#a7:active {
+ transform: scale(0.9);
+}
+</style>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 8</title>
+</head>
+<body>
+<button id="a8">Button 8</button>
+<style type="text/css">
+    #a8 {
+ --glow-color: rgb(217, 176, 255);
+ --glow-spread-color: rgba(191, 123, 255, 0.781);
+ --enhanced-glow-color: rgb(231, 206, 255);
+ --btn-color: rgb(100, 61, 136);
+ outline: none;
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 16px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
+}
+
+#a8::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+#a8:hover, button:focus {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+#a8:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+</style>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 9</title>
+</head>
+<body>
+<button id="a9"> Button 9
+</button>
+<style type="text/css">
+    #a9 {
+ font-size: 18px;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ display: inline-block;
+ text-align: center;
+ font-weight: bold;
+ padding: 0.7em 2em;
+ border: 3px solid #FF0072;
+ border-radius: 2px;
+ position: relative;
+ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+ color: #FF0072;
+ text-decoration: none;
+ transition: 0.3s ease all;
+ z-index: 1;
+}
+
+#a9:before {
+ transition: 0.5s all ease;
+ position: absolute;
+ top: 0;
+ left: 50%;
+ right: 50%;
+ bottom: 0;
+ opacity: 0;
+ content: '';
+ background-color: #FF0072;
+ z-index: -1;
+}
+
+#a9:hover, button:focus {
+ color: white;
+}
+
+#a9:hover:before, button:focus:before {
+ transition: 0.5s all ease;
+ left: 0;
+ right: 0;
+ opacity: 1;
+}
+
+#a9:active {
+ transform: scale(0.9);
+}
+</style>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 10</title>
+</head>
+<body>
+<button id="a10">
+  <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
+  <span>Back</span>
+</button>
+<style type="text/css">
+    #a10 {
+ display: flex;
+ height: 3em;
+ width: 100px;
+ align-items: center;
+ justify-content: center;
+ background-color: #eeeeee4b;
+ border-radius: 3px;
+ letter-spacing: 1px;
+ transition: all 0.2s linear;
+ cursor: pointer;
+ border: none;
+ background: #fff;
+}
+
+#a10 > svg {
+ margin-right: 5px;
+ margin-left: 5px;
+ font-size: 20px;
+ transition: all 0.4s ease-in;
+}
+
+#a10:hover > svg {
+ font-size: 1.2em;
+ transform: translateX(-5px);
+}
+
+#a10:hover {
+ box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+ transform: translateY(-2px);
+}
+</style>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 11</title>
+</head>
+<body>
+<button id="a11"><span>Button</span>
+</button>
+<style type="text/css">
+    #a11 {
+ display: inline-block;
+ border-radius: 4px;
+ background-color: #f4511e;
+ border: none;
+ color: #FFFFFF;
+ text-align: center;
+ font-size: 17px;
+ padding: 16px;
+ width: 130px;
+ transition: all 0.5s;
+ cursor: pointer;
+ margin: 5px;
+}
+
+#a11 span {
+ cursor: pointer;
+ display: inline-block;
+ position: relative;
+ transition: 0.5s;
+}
+
+#a11 span:after {
+ content: '»';
+ position: absolute;
+ opacity: 0;
+ top: 0;
+ right: -15px;
+ transition: 0.5s;
+}
+
+#a11:hover span {
+ padding-right: 15px;
+}
+
+#a11:hover span:after {
+ opacity: 1;
+ right: 0;
+}
+</style>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 12</title>
+</head>
+<body>
+<button id="a12"> Button
+</button>
+<style type="text/css">
+    #a12 {
+ padding: 1em;
+ background: rgb(0,143,255);
+ color: white;
+ border: none;
+ outline: none;
+ border-radius: .5em;
+ text-transform: uppercase;
+ font-weight: 500;
+ transition: all .2s linear;
+}
+
+#a12:hover {
+ transform: translateY(-10px) scale(1.05);
+ box-shadow: 0px 8px 10px rgba(10, 10, 10, 0.2);
+ background: rgb(0, 127, 227);
+}
+</style>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 13</title>
+</head>
+<body>
+<button id=a13>
+  <span class="shadow"></span>
+  <span class="edge"></span>
+  <span class="front text"> Click me
+  </span>
+</button>
+<style type="text/css">
+    #a13 {
+ position: relative;
+ border: none;
+ background: transparent;
+ padding: 0;
+ cursor: pointer;
+ outline-offset: 4px;
+ transition: filter 250ms;
+ user-select: none;
+ touch-action: manipulation;
+}
+
+.shadow {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: hsl(0deg 0% 0% / 0.25);
+ will-change: transform;
+ transform: translateY(2px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.front {
+ display: block;
+ position: relative;
+ padding: 12px 27px;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ color: white;
+ background: hsl(345deg 100% 47%);
+ will-change: transform;
+ transform: translateY(-4px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+#a13:hover {
+ filter: brightness(110%);
+}
+
+#a13:hover .front {
+ transform: translateY(-6px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+#a13:active .front {
+ transform: translateY(-2px);
+ transition: transform 34ms;
+}
+
+#a13:hover .shadow {
+ transform: translateY(4px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+#a13:active .shadow {
+ transform: translateY(1px);
+ transition: transform 34ms;
+}
+
+#a13:focus:not(:focus-visible) {
+ outline: none;
+}
+</style>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 14</title>
+</head>
+<body>
+<button id="a14"> Button
+</button>
+<style type="text/css">
+    #a14 {
+ border: none;
+ color: #4c4c4c;
+ padding: 0.7em 1.7em;
+ font-size: 18px;
+ border-radius: 0.5em;
+ background: #e8e8e8;
+ border: 1px solid #e8e8e8;
+ transform: all .3s;
+ box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+#a14:hover {
+ border: 1px solid white;
+}
+
+#a14:active {
+ box-shadow: 4px 4px 12px #c5c5c5,
+             -4px -4px 12px #ffffff;
+}
+</style>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Button 15</title>
+</head>
+<body>
+
+<button id="b1" class="noselect"><span class="text">Delete</span><span class="icon"><svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button>
+<style type="text/css">
+    #b1 {
+ width: 150px;
+ height: 50px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ background: red;
+ border: none;
+ border-radius: 5px;
+ box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+ background: #e62222;
+}
+
+#b1, #b1 span {
+ transition: 200ms;
+}
+
+#b1 .text {
+ transform: translateX(35px);
+ color: white;
+ font-weight: bold;
+}
+
+#b1 .icon {
+ position: absolute;
+ border-left: 1px solid #c41b1b;
+ transform: translateX(110px);
+ height: 40px;
+ width: 40px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+#b1 svg {
+ width: 15px;
+ fill: #eee;
+}
+
+#b1:hover {
+ background: #ff3636;
+}
+
+#b1:hover .text {
+ color: transparent;
+}
+
+#b1:hover .icon {
+ width: 150px;
+ border-left: none;
+ transform: translateX(0);
+}
+
+#b1:focus {
+ outline: none;
+}
+
+#b1:active .icon svg {
+ transform: scale(0.8);
+}
+</style>
+</body>
+</html>
+
+
+
+<style type="text/css">
+    body{
+        padding: 30px;
+position: relative;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+width: 100%;
+height: 100%;
+z-index: 1;
+flex-direction: row;
+flex-wrap: wrap;
+overflow: hidden;
+background-color: #212121;/*#-dark
+#background-color: #e8e8e8 light;*/
+    }
+    button{
+        margin: 10px;
+    }
+    :not(.rules-modal *, .terms-page *) {
+    box-sizing: border-box;
+</style>

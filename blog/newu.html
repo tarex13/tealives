@@ -1,0 +1,65 @@
+Methods to hide the image error icon:
+
+    Using onerror() event: The onerror event is automatically called when the corresponding item raises an error. When the image is not found, the onerror event while call the hideImg() function which will set the visibility of the image to hidden.
+    Program:
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+        </head>
+        <body>
+            <h2>
+                Example to hide the 'Image Not Found' icon i.e.
+                <img src="error.png" width="20px" />
+            </h2>
+            <img id="HideImg" src="geeksforgeeks-6.png"
+                 onerror="hideImg()"/>
+            <script>
+          function hideImg() {
+            document.getElementById("HideImg")
+                              .style.display = "none";
+           }
+            </script>
+        </body>
+    </html>
+    Using short-hand notation: You can apply this short-hand notation for HTML events. This will set the visibility of the reference object to hidden.
+    Poogram:
+
+    <html>
+        <head>
+        </head>
+        <body>
+            <h2>
+                Example to hide the 'Image Not Found' icon i.e.
+                <img src="error.png" width="20px" />
+            </h2>
+            <img id="HideImg" src="geeksforgeeks-6.png"
+                 onerror='this.style.display = "none"' />
+        </body>
+    </html>
+    Using jQuery: Using the JQuery error handler function error(), we can catch the error and hide the object using hide() function.
+    Note: The error() function has been removed from jquery verion 3.0. and later.
+    Program:
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js">
+           </script>
+        </head>
+        <body>
+            <h2>
+                Example to hide the 'Image Not Found' icon i.e.
+                <img src="error.png" width="20px" />
+            </h2>
+            <img id="HideImg" src="geeksforgeeks-6.png" />
+        </body>
+    </html>
+    <script>
+        $(document).ready(function () {
+            $("#HideImg").error(function () {
+                $(this).hide();
+            });
+        });
+    </script>

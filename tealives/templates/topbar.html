@@ -1,0 +1,480 @@
+ {% load static %}
+<nav class="fixed-nav-bar">
+    <div class="menu" id="menu">
+        <div class="myform">
+            <form id="reset">
+                <input class="reset" type="search" placeholder="Search...">
+            </form>
+        </div>
+        <!-- Example responsive navigation menu  -->
+        <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu">Menu</a>
+
+        <ul class="menu-items">
+            <li><a href="{% url 'lin' %}"><img class="small1" src="{% static 'svg2/home.svg' %}"></a></li>
+
+            <li><a href="{% url 'dm' %}"><img class="small1" src="{% static 'svg2/infinity(2).svg' %}"></a></li>
+            <li><a href=""><img class="small1" src="{% static 'svg2/fan #.svg' %}"></a></li>
+            <li>
+                <svg aria-label="Like" class="hey" class="_8-yf5 " fill="#ff0000" height="24" viewBox="0 0 50 50" width="24">
+                    <path d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
+                </svg>
+            </li>
+            <li id="tiptip" class="tiptip">
+                <a url="{% url 'lin' %}"><img width="40" class="grey" height="40" src="{% static 'tealives/lin.authorized/jide1.jpg' %}"></a>
+
+                <div class="container">
+                    <input type="checkbox" name="" id="" class="btn" style="display:none">
+                    <div class="list" class="tiptiptext" id="tiptiptext">
+                        <a href="{% url 'edit' %}"><img class="small1" src="{% static 'svg2/user-profile-svgrepo-com.svg' %}">&nbspEdit Profile</a>
+                        <a href="#"><i class="fas fa-envelope"></i>&nbspChange Password</a>
+                        <a href="#0"><img class="small1" src="{% static 'svg2/settingsIcon #.svg' %}">&nbspSettings</a>
+                        <a href="#0">
+                            <img class="small1" src="{% static 'svg2/power-off #.svg' %}">
+                            <span>&nbspLog Out
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<style>
+
+    .fixed-nav-bar {
+        top: 0;
+        right: 0;
+        right: 0;
+        z-index: 9999;
+        position: fixed;
+        width: 80%;
+        height: 55px;
+        opacity: 0.9;
+        background-color: #ffffff;
+        border-left: 1px solid black;
+    }
+
+        /* The element at the top of the page right after the fixed navigation bar
+                MUST have sufficient top margin or else it will be covered by the bar */
+
+
+        /* Example responsive navigation menu  */
+        .fixed-nav-bar li, .fixed-nav-bar a {
+            height: 50px;
+            line-height: 50px;
+        }
+
+    .menu {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+        .menu a:hover, .menu a:target {
+            color: #ebebeb;
+        }
+
+    .menu-items {
+        display: block;
+        float: right;
+    }
+
+        .menu-items li {
+            display: flex;
+        }
+
+    .sitename {
+        display: inline-block;
+        margin-right: 20px;
+        margin-left: 11px;
+    }
+
+    a.sitename, a:visited.sitename {
+        color: #ff0000;
+    }
+
+    .menu-items li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+
+    .menu-items a {
+        text-decoration: none;
+    }
+
+    .show, .hide {
+        display: none;
+        padding-left: 15px;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center left;
+        color: #dde1e2;
+    }
+
+    .show {
+        background-image: url(assets/down-arrow-icon.png);
+    }
+
+    .hide {
+        background-image: url(assets/up-arrow-icon.png);
+    }
+
+    @media only screen and (max-width: 800px) {
+        .menu {
+            position: relative;
+            width: 100%;
+        }
+
+        .myform {
+            display: none !important;
+        }
+
+        .sitename {
+            position: absolute;
+            top: 0;
+            left: 15px;
+            margin-left: 0px;
+        }
+
+        .menu-items {
+            display: none;
+            width: 100%;
+            margin-top: 50px;
+            background-color: #008378;
+        }
+
+            .menu-items li {
+                display: block;
+                text-align: center;
+            }
+
+        .show, .hide {
+            position: absolute;
+            top: 0;
+            right: 15px;
+        }
+
+        .show {
+            display: inline-block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #menu:target .show {
+            display: none;
+        }
+
+        #menu:target .hide, #menu:target .menu-items {
+            display: inline-block;
+        }
+    }
+
+    @media only screen and (max-width: 220px) {
+        .sitename, .show, .hide {
+            font-size: 14px;
+        }
+    }
+
+
+
+
+
+
+    .cd-nav__sub-item .text {
+        text-align: left;
+        color: #280659;
+    }
+
+    .cd-nav__sub-item:hover {
+        border-left: 1px solid #03d6e1;
+    }
+
+    .tiptip {
+        position: relative;
+    }
+
+    .tiptiptext {
+        display: flex;
+        flex-direction: column;
+        top: 55px;
+    }
+
+    /* Tooltip text */
+    .tiptip .tiptiptext {
+        visibility: hidden;
+        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.1);
+        border: 0.1px solid #cac6c6;
+        right: 0;
+        color: #fff;
+        background-color: white;
+        text-align: left;
+        font-family: Candara, Courier new, sans-serif, Lucida Console;
+        font-size: 17px;
+        padding: 5px 0;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        /* Position the tooltip text */
+        position: absolute;
+        z-index: 1;
+        min-width: 286px;
+        right: -19px;
+        /* Fade in tooltip */
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+
+
+    .cd-nav__sub-item a:hover {
+        color: #000279;
+    }
+
+    .reset {
+        width: 20%;
+        width: 40%;
+        outline: none !important;
+        padding-left: 30px;
+        border: none;
+        background: #f1f0f0;
+        border-radius: 30px;
+    }
+
+    .myform::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 8px);
+        left: 35px;
+        height: 16px;
+        width: 16px;
+        background: url('{% static "svg2/cd-search.svg" %}') no-repeat 0 0;
+        background-position-x: 0px;
+        background-position-y: 0px;
+    }
+
+    .myform {
+        display: flex;
+        position: absolute;
+        height: calc(100% - 10px);
+        width: 100%;
+        padding-left: 30px;
+        margin: 5px 0;
+    }
+
+    #reset {
+        display: contents;
+    }
+
+    .grey {
+        border-radius: 50%;
+        padding: 3px;
+        vertical-align: middle;
+    }
+
+    .search {
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        width: 25%;
+        padding: 1px;
+        box-shadow: none !important;
+        outline: none !important;
+        font-size: 80%;
+        vertical-align: middle;
+        font-family: Lucida Console, Candara, Georgia;
+        height: 85%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .cd-search {
+        display: block;
+        width: 250px;
+        height: 100%;
+        margin: 0;
+        border-left: 1px solid hsl(210, 10%, 32.4%);
+        border-left: 1px solid hsl(var(--cd-color-1-h), var(--cd-color-1-s), calc(var(--cd-color-1-l)*1.2));
+    }
+
+    .cd-search {
+        position: relative;
+        margin: 0.75em 1.25em 0;
+        margin: var(--space-sm) var(--space-md) 0;
+    }
+
+        .cd-search::before {
+            background-position: 0 -16px;
+        }
+
+        .cd-search::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: calc(50% - 8px);
+            height: 16px;
+            width: 16px;
+            background: url("{% static 'svg/search (2).svg' %}") no-repeat 0 0;
+            background-position-x: 0px;
+            background-position-y: 0px;
+        }
+
+        .cd-search form, .cd-search input {
+            height: 100%;
+            width: 100%;
+        }
+
+    .search::placeholder {
+        text-align: right;
+    }
+
+    .search:focus {
+        box-shadow: none !important;
+    }
+
+    .cd-search input {
+        border-radius: 0;
+        background-color: transparent;
+        color: hsl(0, 0%, 100%);
+        color: var(--cd-color-3);
+        font-size: 0.875em;
+    }
+
+    .cd-search form, .cd-search input {
+        height: 100%;
+        width: 100%;
+    }
+
+    .cd-search input {
+        padding: 0 16px 0 36px;
+        width: 100%;
+        height: 36px;
+        border-radius: .25em;
+        background-color: hsl(0, 0%, 100%);
+        background-color: var(--cd-color-3);
+    }
+
+    .hey {
+        margin: 10px;
+        fill: black;
+    }
+
+    .cd-nav__sub-item .text {
+        text-align: left;
+        color: #280659;
+    }
+
+    .cd-nav__sub-item:hover {
+        border-left: 1px solid #03d6e1;
+    }
+
+    .small1 {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        vertical-align: middle;
+    }
+</style>
+<style type="text/css">
+
+    .fixed-nav-bar .container {
+        width: 200px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent !important;
+    }
+
+    .btn {
+        width: 100%;
+        height: 35px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+    }
+
+        .btn::before {
+            content: 'Drop Down';
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.062);
+            border: 2px solid #FF5F6D;
+            padding-left: 1em;
+            background: linear-gradient(to right, white 80%, #FF5F6D 20%);
+        }
+
+        .btn::after {
+            content: '\f062';
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 700;
+            width: 20%;
+            height: 110%;
+            color: white;
+            transform: rotate(180deg);
+            transition: all .4s;
+        }
+
+        .btn:checked::after {
+            transform: rotate(0deg);
+        }
+
+    .list {
+        position: absolute;
+        margin-top: 9rem;
+        width: 200px;
+        margin-right: 140px;
+        height: 175px;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        display: flex;
+        flex-direction: column;
+        transition: all .4s;
+    }
+
+    input:checked ~ .list {
+        clip-path: none;
+    }
+
+    .list a {
+        height: 25%;
+        display: flex;
+        align-items: center;
+        color: black;
+        padding: 0.3em 0 0.3em 1em;
+        text-decoration: none;
+        margin: 0.3em 0;
+        background: white;
+        color: rgb(36, 36, 36);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.062);
+        transition: background .4s;
+    }
+
+    #content {
+        display: flex;
+        justify-content: center;
+        margin-top: 55px;
+    }
+</style>
+
+
+<script type="text/javascript">
+    document.getElementById('tiptip').addEventListener("click", () => {
+        var a = document.querySelector(".btn").checked
+        if (a == true) {
+            document.querySelector(".btn").checked = false;
+        } else {
+            document.querySelector(".btn").checked = true;
+        }
+    })
+</script>

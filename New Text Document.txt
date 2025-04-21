@@ -1,0 +1,1 @@
+ValueError: Cannot assign "'b6a99fad-0da3-406b-85da-0e7ac3577b26'": "Chat_text.room_id" must be a "Chat_room" instance.

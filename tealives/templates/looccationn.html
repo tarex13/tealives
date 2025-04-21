@@ -1,0 +1,182 @@
+<script type="text/javascript">
+<div id="guess"></div>
+<script src="moment.min.js"></script>
+<script src="moment-timezone-with-data-2012-2022.min.js"></script>
+<script>
+  document.getElementById('guess').innerText = moment.tz.guess();
+</script>
+</script>
+<div id="guess"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.6/jstz.min.js"></script>
+<script>
+  document.getElementById('guess').innerText = jstz.determine().name();
+</script>
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Magic App</title>
+    <meta name="description" content="Magic App">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+</head> 
+<body>
+    <h1>Magic App Here</h1>
+    <div id="main">
+        <div id="time" class="sub">
+            <div>
+                <h2>Your local time</h2>
+                <span class="local"></span>
+            </div>
+            <div>
+                <h2>Magic App Server Time</h2>
+                <span class="server"></span>
+            </div>
+        </div>
+        <div id="location" class="sub">
+            <h2>And you are in...</h2>
+            <div class="address"></div>
+        </div>
+    </div>
+    <style type="text/css">
+      /*index.css*/
+h1 {
+  text-align: center
+}
+#main {
+  max-width: 900px;
+  display: table;
+  margin-left: 30vw;
+  margin-top: 10vh;
+}
+
+#main .sub {
+  display: block;
+  float: left;
+  min-width: 300px;
+  min-height: 300px;
+  border: 0.5px solid #bbb;
+  border-radius: 4px;
+  padding: 15px;
+}
+#main .sub h2{
+  font-size: 20px;
+}
+#main #time {
+  margin-right: 5vw;
+}
+
+#main #time div {
+  display: block;
+  min-height: 120px;
+}
+    </style>
+    <!-- Script here -->
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.6/jstz.min.js"></script>
+<script>
+
+
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  var address = document.querySelector('.address')
+  if (!navigator.geolocation){
+    console.log("Geolocation is not supported by your browser");
+    ipLookup();
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+  
+function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    reverseGeocodingWithGoogle(longitude, latitude)
+  }
+  function error() {
+    console.log("Unable to retrieve your location");
+  }
+  function ipLookup() {
+    fetch('https://extreme-ip-lookup.com/json/')
+    .then( res => res.json())
+    .then(response => {
+        fallbackProcess(response)
+    })
+    .catch((data, status) => {
+        address.innerText = 'We could not find your location'
+    })
+  }
+  
+function reverseGeocodingWithGoogle(latitude, longitude) {
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?
+      latlng=${latitude},${longitude}&key={GOOGLE_MAP_KEY}`)
+    .then( res => res.json())
+    .then(response => {
+      processUserData(response)
+    })
+    .catch(status => {
+      ipLookup()
+    })
+  }
+  
+function processUserData(response) {
+    address.innerText = response.results[0].formatted_address
+  }
+  
+  function fallbackProcess(response) {
+    address.innerText = `${response.city}, ${response.country}`
+  }
+  
+var localTime = jstz.determine().name();
+  var serverTime = "Asia/Novosibirsk";
+  document.querySelector('.server').innerText = new Date().toLocaleString("en-US", {timeZone: serverTime});
+  document.querySelector('.local').innerText = new Date().toLocaleString("en-US", {timeZone: localTime});
+});
+
+
+</script>
+
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Getting Clients IP</title>
+  <style>
+    p, h1 {
+      color: green;
+    }
+  </style>
+  <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+
+  <script>
+    /* Add "https://api.ipify.org?format=json" statement
+    this will communicate with the ipify servers in
+    order to retrieve the IP address $.getJSON will
+    load JSON-encoded data from the server using a
+    GET HTTP request */
+
+    $.getJSON("https://api.ipify.org?format=json",
+                    function(data) {
+
+      // Setting text of element P with id gfg
+      $("#gfg").html(data.ip);
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h1>GeeksforGeeks</h1>
+    <h3>Public IP Address of user is:</h3>
+
+    <p id="gfg"></p>
+
+  </center>
+</body>
+
+</html>

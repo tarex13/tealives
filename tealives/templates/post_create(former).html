@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+{% include 'topbar.html' %}
+<div class="content">
+    <div class="contain">
+    <div class="fr-popup fr-desktop fr-active" data-inst1="true">
+        <div class="fr-image-upload-layer fr-active fr-layer" id="fr-image-upload-layer-1" data-mouseenter-event-set="true">
+            <div class="">
+            <strong>Drop image</strong><br>(or click)
+            <div class="fr-form">
+                <input type="file" accept="image/*,video/*" multiple tabindex="-1" aria-labelledby="fr-image-upload-layer-1" role="button" dir="auto" class="inputfile">
+
+            </div>
+            <img src="" class="outputfileimage" hidden="">
+                <video src="" class="outputfilevideo" hidden="">
+                </video>
+        </div>
+        </di
+        v>
+        <div class="fr-image-by-url-layer fr-layer" id="fr-image-by-url-layer-1" data-mouseenter-event-set="true">
+            <div class="fr-input-line"><input id="fr-image-by-url-layer-text-1" type="text" placeholder="" tabindex="1" aria-required="true" dir="auto">
+                <label for="fr-image-by-url-layer-text-1">http://</label>
+            </div>
+            <div class="fr-action-buttons">
+                <button type="button" class="fr-command fr-submit" data-cmd="imageInsertByURL" tabindex="2" role="button">Insert</button>
+            </div>
+        </div>
+        <div class="fr-image-progress-bar-layer fr-layer" data-mouseenter-event-set="true">
+            <h3 tabindex="-1" class="fr-message">Uploading</h3>
+            <div class="fr-loader"><span class="fr-progress">
+
+            </span>
+        </div>
+        <div class="fr-action-buttons">
+            <button type="button" class="fr-command fr-dismiss" data-cmd="imageDismissError" tabindex="2" role="button">OK</button>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<div class="from">
+    <button class="adele">Next</button>
+</div>
+</div>
+
+
+<style type="text/css">
+body{
+    overflow: hidden;
+}
+.fr-image-upload-layer:hover {
+    background: #ebebeb;
+}
+    .fr-popup .fr-layer.fr-active {
+    display: flex;
+    position: absolute;
+    top: 55px;
+    bottom: 10px;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fr-image-upload-layer {
+    border: dashed 2px #bdbdbd;
+    padding: 25px 0;
+    margin: 20px;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 140%;
+    text-align: center;
+}
+.fr-layer {
+    width: 260px;
+}
+.fr-layer {
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    width: 195px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 20px;
+    display: none;
+}
+.fr-popup {
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    text-rendering: optimizelegibility;
+    line-height: 1.2;
+}
+.fr-image-upload-layer {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 140%;
+    text-align: center;
+}
+.fr-image-upload-layer .fr-form {
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2147483640;
+    overflow: hidden;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+.fr-image-upload-layer {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 140%;
+    text-align: center;
+}
+.fr-image-upload-layer .fr-form input {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 500%;
+    height: 100%;
+    margin: 0;
+    font-size: 400px;
+}
+.fr-popup input, .fr-popup textarea {
+    user-select: text;
+    -o-user-select: text;
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    outline: none;
+}
+.fr-image-upload-layer {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 140%;
+    text-align: center;
+}
+.content{
+    display: flex;
+}
+.from{
+    position: absolute;
+    top: 55px;
+    right: 0;
+    bottom: 0;
+    width: calc(50% - 40px);
+    padding: 20px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid blueviolet;
+    font-size: 20px;
+}
+.adele{
+    font-size: xx-large;
+    background-color: bdbdbd;
+    color: black;
+    width: 200px;
+}
+</style>
+<script type="text/javascript">
+  var blobURL;
+  var fileName;
+  
+  // Convert a base64 string into a binary Uint8 Array
+  // https://gist.github.com/borismus/1032746
+  function convertDataURIToBinary(dataURI) {
+  var BASE64_MARKER = ';base64,';
+  var base64Index = dataURI.indexOf(BASE64_MARKER) + BASE64_MARKER.length;
+  var base64 = dataURI.substring(base64Index);
+  var raw = window.atob(base64);
+  var rawLength = raw.length;
+  var array = new Uint8Array(new ArrayBuffer(rawLength));
+  
+  for(i = 0; i < rawLength; i++) {
+  array[i] = raw.charCodeAt(i);
+  }
+  return array;
+  }
+  
+  // File Reader
+  // https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
+  function readFile(evt) {
+  var f = evt.target.files[0];
+  
+  if (f) {
+  if ( /(jpe?g|png|gif|mp4)$/i.test(f.type) ) {
+  var r = new FileReader();
+  r.onload = function(e) {
+  var base64Img = e.target.result;
+  var binaryImg = convertDataURIToBinary(base64Img);
+  var blob = new Blob([binaryImg], {type: f.type});
+  blobURL = window.URL.createObjectURL(blob);
+  fileName = f.name;
+  if ( /(jpe?g|png|gif)$/i.test(f.type) ){
+  document.querySelector('.outputfileimage').src = blobURL;
+  document.querySelector('.outputfileimage').style.display = "block";
+}
+  if ( /(mp4)$/i.test(f.type) ){
+  document.querySelector('.outputfilevideo').src = blobURL;
+  document.querySelector('.outputfilevideo').style.display = "block";
+}
+  }
+  r.readAsDataURL(f);
+  } else {
+  alert("Failed file type");
+  }
+  } else {
+  alert("Failed to load file");
+  }
+  }
+  document.querySelector('.inputfile').addEventListener('change', readFile, false);
+</script>
+</body>
+</html>

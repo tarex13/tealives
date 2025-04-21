@@ -1,0 +1,438 @@
+{% extends "nice.html" %}
+{% block page_content %}
+{% load static %}
+<!DOCTYPE html>
+<!--Try maybe getting the images from a database to mak things more sucure-->
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="author" content="Tealives" />
+    <title>Tealives | Login</title>
+    <link rel="icon" href="{% static 'tealives/tli.png' %}" type="image/x-icon">
+    <!-- <link href="{% static 'tealives/lin.css' %}" type="text/css" rel="stylesheet"> -->
+</head>
+
+
+<body class="d-flex flex-column h-100">
+
+    <center>
+    <div id="body"> 
+    <center>
+    <div id="form">
+                       <form autocomplete="off" auto-capitalize="off" auto-correct="off" method="post" action="{% url 'lin' %}" onsubmit="return change()">
+                                        {% csrf_token %}
+                               <img alt="Tealives" class="logo l2" src="{% static 'tealives/ttt2.png' %}" />
+                           {% for message in messages %}
+                           <span class="messages">{{ message }}</span>
+                           {% endfor %}
+                               <br /><div id="alert"></div><div class="class" oninput="return change()" onchange="return hbjhb()"> {{ form.userid }} <br />
+                           {{ form.userpass }}</div>
+                               <br />
+                           <div id="btw">
+                               <button name="lin" id="bttw" disabled>Login</button></div><br />
+                               <div id="line"></div>
+                               <br /> <span><a class="blue" href="fp">Forgot Password?</a></span>
+                       </form>
+       </div>
+    <br />
+    
+    <div id="from">
+    <div class="account">
+        <span class="span">
+        Don't Have An Account? <b><a href="{% url 'sup' %}">Sign Up</a></b>
+            </span>
+    </div>
+        </div>
+
+</center>
+        </div>
+    </center>
+    <center>
+            <div class="footer">
+    <footer>
+        <center>
+            <div class="center">
+                <ul>
+
+                    <li><a class="black" href="about">About</a></li>
+                    <li><a class="black" href="about">Help</a></li>
+                    <li><a class="black" href="about">Privacy</a></li>
+                    <li><a class="black" href="about">Terms</a></li>
+                    <li><a class="black" href="{% url 'sup' %}">Sign Up</a></li>
+                    <li><a class="black" href="about">Feedback</a></li>
+                    <li><a class="black" href="{% url 'blog_index' %}">Blog</a></li>
+                    <li><a class="black" href="about">Ad service</a></li>
+
+                </ul>
+            </div>
+        </center>
+        <div id="closing">&copy; {{ yearr }} Tealives</div>
+                
+                </footer>
+            </div>
+        </center>
+<style>
+
+        body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 23px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color: #1c1e21;
+    margin: 0;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    display: block;
+}
+
+#body {
+    padding-bottom: 112px;
+    padding-top: 10px;
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+    background-color: #efefef;
+}
+
+#alert{
+    color: #333131;
+}
+.peaches{
+    display: none;
+}
+.span {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Arial Special G2';
+    color: #282727;
+}
+
+#form {
+    border-radius: 20px;
+    width: 90%;
+    line-height: 200%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    background-color: #fff;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+    width: 50%;
+    /*animation: mymove 5s infinite;*/
+}
+
+.account {
+    background-color: #efefef;
+    border-bottom-width: 20px;
+    border-top-width: 20px;
+    border-left-width: 20px;
+    border-right-width: 20px;
+    border-radius: 10px;
+    padding: 5px 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#sage {
+    border: 10px solid #dbdbdb;
+    color: white;
+    padding: 20px;
+    background-color: dimgrey;
+    font-size: 20px;
+    text-align: left;
+    max-width: 20%;
+    margin-top: -10px;
+    height: 50px;
+    margin-left: -10px;
+}
+
+.input {
+    padding: 12px;
+    border-radius: 5px;
+    border: 3px solid #8e8c8c;
+    width: 60%;
+    height: 35px;
+    font-size: 80%;
+    margin-bottom: 20px;
+    outline: none !important;
+}
+
+    .input:active {
+        border: 3px solid #8e8c8c;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    }
+
+    .input:focus {
+        border: 3px solid #8e8c8c;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    }
+
+button {
+    padding: 15px;
+    margin: 15px;
+    border-radius: inherit;
+    width: 60%;
+    line-height: 120%;
+    color: white;
+    font-size: 100%;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+}
+#bttw{
+
+    background: linear-gradient(60deg, rgb(255, 255, 255) 0%, rgb(13, 41, 151) 100%);
+}
+    .button:hover {
+        background-color: #6e73b5;
+    }
+.butt{
+        background: linear-gradient(60deg, rgb(255, 255, 255) 0%, rgb(0, 42, 206) 100%);
+}
+.butt:hover{
+    background-color: #41479d;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.blue {
+    color: #2b73d0;
+}
+
+#from {
+    padding: 10px;
+    width: 40%;
+    text-align: center;
+}
+
+#line {
+    border-bottom: 1.5px solid black;
+    margin: 10px 30% -5px 30%;
+    display: flex;
+}
+
+.footer {
+    margin-top: -1%;
+    justify-content: center;
+    display: flex;
+    padding: 1%;
+    padding-top: 60px;
+    margin-top: auto;
+}
+
+span {
+    font-size: 100%;
+}
+
+ul {
+    text-align: center;
+    display: flex;
+    flex-flow: row;
+    font-size: 80%;
+    margin-left: -6%;
+    flex-basis: 100%;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    color: #171313;
+    padding: 1px;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.black {
+    color: #1d1b1b;
+    font-size: 80%;
+}
+
+#closing {
+    font-size: x-large;
+}
+
+
+/*@keyframes mymove {
+    from {
+        border-bottom-color: #dbdbdb;
+    }
+
+    to {
+        border-left-color: #cacaca;
+    }
+
+    to {
+        border-top-color: #bab8b8;
+    }
+
+    to {
+        border-right-color: #b2b2b2;
+    }
+}
+    */
+.img {
+    width: 70%;
+    height: 10%;
+    margin-top: 8%;
+    margin-right: 2px;
+}
+.l2{
+    width: 50%;
+}
+.span{
+    font-size: 90%;
+}
+    .messages{
+    display: flow-root;
+    background: linear-gradient(36deg, rgb(255, 255, 255) 0%, rgb(40, 44, 78) 100%);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-top: -1%;
+    margin-bottom: -5%;
+    background-color: black;
+    text-decoration-color: white;
+    color: white;
+    }
+@media (max-width:462px) {
+    body{
+        width: 100%;
+    }
+    .account{
+        background-color: #ffffff;
+    }
+    ul{
+        padding: 10px;
+    }
+    form {
+        box-shadow: none;
+    }
+    ul {
+        padding: 10px;
+    }
+
+    .footer {
+        display: block;
+    }
+
+    footer {
+        display: block;
+    }
+
+    ul {
+        display: block;
+    }
+
+    li {
+        display: block;
+    }
+     @media (max-width:250px) {
+        #body{
+            background-color: #fff;
+        }
+        button{
+            padding: none;
+            width: 110%;
+            font-size: small;
+
+        }
+        #line{
+            display: none;
+        }
+
+
+
+     }
+    @media (max-width:100px) {
+        #body{
+            width: 120%;
+        }
+        form {
+            justify-items: right;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            box-shadow: none;
+        }
+        button{
+            font-size: 30%;
+        }
+    }
+
+    @media (max-width:960px) {
+        .img {
+            display: none;
+        }
+
+        #form {
+            text-align: center;
+            justify-items: right;
+            width: 100%;
+        }
+
+        form {
+            text-align: center;
+            justify-items: right;
+            width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+
+        .span {
+            font-size: 70%;
+        }
+    }
+
+</style>
+    <script>
+        function change() {
+            var name = document.getElementById("teaname").value;
+            var pass = document.getElementById("teapass").value;
+            var button = document.getElementById("bttw");
+            if (name == "" || name == null || pass == "" || pass == null) {
+                return false;
+            }
+            else if(pass.length<8 || name.length<6){
+                return true;
+            }
+            else{
+                button.outerHTML="<button name='lin' class='butt'>Login</button>";
+
+            }
+        }
+        function hbjhb() {
+            var name = document.getElementById("teaname").value;
+            var pass = document.getElementById("teapass").value;
+            var button = document.getElementById("bttw");
+            if (name == "" || name == null || pass == "" || pass == null) {
+                button.outerHTML="<button name='lin' id='bttw' disabled>Login</button>";
+
+            }
+            else if(pass.length<8 || name.length<6){
+                button.outerHTML="<button name='lin' id='bttw' disabled>Login</button>";
+            }
+            else{
+                button.outerHTML="<button name='lin' class='butt'>Login</button>";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+{% endblock %}

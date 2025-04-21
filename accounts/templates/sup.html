@@ -1,0 +1,17 @@
+{% block page_content %}
+{% load static %}
+      
+            <form  autocomplete="off" auto-capitalize="off" auto-correct="off" method="post" action="{% url 'lin' %}" onsubmit="integer()">
+                <img alt="Tealives" class="logo l2" src="{% static 'tealives/ttt2.png' %} " />
+                <div id="alert"></div>
+                <input placeholder="Full Name" aria-required="true" autocomplete="off" auto-capitalize="off" auto-correct="off" class="input" name="fname" type="text" value="" required /><br />
+                <input placeholder="Username" aria-required="true" autocomplete="on" auto-capitalize="off" auto-correct="off" class="input" name="uname" type="text" value="" required /><br />
+                <input placeholder="Mobile Number Or Email" autocomplete="off" auto-capitalize="off" auto-correct="off" aria-required="true" maxlength="75" class="input" name="identification" type="text" value=""  required /><br />
+                <input type="password" placeholder="Password" class="input" name="pword"  required />
+                <br />
+                <button name="sup" id="bttw">Sign Up</button><br />
+               <div class="terms"> By clicking Sign Up, you agree to our <a class="blark" href="about">Terms</a>, <a class="blark" href="about">Data Policy</a> and <a class="blark" href="about">Cookie Policy</a>.</div>
+                
+
+            </form>
+{% endblock %}

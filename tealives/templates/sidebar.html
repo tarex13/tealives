@@ -1,0 +1,107 @@
+ {% load static %}
+            <div class="blip">
+                <div class="sidebarr">
+                    <a class="bling" href="{% url 'editAccount' %}">Edit Profile</a>
+                    <a class="bling" href="{% url 'changePass' %}">Change Password</a>
+                    <a class="bling" href="#about">Customize</a>
+                    <a class="bling" href="{% url 'accountsec' %}">Security</a>
+                    <a class="bling" href="{% url 'pref' %}">Preferences</a>
+                    <a class="bling" href="#">Activity</a>
+                    <a class="bling md-trigger md-setperspective" data-modal="modal-7" href="#feedback">Feedback</a>
+                    <a class="bling" href="javascript:location.href=location.protocol + '//' + location.host + '/logout/'">Log Out</a><br>
+                    <span id="closing">&copy; {{ yearr }} Tealives</span>
+                </div>
+            </div>
+
+<style>
+.blip{
+    justify-content: left;
+    display: flex;
+    overflow: auto;
+    line-height: 90%;
+}
+                       /* The side navigation menu */
+    .sidebarr {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+  }
+/* Sidebar links */
+.sidebarr a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebarr span{
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebarr a.active {
+  background-color: #212529;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebarr a:hover:not(.active) {
+  border-bottom: 2px solid #212529;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 900px) {
+  .sidebarr {
+    display: none;
+}
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+
+    .bling::before {
+      transform: scaleX(0);
+      transform-origin: bottom right;
+  }
+
+  .bling:hover::before {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+  }
+
+  .bling::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      inset: 0 0 0 0;
+      background: #989898;;
+      z-index: -1;
+      transition: transform .3s ease;
+  }
+  .bling {
+      position: relative;
+  }
+  .typing-demo {
+      width: 9ch;
+      animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid;
+      font-family: monospace;
+      font-size: 2em;
+  }
+
+  @keyframes typing {
+      from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+}
+}
+
+</style>

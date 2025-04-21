@@ -1,0 +1,713 @@
+
+{% load static %}
+{% block page_content %}
+<title>
+    Tea_blog
+</title>
+<link rel="stylesheet" type="text/css" href="{% static 'blog/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'blog/block.css' %}" />
+<link rel="icon" href="{% static 'tealives/tli.png' %}" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
+		<script src="{% static 'js/modernizr.custom.js' %}"></script>
+ <!-- The sidebar -->
+<div class="sidebar">
+  <a class="active" href="{% url 'blog_index' %}">Home</a>
+  <a class="bling" href="#about">Feedback</a>
+  <a class="bling" href="#about">Login</a>
+  <a class="md-trigger bling" href="#" data-modal="modal-10">Sign-Up</a>
+  <a class="bling" href="#about">Terms</a>
+  <a class="bling" href="#about">Help</a>
+    <hr />
+    <small><b class="rec">Recommended For you</b></small>
+  <a class="bling" href="#about">Trending Posts</a>
+  <a class="bling" href="#about">Top Accounts</a>
+    <span id="closing">&copy; {{ yearr }} Tealives</span>
+</div>
+<div class="md-modal md-effect-10" id="modal-10">
+			<div class="md-content">
+				<div>
+
+
+                    <div class="containher right-panel-active">
+
+			<!-- Sign Up -->
+			<div class="containher__form containher--signup">
+
+                        <button class="button md-close">X</button>
+				<form action="#" method="post" class="form" id="form1">
+                    {% csrf_token %}
+					<h2 class="form__title">Sign Up</h2>
+					<input type="text" placeholder="User" name="username" class="input" />
+					<input type="email" placeholder="Email" name="email" class="input" />
+					<input type="password" placeholder="Password" name="password" class="input" />
+					<button class="btn">Sign Up</button>
+
+				</form>
+			</div>
+
+			<!-- Sign In -->
+			<div class="containher__form containher--signin">
+                 <button class="button md-closee">X</button>
+				<form action="#" class="form" id="form2">
+                    {% csrf_token %}
+					<h2 class="form__title">Sign In</h2>
+					<input type="email" placeholder="Email" class="input" />
+					<input type="password" placeholder="Password" class="input" />
+					<a href="#" class="link">Forgot your password?</a>
+					<button class="btn">Sign In</button>
+				</form>
+			</div>
+
+			<!-- Overlay -->
+			<div class="containher__overlay">
+				<div class="overlay">
+					<div class="overlay__panel overlay--left">
+						<button class="btn" id="signIn">Sign In</button>
+					</div>
+					<div class="overlay__panel overlay--right">
+						<button class="btn" id="signUp">Sign Up</button>
+					</div>
+				</div>
+			</div>
+		</div>
+				</div>
+			</div>
+		</div>
+<div class="md-overlay"></div>
+<!-- Page content -->
+<div class="content">
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="{% url 'blog_index' %}">Tea_Blog</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="md-trigger bling hi btn-sm btn-outline-secondary" href="#" data-modal="modal-10">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+     {% for category in categories %} <a class="p-2 link-secondary" href="{% url 'blog_category' category.name %}">{{ category.name }}</a>{%  endfor %}
+    </nav>
+  </div>
+</div>
+<main class="container">
+    <div class="p-4  mb-4 text-white rounded bg-dark">
+        {% for post in admin %}
+        <div class="px-0 ">
+            <span class="wrapper"><h4 class="left typing-demo"><b>Tea_blog.</b></h4></span>
+            <h5>{{ post.heading }}</h5>
+            <h6>{{ post.sub_heading }}</h6>
+            <p class="blog-post-meta">{{ post.created_on.date }} by {{ post.author }} | <a href="">Tea_blog</a></p>
+
+                <p>{{ post.pre_body }}</p>
+                <hr>
+                <p>{{ post.body }}</p>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
+{% endfor %}
+    </div>
+    <!--
+    <div class="ads">
+       {% for ads in ads %}
+       {% endfor %}
+    </div>
+    -->
+{% for post in posts %}
+    <div class="">
+        <div class="">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-300 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">{% for category in post.categories.all %}
+                    <strong class="d-inline-block mb-2 text-primary"><a href="{% url 'blog_category' category.name %}">{{ category.name }}</a></strong>{% endfor %}
+                    <h3 class="mb-0"><a href="{% url 'blog_detail' post.pk %}">{{ post.title | slice:"80" }}</a></h3>
+                    <div class="mb-1 text-muted">{{ post.created_on.date }} |{% for user in post.user.all %} {{ user.name }} {% endfor %}</div>
+                    <p class="card-text mb-auto">{{ post.body | slice:"300" }}...</p>
+                    <a href="{% url 'blog_detail' post.pk %}" class="">Continue reading</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img class="bd-placeholder-img" width="300" height="300" src="{{ pic }}{{ post.path }}"  alt="Blog Pics" />
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">Design</strong>
+                    <h3 class="mb-0">Post title</h3>
+                    <div class="mb-1 text-muted">Nov 11</div>
+                    <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="stretched-link">Continue reading</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="pb-4 mb-4 font-italic border-bottom">
+                From Tealives......
+            </h3>
+
+            <article class="blog-post">
+                <h2 class="blog-post-title">The Covid-19 Pandemic</h2>
+                <h3>Prevention Tips!!!!!</h3>
+                <p class="blog-post-meta">April 4, 2021 by <a href="#">Tealives</a></p>
+
+                <p>Covid-19(also known as the Corona Virus) is an infectious disease tha started in China. It has killed a lot of people and is still killing a lot of people. There is no confirmed cure for this virus that is why we must all protect ourselves by:</p>
+                <hr>
+                <p>1. Wearing of face masks.</p>
+                <P>2. Using of hand sanitizers.</P>
+                <p>3. Avoiding public gatherings.</p>
+                <p>4. Washing our hands for atleast 20 Seconds.</p>
+                <p>5. Avoid putting our hands in our eyes, noses, mouths.</p>
+                <p>6. Keeping yourself atleast 2 metres away from another person.</p>
+                <p>7. Visiting a doctor immediately you experience any o ]f the signs and symptoms.</p>
+                <h2>Signs and Symptoms</h2>
+                <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <h3>Sub-heading</h3>
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <pre><code>Example code block</code></pre>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+                <h3>Sub-heading</h3>
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                <ul>
+                    <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                    <li>Donec id elit non mi porta gravida at eget metus.</li>
+                    <li>Nulla vitae elit libero, a pharetra augue.</li>
+                </ul>
+                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+                <ol>
+                    <li>Vestibulum id ligula porta felis euismod semper.</li>
+                    <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                    <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+                </ol>
+                <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+            </article><!-- /.blog-post -->
+
+            <article class="blog-post">
+                <h2 class="blog-post-title">Another blog post</h2>
+                <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
+
+                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                <blockquote>
+                    <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </blockquote>
+                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            </article><!-- /.blog-post -->
+
+            <article class="blog-post">
+                <h2 class="blog-post-title">New feature</h2>
+                <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
+
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                <ul>
+                    <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                    <li>Donec id elit non mi porta gravida at eget metus.</li>
+                    <li>Nulla vitae elit libero, a pharetra augue.</li>
+                </ul>
+                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+            </article><!-- /.blog-post -->
+
+            <nav class="blog-pagination" aria-label="Pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+            </nav>
+
+        </div>
+
+        <div class="col-md-4 fixed">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="font-italic">About Tea_Blog</h4>
+                <p class="mb-0"><b>Tea_Blog</b> is a place where you can get the latest news on everything happening around the world and even at your location.</p>
+            </div>
+
+            <div class="p-4">
+                <h4 class="font-italic">Archives</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+                    <li><a href="#">February 2014</a></li>
+                    <li><a href="#">January 2014</a></li>
+                    <li><a href="#">December 2013</a></li>
+                    <li><a href="#">November 2013</a></li>
+                    <li><a href="#">October 2013</a></li>
+                    <li><a href="#">September 2013</a></li>
+                    <li><a href="#">August 2013</a></li>
+                    <li><a href="#">July 2013</a></li>
+                    <li><a href="#">June 2013</a></li>
+                    <li><a href="#">May 2013</a></li>
+                    <li><a href="#">April 2013</a></li>
+                </ol>
+            </div>
+
+            <div class="p-4">
+                <h4 class="font-italic">Elsewhere</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ol>
+            </div>
+        </div>
+
+    </div><!-- /.row -->
+
+</main><!-- /.container -->
+</div>
+
+<style>
+.left{
+}
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  font-size: small;
+  overflow: auto;
+}
+.hi {
+  display: block;
+  color: black;
+  padding: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+}
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.rec{
+      display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar span{
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #212529;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  .sidebar span {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+  .sidebar span {
+    text-align: center;
+    float: none;
+  }
+}
+.bling::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.bling:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.bling::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: #989898;;
+  z-index: -1;
+  transition: transform .3s ease;
+}
+.bling {
+  position: relative;
+}
+.typing-demo {
+  width: 9ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: rights;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+<style>
+.button {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+            :root {
+	/* COLORS */
+	--white: #e9e9e9;
+	--gray: #333;
+	--blue: #0367a6;
+	--lightblue: #008997;
+
+	/* RADII */
+	--button-radius: 0.7rem;
+
+	/* SIZES */
+	--max-width: 758px;
+	--max-height: 420px;
+
+	font-size: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.form__title {
+	font-weight: 300;
+	margin: 0;
+	margin-bottom: 1.25rem;
+}
+
+.link {
+	color: var(--gray);
+	font-size: 0.9rem;
+	margin: 1.5rem 0;
+	text-decoration: none;
+}
+
+.containher {
+	background-color: var(--white);
+	border-radius: var(--button-radius);
+	box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+		0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+	height: var(--max-height);
+	max-width: var(--max-width);
+	overflow: hidden;
+	position: relative;
+	width: 140%;
+}
+
+.containher__form {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	transition: all 0.6s ease-in-out;
+}
+
+.containher--signin {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.containher.right-panel-active .containher--signin {
+	transform: translateX(100%);
+}
+
+.containher--signup {
+	left: 0;
+	opacity: 0;
+	width: 50%;
+	z-index: 1;
+}
+
+.containher.right-panel-active .containher--signup {
+	animation: show 0.6s;
+	opacity: 1;
+	transform: translateX(100%);
+	z-index: 5;
+}
+
+.containher__overlay {
+	height: 100%;
+	left: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	transition: transform 0.6s ease-in-out;
+	width: 50%;
+	z-index: 100;
+}
+
+.containher.right-panel-active .containher__overlay {
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background-color: var(--lightblue);
+	background: url("milk2.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	left: -100%;
+	position: relative;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+	width: 200%;
+}
+
+.containher.right-panel-active .overlay {
+	transform: translateX(50%);
+}
+
+.overlay__panel {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+	width: 50%;
+}
+
+.overlay--left {
+	transform: translateX(-20%);
+}
+
+.containher.right-panel-active .overlay--left {
+	transform: translateX(0);
+}
+
+.overlay--right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.containher.right-panel-active .overlay--right {
+	transform: translateX(20%);
+}
+
+.btn {
+	background-color: var(--blue);
+	background-image: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);
+	border-radius: 20px;
+	border: 1px solid var(--blue);
+	color: var(--white);
+	cursor: pointer;
+	font-size: 0.8rem;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+	padding: 0.9rem 4rem;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+.button:hover{
+color: #aeaeae;
+}
+.buttonn:hover{
+color: #aeaeae;
+}
+
+.form > .btn {
+	margin-top: 1.5rem;
+}
+
+.btn:active {
+	transform: scale(0.95);
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.form {
+	background-color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 3rem;
+	height: 100%;
+	text-align: center;
+}
+
+.input {
+	background-color: #fff;
+	border: none;
+	padding: 0.9rem 0.9rem;
+	margin: 0.5rem 0;
+	width: 100%;
+}
+
+@keyframes show {
+	0%,
+	49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+
+	50%,
+	100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+        </style>
+
+
+
+
+<script>
+   // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("md-close")[0];
+var spann = document.getElementsByClassName("md-closee");
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+spann.onclick = function() {
+  modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+ </script>
+        <script>
+            const signInBtn = document.getElementById("signIn");
+const signUpBtn = document.getElementById("signUp");
+const fistForm = document.getElementById("form1");
+const secondForm = document.getElementById("form2");
+const container = document.querySelector(".containher");
+
+signInBtn.addEventListener("click", () => {
+	container.classList.remove("right-panel-active");
+});
+
+signUpBtn.addEventListener("click", () => {
+	container.classList.add("right-panel-active");
+});
+
+fistForm.addEventListener("submit", (e) => e.preventDefault());
+secondForm.addEventListener("submit", (e) => e.preventDefault());
+
+        </script>
+		<script src="{% static 'js/classie.js' %}"></script>
+		<script src="{% static 'js/modalEffects.js' %}"></script>
+
+		<!-- for the blur effect -->
+		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="{% static 'js/cssParser.js' %}"></script>
+		<script src="{% static 'js/css-filters-polyfill.js' %}"></script>
+{% endblock %}

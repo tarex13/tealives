@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<polygon fill="#006DAE" points="36,2 22,30 40,30 54,2 "/>
+<polygon fill="#018BC9" points="42,2 28,30 34,30 48,2 "/>
+<path fill="#F9C802" d="M43,28H21c0,0-1,0-1,1v7h2v-6h19c0,0,1,0,1,1v5h2v-7C44,28,43,28,43,28z"/>
+<polygon opacity="0.5" fill="#302C3B" points="32.77,8.462 23.077,27.846 24,30 40,30 41.076,27.846 "/>
+<circle fill="#F9C802" cx="32" cy="46" r="16"/>
+<path fill="#F59E01" d="M32.222,31.453c-8.156,0-14.768,6.621-14.768,14.797c0,2.438,0.599,4.727,1.641,6.754
+	c-0.526-1.609-0.821-3.324-0.821-5.109c0-8.664,6.695-15.748,15.18-16.378C33.046,31.483,32.639,31.453,32.222,31.453"/>
+<path fill="#FEEC9A" d="M43.346,36.844c4.166,7.277,1.988,16.691-5.197,21.52c-1.484,0.996-3.068,1.711-4.695,2.184
+	c2.258-0.281,4.49-1.07,6.514-2.426c6.779-4.555,8.617-13.648,4.107-20.313C43.844,37.473,43.598,37.156,43.346,36.844"/>
+<polygon fill="#FEEC9A" points="32,39.531 32,34.348 29.365,42.457 30.576,43.91 "/>
+<polygon fill="#F59E01" points="33.423,43.91 34.633,42.457 32,34.348 32,39.531 "/>
+<polygon fill="#EA8800" points="34.303,46.617 36.26,47.465 43.156,42.457 38.027,43.91 "/>
+<polygon fill="#FFE12C" points="38.027,43.91 43.156,42.457 34.633,42.457 33.423,43.91 "/>
+<polygon fill="#FFE12C" points="30.576,43.91 29.365,42.457 20.841,42.457 25.971,43.91 "/>
+<polygon fill="#F9B700" points="25.971,43.91 20.841,42.457 27.737,47.465 29.697,46.617 "/>
+<polygon fill="#F59E01" points="34.303,46.617 35.725,51 38.896,55.57 36.26,47.465 "/>
+<polygon fill="#F9B700" points="32,48.293 32,50.563 38.896,55.57 35.725,51 "/>
+<polygon fill="#FEEC9A" points="29.697,46.617 27.737,47.465 25.102,55.57 28.271,51 "/>
+<polygon fill="#F59E01" points="28.271,51 25.102,55.57 32,50.563 32,48.293 "/>
+<polygon fill="#006DAE" points="28,2 10,2 22,30 40,30 "/>
+<polygon fill="#018BC9" points="28,30 34,30 22,2 16,2 "/>
+</svg>
