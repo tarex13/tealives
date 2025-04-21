@@ -1,5 +1,7 @@
 # Media files and uploads
 media/
+svg/
+svg2/
 *.png
 *.jpg
 *.jpeg

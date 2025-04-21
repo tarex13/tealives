@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="1634 260 16 16">
-  <g id="homeBlack" transform="translate(1442 180)">
-    <path id="Fill1" fill="#e6e6e6" d="M194.57,87.188,200,81.732l5.609,5.684v6.751H201.5V89.11h-3.059v5.057H194.57Z"/>
-    <path id="Fill2" fill="#e81123" d="M198.49,89.218h3.09v5.421h-3.09Z" transform="translate(0 -0.008)"/>
-    <path id="Contour" d="M8-15.63l7.31,7.318-.7.7-.645-.637V-2H8.993V-6.969H7V-2H2.033V-8.25l-.645.637-.7-.7ZM12.971-2.991V-9.245L8-14.217,3.027-9.245v6.254H6.01V-7.963H9.988v4.972Z" transform="translate(192.011 96.63)"/>
-  </g>
-</svg>
