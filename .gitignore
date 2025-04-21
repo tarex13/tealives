@@ -1,5 +1,5 @@
 # Media files and uploads
-media/
+#media/
 svg/
 svg2/
 *.png
@@ -9,6 +9,7 @@ svg2/
 *.mp4
 *.mov
 *.avi
+*.svg
 
 # Documents and heavy assets
 *.docx
