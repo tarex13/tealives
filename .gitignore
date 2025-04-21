@@ -1,0 +1,37 @@
+# Media files and uploads
+media/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.mov
+*.avi
+
+# Documents and heavy assets
+*.docx
+*.pdf
+*.psd
+
+# DBs (SQLite etc.)
+*.sqlite3
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.mypy_cache/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Secrets
+.env
+*.key
+
+# System files
+.DS_Store
+Thumbs.db
