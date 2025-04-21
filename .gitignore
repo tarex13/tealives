@@ -2,9 +2,7 @@
 #media/
 svg/
 svg2/
-*.png
-*.jpg
-*.jpeg
+blog/
 *.gif
 *.mp4
 *.mov
