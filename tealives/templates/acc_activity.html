@@ -1,0 +1,106 @@
+{% load static %}
+{% if user.is_authenticated %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Edit Profile</title>
+    <link href="{% static 'tealives/bootstrap.min.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'style/style-Profile.css' %}">
+</head>
+<body onload="pLoad('container')">
+    <div class="container" x-data="{ rightSide: false, leftSide: false }">
+    {%include '__leftbar.html'%}
+    <div class="main">
+        {%include '__searchbar.html'%}
+        <div class="main-container hank">
+            <div id="main-inner">
+                <!--Maybe add a filter to filter the different of activities kinds like maybe the user
+                might want to view just the location based activities or something like that-->
+                <div id="login-act"><!--Template for the Login Activity-->
+
+                </div>
+                <div id="post_activity"><!--Template for the post activities-->
+                    <!--Like, Share, User commented-->
+                    <div class="post-inner log inner">
+                        <div id="log-details">
+                            <span class="date">12 May, 2024</span>
+                            <span class="log-explanation">You liked a post from <span class="log-uname">@tarex_13</span>
+                            <span class="view">View Post</span>
+                        </div>
+                        <div id="log-details">
+                            <span class="date">12 May, 2024</span>
+                            <span class="log-explanation">You commented on a post from <span class="log-uname">@tarex_13</span>
+                            <span class="view">View Post</span>
+                        </div>
+                        <div id="log-details">
+                            <span class="date">12 May, 2024</span>
+                            <span class="log-explanation">You shared a post from <span class="log-uname">@tarex_13</span>
+                            <span class="view">View Post</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="comment_activity">
+                    <!--User like a comment, replied to a comment etc-->
+                    <div class="login-inner log inner">
+                        
+                    </div>
+                </div>
+                <div id="follow_activity"><!--This one wouold be view profile instead of vie wpos-->
+                    <div class="follow-inner log inner">
+                    <div id="log-details">
+                        <span class="date">12 May, 2024</span>
+                        <span class="log-explanation">You Followed <span class="log-uname">@tarex_13</span>
+                        <span class="view">View Profile</span>
+                    </div>
+                    <div id="log-details">
+                        <span class="date">12 May, 2024</span>
+                        <span class="log-explanation">You Unfollowed <span class="log-uname">@tarex_13</span>
+                        <span class="view">View Profile</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+        {%include 'sidebar.html'%}
+    </div>
+
+    
+</body>
+<style>
+    .log #log-details{
+        background: #151728;
+        display: flex;
+        height: 42px;
+        align-items: center;
+        position: relative;
+        margin: 3vh 0;
+    }
+    #log-details .date{
+        padding: 1vh 1vw;
+        width: 20%;
+        border-right: 2px solid white;
+    }
+    #log-details .log-explanation{
+        padding: 0vw 2vw;
+    }
+    #log-details .view{
+        float: right;
+    position: absolute;
+    right: 0;
+    padding: 0 16px;
+    background: #dbdbe1;
+    color: black;
+    font-weight: 600;
+    height: 100%;
+    top: 0;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    }
+</style>
+<script src="{% static 'general/general.js' %}"></script>
+</html>
+{% endif %}

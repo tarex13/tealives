@@ -1,0 +1,211 @@
+{% load static %}
+<div class="search-bar">
+    <input type="text" class="search-input" placeholder="Search" />
+    <div class="search-container">
+        <div class="notFound">
+            <span style="
+            font-size: 8vh;
+        ">No result found!!!</span>
+        </div>
+    </div>
+    <!--NOt sure what this is for<button class="right-side-button" onclick="window.location.href=`{% url 'dm' %}`        " @click="rightSide = !rightSide">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </button>-->
+</div>
+<style>
+    .search-bar{
+        height: 60px;
+        background-color: #151728;
+        z-index: 3;
+        position: relative;
+    }
+    .search-bar input {
+        height: 100%;
+        width: 100%;
+        display: block;
+        background-color: transparent;
+        border: none;
+        padding: 0 54px;
+        background-image: url(data:image/svg+xml; charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512'%3e%3cpath d='M508.9 478.7L360 330a201.6 201.6 0 0045.2-127.3C405.3 90.9 314.4 0 202.7 0S0 91 0 202.7s91 202.6 202.7 202.6c48.2 0 92.4-17 127.3-45.2L478.7 509c4.2 4.1 11 4.1 15 0l15.2-15.1c4.1-4.2 4.1-11 0-15zm-306.2-116c-88.3 0-160-71.8-160-160s71.7-160 160-160 160 71.7 160 160-71.8 160-160 160z' data-original='%23000000' class='active-path' data-old_color='%23000000' fill='%235C5D71'/%3e%3c/svg%3e);
+        background-repeat: no-repeat;
+        background-size: 16px;
+        background-position: 25px 50%;
+        color: #fff;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: 600;
+    }
+    .search-bar .right-side-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        border: 0;
+        width: 52px;
+        background-color: #1e2031;
+        border-left: 1px solid #272a3a;
+        color: #fff;
+        display: none;
+        cursor: pointer;
+    }
+    .right-side-button svg {
+        width: 22px;
+    }
+
+    
+    .search-container {
+        width: 80%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        box-shadow: #a3acbb30 0px 3px 8px;
+        background: #151728;
+        border-radius: 10px;
+        min-height: 300px;
+        max-height: 400px;
+        overflow-y: auto;
+        visibility: hidden;
+    }
+
+    .search-box {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+    }
+
+    .search-box-img {
+        height: 50px;
+    }
+
+    .search-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .search-top {
+        color: white;
+    }
+
+    .search-middle {
+        color: #c2c2c7;
+    }
+    .search-box-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+</style>
+
+<script defer src="{% static 'tealives/scripts/templates-nice.js' %}"></script>
+<script>
+
+
+        /**
+         * This function send and receives data from db
+         * url is the url for the xhttp
+         * params are the parameters if any
+         * method is the method which the ready data goes thru
+         * passMethod is any extra method that needs to be passed along
+         * */
+
+         function openXmlRequest(url, requestMethod, params, method, passMethod, ...args) {
+            console.log("hi");
+            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+            requestMethod = requestMethod.toUpperCase();
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    try {
+                        method(JSON.parse(this.responseText), passMethod, args);
+                        console.log("hi");
+                    } catch (e) {
+                        console.error(e.message);
+                        //display an error
+                    }
+
+                }
+
+            };
+            xhttp.open(requestMethod, encodeURI(location.origin + "/" + url +"/"+ params));
+            if (requestMethod == "POST") {
+                //Send the proper header information along with the request
+                xhttp.setRequestHeader('X-CSRFToken', csrftoken, 'Content-type', 'application/x-www-form-urlencoded');
+            }
+            xhttp.send()
+
+        }
+
+    document.querySelector('.search-input').addEventListener('keyup', (e) => {
+        var letters = /^[A-Za-z0-9._-]+$/;
+        var searchContainer = document.querySelector(".search-container");
+        var searchBox = document.querySelectorAll(".search-box");
+        for (var i = 0; i < searchBox.length; i++) {
+            document.querySelector(".search-container").removeChild(searchBox[i]);
+        }
+
+        document.querySelector(".notFound").style.display = "none";
+        //if (inputtxt.value.match(letters)) {
+        //    return true;
+        //}
+        //else {
+        //    alert("message");
+        //    return false;
+        //}
+        var text = document.querySelector('.search-input').value;
+        var textSan = ""
+        for (var i = 0; i < text.length; i++) {
+            if (text[i].match(letters)) { textSan += text[i] }
+        }
+        if (textSan == "" || textSan == " ") {
+            searchContainer.style.visibility = "hidden";
+
+        } else {
+            var text = text.replaceAll(" ", "");
+            const params = "?q=" + textSan + "&src=teabase&lg=en&ip=192.168.2.0.1&client=tealives";
+            openXmlRequest("api/v1/user/search", "GET", params, getData, cloneSearchUser)
+            //xhttp.open("GET", `http://127.0.0.1:8000/api/v1/user/search?q=${textSan}&src=teabase&lg=en&ip=192.168.2.0.1&client=tealives`);
+
+            searchContainer.style.visibility = "visible";
+        }
+    })
+
+    
+        // Use this to show the people found throught the search
+        function cloneSearchUser(data) {
+            if (data == false) {
+                document.querySelector(".notFound").style.display = "flex";
+            } else {
+
+                var searchContainer = document.querySelector(".search-container");
+                searchContainer.innerHTML = searchContainer.innerHTML + searchBox;
+
+                console.log(searchBox);
+                boxLink = searchContainer.querySelectorAll('.search-box');
+                boxImg = searchContainer.querySelectorAll('.search-img');
+                boxTop = searchContainer.querySelectorAll('.search-top');
+                boxMiddle = searchContainer.querySelectorAll('.search-middle');
+
+                boxLink[boxLink.length - 1].href = "/" + data.username;
+                boxTop[boxTop.length - 1].innerText = data.username;
+                boxMiddle[boxMiddle.length - 1].innerText = data.first_name + " " + data.last_name;
+            }
+        }
+
+        //see nice.html for some context
+        function getData(data, method, ...args) {
+            var cloned;
+            for (var i = 0; i < data.length; i++) {
+
+                cloned = method(data[i], ...args);
+            }
+            if (data.length == 0) {
+                method(false);
+            }
+        }
+</script>

@@ -129,6 +129,13 @@ def edit(request):
 
     context = {}
     return render(request, "editProfile.html", context)
+@login_required(redirect_field_name='next', login_url='lin')
+def acc_activity(request):
+    db_user = User.objects.all().get(username=request.user)
+    context = {"user":db_user}
+    return render(request, "acc_activity.html", context)
+
+@login_required(redirect_field_name='next', login_url='lin')
 def changePass(request):
     if request.method == "POST":
         oldP = request.POST.get('19iuw')

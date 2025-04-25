@@ -6,6 +6,7 @@ from django.db import models
 from tealives.models import Files
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
+from tealives.models import generate_random_filename
 from django.contrib.auth.models import AbstractUser
 
 # Create your models here.

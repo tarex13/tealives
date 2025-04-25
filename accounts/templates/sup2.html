@@ -18,8 +18,8 @@
                 <a class="sitename" href="{% url 'sup' %}">
                     <img class="kissmemore" src="{% static 'tealives/lin.authorized/no-bg.png' %}">
                 </a>
+                <p class="headerText">Sign Up</p>
             </h1>
-            <p class="headerText">Sign Up</p>
             <form method="post" autocomplete="off">
                 {% csrf_token %}
                 <div class="inputWrapper">
@@ -81,26 +81,32 @@
                 max-width: 400px;
                 width: 100%;
                 padding: 30px;
-                border-radius: 30px;
+                border-radius: 10px;
                 background: #fff;
-                box-shadow: 0 35px 68px 0 rgba(136, 174, 222, 0.42), inset 0 -8px 16px 0 #b9d1f1;
+                box-shadow: 0 3px 9px 0 rgba(136, 174, 222, 0.42), inset 0 0 19px 0 #b9d1f1;
             }
 
             .terms {
                 padding: 10px;
             }
 
+
             .header {
                 font-size: 36px;
                 font-weight: 500;
                 margin: 0 0 12px;
                 text-align: center;
+                display: flex;
             }
-
+            
             .headerText {
                 font-size: 25px;
-                margin: 0 0 24px 0;
-                text-align: left;
+                border-left: 2px solid #6f6f71;
+                margin: 0;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                padding: 0 0 0 2vw;
             }
 
             .inputWrapper {
@@ -140,7 +146,7 @@
                 font-size: 16px;
                 color: #fff;
                 border-radius: 8px;
-                background-image: linear-gradient(90deg, #5fc7ff 50%, #43a8ff 100%);
+                background-image: linear-gradient(90deg, #186b99 50%, #181d85 100%);
                 background-size: 200% 100%;
                 background-position: 100% 100%;
                 transition: background-position 256ms;
@@ -152,8 +158,14 @@
                     background-position: 0% 200%;
                 }
 
-            .kissmemore {
+            .sitename{
                 width: 50%;
+                background: #000000;
+            }
+
+            .kissmemore {
+                width: 100%;
+                background: #000000;
             }
 
             .link {

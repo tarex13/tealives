@@ -8,6 +8,8 @@ blog/
 *.mov
 *.avi
 *.svg
+"heroku keys"
+*.json
 
 # Documents and heavy assets
 *.docx

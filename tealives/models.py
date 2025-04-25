@@ -96,7 +96,7 @@ def generate_random_filename():
     # Generate a random UUID and append the file extension
     return f"{uuid.uuid4()}"
 
-class photos(models.Model):
+class Media(models.Model):
     title = models.CharField(_(""), max_length=100, default=generate_random_filename())
     image = CloudinaryField('image')
 
@@ -155,10 +155,17 @@ class Follower_followed(models.Model):
         return f'{self.follower,"->",self.followed}'
 
 class Activity(models.Model):
-    a_id = models.CharField(max_length=225)
+    a_type = [
+        ('Login', 'Login'),
+        ('Like', 'Post Like'),
+        ('post_c', 'Post Create'),
+        ('story_c', 'Story Create'),
+    ]
+    a_id = models.CharField(_("id"), default=generate_random_filename(), max_length=225)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    time = models.DateTimeField()
+    date = models.DateTimeField(_("Date Time"), auto_now=False, auto_now_add=False)
     location = models.CharField(max_length=255)
+    activity = models.CharField(_("Activity Type"), max_length=50, choices=a_type)
     
     class Meta:
         verbose_name_plural = "Activities"

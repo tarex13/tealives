@@ -1,4 +1,5 @@
-        {% load static %}
+       <!--not in use-->
+       {% load static %}
 
         {% if user.is_authenticated %}
 <!DOCTYPE html>
@@ -9,9 +10,10 @@
     <link href="{% static 'tealives/bootstrap.min.css' %}" rel="stylesheet" />
     <title>Tealives</title>
     <link rel="icon" href="{% static 'tealives/tli.png' %}" type="image/x-icon">
+    
 </head>
 <body>
-    {% include 'topbar.html' %}
+    {% include '__leftbar.html' %}
 
     {% include 'feedback.html' %}
     <center>

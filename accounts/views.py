@@ -42,7 +42,7 @@ def login(request):
     year = datetime.date.today().year
     home = "127.0.0.1:8000"
     home_name = "Home"
-    username = "tarex_13"
+    #username = "tarex_13"
     loginform = LoginForm
     next_ = request.GET.get("next")
 

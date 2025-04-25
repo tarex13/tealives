@@ -21,6 +21,10 @@ import cloudinary.api
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# The `DYNO` env var is set on Heroku CI, but it's not a real Heroku app, so we have to
+# also explicitly exclude CI:
+# https://devcenter.heroku.com/articles/heroku-ci#immutable-environment-variables
+IS_HEROKU_APP = "DYNO" in os.environ and "CI" not in os.environ
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -33,7 +37,11 @@ SECRET_KEY = "!^_6%0so9$a@u-w22nc56xcp0^spoo4k^3q!j016o5hll+#c#o"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
+if IS_HEROKU_APP:
+    ALLOWED_HOSTS = ['.herokuapp.com']
+    SECURE_SSL_REDIRECT = True
+else:
+    ALLOWED_HOSTS = ['*']
 
 AUTHENTICATION_BACKENDS = ['personal_portfolio.backends.EmailBackend','django.contrib.auth.backends.ModelBackend']
 # Application definition
@@ -90,13 +98,30 @@ WSGI_APPLICATION = "personal_portfolio.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    
-}
+if IS_HEROKU_APP:
+    # In production on Heroku the database configuration is derived from the `DATABASE_URL`
+    # environment variable by the dj-database-url package. `DATABASE_URL` will be set
+    # automatically by Heroku when a database addon is attached to your Heroku app. See:
+    # https://devcenter.heroku.com/articles/provisioning-heroku-postgres#application-config-vars
+    # https://github.com/jazzband/dj-database-url
+    DATABASES = {
+        "default": dj_database_url.config(
+            env="DATABASE_URL",
+            conn_max_age=600,
+            conn_health_checks=True,
+            ssl_require=True,
+        ),
+    }
+else:
+    # When running locally in development or in CI, a sqlite database file will be used instead
+    # to simplify initial setup. Longer term it's recommended to use Postgres locally too.
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
@@ -144,6 +169,8 @@ LOGIN_REDIRECT_URL = "lin"
 #STATIC_URL = "/files/"
 STATIC_ROOT = BASE_DIR / 'staticfiles' 
 STATIC_URL = '/static/'  
+
+
 # Whitenoise Middleware for static files 
 #MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 MEDIA_URL = '/media/'
@@ -157,6 +184,7 @@ cloudinary.config(
     api_key = "478284933824842",
     api_secret = "z10Dzs7s91MO2wtxphm18n8WALA"
 )
+
 
 EMAIL_USE_TLS = True  
 EMAIL_HOST = 'smtp.office365.com'  
