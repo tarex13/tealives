@@ -1,5 +1,5 @@
 from django.contrib import admin
-from tealives.models import Post, Story, Follower_followed, Comments, Activity, Comment_reply, Verify, Logged_in, Security, Files, Chat_member, Chat_room, Chat_text, Chat_log, Post_likes, Media
+from tealives.models import Post, Story, Follower_followed, Comments, Activity, Comment_reply, Verify, Logged_in, Security, Files, Chat_member, Chat_room, Chat_text, Chat_log, Post_likes
 # Register your models here.
 
 '''class UserAdmin(admin.ModelAdmin):
@@ -13,8 +13,6 @@ from tealives.models import Post, Story, Follower_followed, Comments, Activity, 
     list_display = ('username','email','is_verified','is_disabled','followers','is_logged_in')
     list_filter = ['date_joined']'''
 class PostAdmin(admin.ModelAdmin):
-    pass
-class MediaAdmin(admin.ModelAdmin):
     pass
 class StoryAdmin(admin.ModelAdmin):
     pass
@@ -50,7 +48,6 @@ class PostLikeAdmin(admin.ModelAdmin):
 
 #admin.site.register(User, UserAdmin)
 admin.site.register(Post, PostAdmin)
-admin.site.register(Media, MediaAdmin)
 admin.site.register(Post_likes, PostLikeAdmin)
 admin.site.register(Story, StoryAdmin)
 admin.site.register(Follower_followed, Follower_followedAdmin)

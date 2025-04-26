@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "accounts",
     "django.contrib.admindocs",
     "cloudinary",
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -179,12 +180,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-cloudinary.config(
-    cloud_name = "tealives",
-    api_key = "478284933824842",
-    api_secret = "z10Dzs7s91MO2wtxphm18n8WALA"
-)
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dflkxko9o',
+    'API_KEY': "478284933824842",
+    'API_SECRET': "z10Dzs7s91MO2wtxphm18n8WALA",
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 EMAIL_USE_TLS = True  
 EMAIL_HOST = 'smtp.office365.com'  

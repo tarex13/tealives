@@ -4,6 +4,8 @@ from random import choices
 from tabnanny import verbose
 from tokenize import Comment
 import uuid
+import mimetypes
+from cloudinary_storage.storage import MediaCloudinaryStorage
 from email.policy import default
 from enum import unique
 from xmlrpc.client import DateTime
@@ -20,30 +22,47 @@ from django.conf import settings
 from cloudinary.models import CloudinaryField
 User = settings.AUTH_USER_MODEL
 
+def generate_random_filename():
+    # Generate a random UUID and append the file extension
+    return f"{uuid.uuid4()}"
+
+def dynamic_upload_path(_, filename):
+    #import mimetypes
+    from django.utils import timezone
+
+    mime_type, _ = mimetypes.guess_type(filename)
+    prefix = mime_type.split('/')[0] if mime_type else 'other'
+    date_path = timezone.now().strftime('%Y/%m/%d')
+    return f'{prefix}s/{date_path}/{filename}'
 
 class Files(models.Model):
-    f_id = models.CharField(max_length=225)
-    file_type_choices = [
+    f_id = models.CharField(max_length=225, default=generate_random_filename(), unique=True)
+
+    FILE_TYPE_CHOICES = [
         ('U', 'User Picture'),
         ('S', 'Story Picture'),
         ('P', 'Post Picture'),
     ]
-    #username = models.CharField()
-    name = models.CharField(max_length=225, unique=True) # Should be a set of random characters
-    base = models.CharField(
-        max_length = 20,
-        choices = file_type_choices,
-        blank = False,
-        )
-    
-    uploadedFile = models.FileField(verbose_name="file", upload_to='uploads/%Y/%m/%d/')
+
+    name = models.CharField(max_length=225, unique=True)
+    base = models.CharField(max_length=20, choices=FILE_TYPE_CHOICES, blank=False)
+
+    uploadedFile = models.FileField(verbose_name="file", upload_to=dynamic_upload_path, storage=MediaCloudinaryStorage())
     file_type = models.CharField(max_length=10, blank=True)
     file_mime = models.CharField(max_length=50, blank=True)
-    #date = models.DateTimeField(now)
-    #base64 = models.TextField()
-    #blob_url = models.CharField(max_length=225)
+
+    def save(self, *args, **kwargs):
+        if self.uploadedFile:
+            filename = self.uploadedFile.name
+            mime_type, _ = mimetypes.guess_type(filename)
+            if mime_type:
+                self.file_mime = mime_type
+                self.file_type = mime_type.split('/')[0]
+        super().save(*args, **kwargs)
+
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name}__{self.uploadedFile.name}'
+    
 
 class Post(models.Model):
    class Templates(models.IntegerChoices):
@@ -92,13 +111,8 @@ class Post(models.Model):
        return '%s' % (self.p_id)
   
   
-def generate_random_filename():
-    # Generate a random UUID and append the file extension
-    return f"{uuid.uuid4()}"
 
-class Media(models.Model):
-    title = models.CharField(_(""), max_length=100, default=generate_random_filename())
-    image = CloudinaryField('image')
+
 
 class Comments(models.Model):
     c_post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="+")

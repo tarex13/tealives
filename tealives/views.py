@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, Http404
 from django.http import HttpResponse
 import datetime
+
 from tealives.models import Post, Follower_followed
 #from tealives.forms import LoginForm
 #from tealives.forms import RegistrationForm
@@ -16,7 +17,7 @@ auth_user = settings.AUTH_USER_MODEL
 User = settings.AUTH_USER_MODEL'''
 try:
     from django.contrib.auth import get_user_model
-except ImportError: # django < 1.5
+except ImportError: 
     from django.contrib.auth.models import User
 else:
     User = get_user_model()
@@ -207,6 +208,29 @@ def aboutPage(request,username):
         raise Http404
 @login_required(redirect_field_name='next', login_url='lin')
 def create(request):
+    if request.method == "POST":
+        user = request.user
+        file_s = []
+        try:
+            temp = int(request.POST.get('template'))
+        except:
+            temp = 0
+        title = request.POST.get('post')
+        top_text = request.POST.get('top_text')
+        desc = request.POST.get('desc')
+        post = Post.objects.create(username=user, desc=desc, title=title, top_text=top_text, template=temp)
+        
+        if len(request.FILES) != temp:
+            a = 0#just a filler
+            #do something like return error
+        for key in request.FILES:
+            file_obj = request.FILES[key]
+            mime, _ = mimetypes.guess_type(file_obj.name)
+            file_type = mime.split('/')[0] if mime else ''
+            new_file = Files.objects.create(uploadedFile=file_obj, name=file_obj.name, base="P", file_type=file_type, file_mime=file_mime)
+            uploaded_files.append(new_file)
+            
+        post.files.set(uploaded_files)
     context = {}
     # db_user = 
     return render(request, "post_create.html", context)
