@@ -79,7 +79,7 @@ def login(request):
 
 
     if request.user.is_authenticated:
-        context = {}#"yearr": year, "home": home, "h_name": home_name, "username": username
+        context = {"db":request.user}#"yearr": year, "home": home, "h_name": home_name, "username": username
         return render(request, "nice.html", context)
     else:
         #context = {"yearr": year, "loginform": loginform, "regform": regform}

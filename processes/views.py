@@ -38,7 +38,7 @@ def post_index(request):
                 recommended = True
 
     #Enumerate allows us to use the index like in js
-            post_ = list(post.values("p_id","username__username","username__display_picture__uploadedFile","title","top_text","desc","created_on","location","alt_text","desc", "files__uploadedFile", "template"))
+            post_ = list(post.values("p_id","username__username","title","top_text","desc","created_on","location","alt_text","desc", "template"))
             for index,x in enumerate(post):
                 liked = Post_likes.objects.filter(Q(post__p_id=post_[index]["p_id"])&Q(user=request.user,status="L"))
                 if liked:
@@ -46,7 +46,10 @@ def post_index(request):
                 else:
                     post_[index]['isLiked']=False
                 post_[index]['likes']=(x.likes())
+                post_[index]['files']=x.file_img()
+                post_[index]['dp']=x.prof_img()
                 post_[index]['comments']=(x.comments())
+                post_
                 #data.append(post_)
                 #post_list += data
             #html[0]['recommended'] = recommended

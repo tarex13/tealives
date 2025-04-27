@@ -100,20 +100,16 @@ var ctext = '<div class="comment-text"><label class="comment-user"></label><labe
 var temp1 =
     '<!--Template 1-->' +
     head +
-    '<div class="post-content temp1" > ' +
-    '<!--When the bass drops, so do my problems.--> ' +
-    '<div class="post-files" > ' +
-    '<div class="file_left post_image post_file post_file_left animated-bg"> ' +
-    '<!--< img src = "https://images.unsplash.com/photo-1508179719682-dbc62681c355?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80" alt = "" class="post-file_left"/> -->' +
-    '</div > ' +
-    '<div class="post-right" > ' +
-    '<div class="file-right post_image file_right_up animated-bg" ><!--< img src = "https://images.unsplash.com/photo-1502872364588-894d7d6ddfab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt = "" class="post-file" /> --></div > ' +
-    '<div class="file-right post_image file_right_down animated-bg" ><!--< img src = "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt = "" class="post-file" /> --></div > ' +
+    '<div class="post-content temp2">' +
+    '<!--When the bass drops, so do my problems.-->' +
+    '<div class="post-files">' +
+    '<div class="file_left post_file post_image post_file_left animated-bg">' +
+    '<!--<img src="https://images.unsplash.com/photo-1508179719682-dbc62681c355?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80" alt="" class="post-file_left" />-->' +
     '</div>' +
     '</div>' +
     '</div>' +
     actions +
-    '</div > ' + comment
+    '</div>' + comment
     ;
 var temp2 =
     '<!--Template 2-->' +
@@ -131,6 +127,24 @@ var temp2 =
     '</div>' +
     actions +
     '</div>' + comment
+    ;
+var temp5 =
+    '<!--Template 3-->' +
+    head +
+    '<div class="post-content temp1" > ' +
+    '<!--When the bass drops, so do my problems.--> ' +
+    '<div class="post-files" > ' +
+    '<div class="file_left post_image post_file post_file_left animated-bg"> ' +
+    '<!--< img src = "https://images.unsplash.com/photo-1508179719682-dbc62681c355?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80" alt = "" class="post-file_left"/> -->' +
+    '</div > ' +
+    '<div class="post-right" > ' +
+    '<div class="file-right post_image file_right_up animated-bg" ><!--< img src = "https://images.unsplash.com/photo-1502872364588-894d7d6ddfab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt = "" class="post-file" /> --></div > ' +
+    '<div class="file-right post_image file_right_down animated-bg" ><!--< img src = "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt = "" class="post-file" /> --></div > ' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    actions +
+    '</div > ' + comment
     ;
 var temp3 =
     '<!--Template 3--> ' +
@@ -155,7 +169,5 @@ var temp3 =
 
 var searchBox = '<a href="" class="search-box"><div class="search-box-img"><img class="search-img" src="" /></div><div class="search-box-right"><div class="search-top">tarex_13</div><div class="search-middle">Tara Emmanuel</div></div></a>';
 
-var sideContact = '<div class="user" onclick="contactsUrl(this)"><img src="" class="user-img" /><div class="username"><label></label><div class="user-status offline"></div></div><input class="room" value="" type="hidden"/></div > '
-
-
+var sideContact = '<div class="user" onclick="contactsUrl(this)"><img src="" class="user-img" /><div class="username"><label></label><div class="user-status offline"></div></div><input class="room" value="" type="hidden"/></div > ';
 

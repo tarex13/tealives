@@ -44,7 +44,7 @@ class Files(models.Model):
         ('P', 'Post Picture'),
     ]
 
-    name = models.CharField(max_length=225, unique=True)
+    #name = models.CharField(max_length=225, unique=True)
     base = models.CharField(max_length=20, choices=FILE_TYPE_CHOICES, blank=False)
 
     uploadedFile = models.FileField(verbose_name="file", upload_to=dynamic_upload_path, storage=MediaCloudinaryStorage())
@@ -61,7 +61,7 @@ class Files(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'{self.name}__{self.uploadedFile.name}'
+        return f'{self.f_id}'#__{self.uploadedFile.name}'
     
 
 class Post(models.Model):
@@ -100,12 +100,28 @@ class Post(models.Model):
    tagged = models.ManyToManyField(User, related_name="Username", blank=True)
    last_modified = models.DateTimeField(_('last modified'),auto_now_add=True)
    created_on = models.DateTimeField(auto_now_add=True)
+   
+   
+      
    def likes(self):
        likes = Post_likes.objects.filter(post=self.p_id, status="L")
        return(likes.count())
    def comments(self):
        comments = Comments.objects.filter(c_post = self.p_id)
        return(comments.count())
+   def file_img(self):
+       a = 1
+       images={}
+       for x in self.files.all():
+           images[a]=x.uploadedFile.url
+           #print(images[a])
+           a+=1
+       return images
+   def prof_img(self):
+       return self.username.display_picture.uploadedFile.url
+   def template_id(self):
+       return self.template
+   
 
    def __str__(self):
        return '%s' % (self.p_id)
