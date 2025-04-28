@@ -125,77 +125,7 @@
                 </div>-->
             </div>
             <div class="side-wrapper contacts">
-                <div class="side-title"><!--CONTACTS-->CHAT</div>
-                <div class="user">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" class="user-img">
-                    <div class="username">
-                        Andrei Mashrin
-                        <div class="user-status"></div>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=046c29138c1335ef8edee7daf521ba50" class="user-img">
-                    <div class="username">
-                        Aryn Jacobssen
-                        <div class="user-status offline"></div>
-                    </div>
-                </div>
-                <!--<div class="user">
-                    <img src="https://images.unsplash.com/photo-1575084713138-342cae5f8d00?ixlib=rb-1.2.1&auto=format&fit=crop&w=958&q=80" class="user-img">
-                    <div class="username">
-                        Carole Landu
-                        <div class="user-status offline"></div>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="https://images.pexels.com/photos/598745/pexels-photo-598745.jpeg?h=350&auto=compress&cs=tinysrgb" class="user-img">
-                    <div class="username">
-                        Chineze Afa
-                        <div class="user-status"></div>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="https://pbs.twimg.com/profile_images/2452384114/noplz47r59v1uxvyg8ku.png" class="user-img">
-                    <div class="username">
-                        Mok Kwang
-                        <div class="user-status"></div>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="https://randomuser.me/api/portraits/women/63.jpg" class="user-img">
-                    <div class="username">
-                        Naomi Yepes
-                        <div class="user-status"></div>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="https://images.unsplash.com/photo-1476493279419-b785d41e38d8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=61eaea85f1aa3d065400179c78163f15" class="user-img">
-                    <div class="username">
-                        Shaamikh Ale
-                        <div class="user-status"></div>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMjI4NDcyNjQxNl5BMl5BanBnXkFtZTgwMzI4OTM3NjM@._V1_UY256_CR13,0,172,256_AL_.jpg" class="user-img">
-                    <div class="username">
-                        Sofia Alcocer
-                        <div class="user-status idle"></div>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="https://images.unsplash.com/photo-1509380836717-c4320ccf1a6f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=e01c8c45a063daaf6d6e571a32bd6c90" class="user-img">
-                    <div class="username">
-                        Wen Yahui
-                        <div class="user-status"></div>
-                    </div>
-                </div>
-                <div class="user">
-                    <img src="https://pbs.twimg.com/profile_images/737221709267374081/sdwta9Oh.jpg" alt="" class="user-img">
-                    <div class="username">
-                        Leslee Moss
-                        <div class="user-status idle"></div>
-                    </div>
-                </div>-->
+                <div class="side-title">CHAT</div>
             </div>
             <!--<div class="search-bar right-search">
                 <input type="text" placeholder="Search" />
@@ -343,8 +273,6 @@
       </template>
       <!--Template for Posts-->
       <template id="post-template">
-        <div class="post-cont">
-          <div class="post box">
             <!-- Header -->
             <div class="post-cont">
                 <div class="post box">
@@ -370,8 +298,6 @@
                     <div class="context-item"><div class="context-name">Post</div><div class="context-more">></div></div>
                     <div class="context-item context-name close" onclick="hideUnhideContextMenu(this)">Close</div>
                   </div>
-                </div>
-              </div>
       
             <!-- Post Content -->
             <div class="post-content">
@@ -445,12 +371,12 @@
                   <button type="submit" class="send">Send</button>
                 </div>
               </div>
-          </div>
+            </div>
         </div>
       </template>
       <template id="temp1"><div class="post-left"><div class="file-left post_image file_left_up animated-bg"></div></div></template>
-      <template id="temp3"><div class="post-left"><div class="file-left post_image file_left_up animated-bg"></div><div class="file-left post_image file_left_down animated-bg"></div></div><div class="post-right"><div class="file-right post_image file_right_up animated-bg"></div></div></template>
-      <template id="temp2"><div class="post-left"><div class="file-left post_image file_left_up animated-bg"></div></div><div class="post-right"><div class="file-right post_image file_right_up animated-bg"></div></div></template>
+      <template id="temp3"><div class="post-left"><div class="file-left post_image file_left_up animated-bg" style="height:100%;"></div></div><div class="post-right"><div class="file-right post_image file_right_up animated-bg"></div><div class="file-right post_image file_right_down animated-bg"></div></div></template>
+      <template id="temp2"><div class="post-left"><div class="file-left post_image file_left_up animated-bg" style="height:100%;"></div></div><div class="post-right"><div class="file-right post_image file_right_up animated-bg" style="height:100%;"></div></div></template>
       <template id="temp4"><div class="post-left"><div class="file-left post_image file_left_up animated-bg"></div><div class="file-left post_image file_left_down animated-bg"></div></div><div class="post-right"><div class="file-right post_image file_right_up animated-bg"></div><div class="file-right post_image file_right_down animated-bg"></div></div>  </template>
       <template id="search-box-template">
         <a href="" class="search-box">
@@ -1304,10 +1230,13 @@
 
         .post-right, .post-left {
             width: 50%;
-            margin-left: 10px;
             line-height: 0;
             display: flex;
             flex-direction: column;
+        }
+        .post-right{
+            
+            margin-left: 10px;
         }
         /*
                     .post-right .post-file {
@@ -1928,7 +1857,7 @@
         }
 
         .comment-input {
-            width: 80%;
+            width: 85%;
             border-radius: 30px;
             border: none;
             outline: none;
@@ -1938,7 +1867,7 @@
             color: white;
             padding: 10px 15px;
             left: 1%;
-            height: 25px;
+            min-height: 25px;
             background: #24273b;
         }
 
@@ -1950,9 +1879,9 @@
             border-radius: 30px;
             position: absolute;
             right: 1%;
-            width: 20%;
+           
             font-size: 13px;
-            width: 70px;
+            width: 10%%;
             cursor: pointer;
             bottom: 20%;
             background-image: linear-gradient(to bottom right, #00C0FF, #4218B8);
@@ -2086,7 +2015,7 @@
         }
 
 
-        // This method shows the side contacts
+        // This method shows the side contacts(dm/chat)
         function cloneContact(data) {
             var contacts = document.querySelector(".side-wrapper.contacts");
             contacts.innerHTML += sideContact();
@@ -2305,7 +2234,7 @@
 
 
             if (openXmlRequest("api/v1/user/post/like/" + p_id, "GET", "?r=feed", addLiked, elementParent) == false) {
-                console.log("ikjlik");
+                //console.log("ikjlik");
             }
 
 
@@ -2325,7 +2254,7 @@
 
             // Send the comment
             elementParent.parentElement.querySelector(".comment-bottom .send").addEventListener('click', (e) => {
-                comment = document.querySelector(".comment-input");
+                comment = elementParent.parentElement.querySelector(".comment-bottom .comment-input");
 
                 if (comment.value != "") {
                     var params = "?ct=" + encodeURI(comment.value);

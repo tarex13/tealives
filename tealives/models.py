@@ -140,7 +140,7 @@ class Comments(models.Model):
     c_is_deleted = models.BooleanField(default=False)
     c_likes = models.IntegerField(default=0)
     def __str__(self):
-       return '%s -> %s' % (self.c_post, self.c_sender)
+       return '%s -> %s to %s' % (self.c_post, self.c_sender, self.c_receiver)
 
     
 class Comment_reply(models.Model):
