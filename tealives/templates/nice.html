@@ -2028,7 +2028,7 @@
             username = contact.querySelector("label");
             username.innerHTML = data.user[0].first_name + " " + data.user[0].last_name;
             id.value = data.room.id.room_id;
-            img.src = "http://127.0.0.1:8000/media/" + data.user[0].display_picture__uploadedFile;
+            img.src = data.user[0].dp;
 
 
 

@@ -237,17 +237,20 @@ def get_chatrooms(request):
         data = []
         me = 0
         for x in chat_rooms:
-            me+=1;
+            me+=1
             chatty = Chat_room.objects.filter(room_id = x["room_id"]).values("members__username")
-            user = User.objects.filter(username__in=chatty).exclude(username=request.user.username).values("username", "display_picture__uploadedFile", "first_name", "last_name")
+            user = list(User.objects.filter(username__in=chatty).exclude(username=request.user.username).values("username", "first_name", "last_name"))
             lastChat = Chat_text.objects.filter(room_id=x["room_id"]).last()
+            for user_ in user:
+                user_["dp"]=User.objects.filter(username__in=chatty).exclude(username=request.user.username).get().display_picture.uploadedFile.url
             if lastChat:
                 lastChat = lastChat.text
             else:
                 lastChat = ""
             data.clear()
-            data.append({'room':{"id":x,'message':lastChat},'user':list(user)})
+            data.append({'room':{"id":x,'message':lastChat},'user':user})
             chat_room_list += list(data)
+            
         return JsonResponse(chat_room_list, safe=False)
 
 def user_relations(request):

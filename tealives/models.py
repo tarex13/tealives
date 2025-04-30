@@ -205,7 +205,7 @@ class Verify(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 class Logged_in(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    time = models.CharField(max_length=50)
+    time = models.CharField(max_length=50, )
     time_active = models.CharField(max_length=50)
 class Security(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)

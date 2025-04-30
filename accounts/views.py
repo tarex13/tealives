@@ -4,6 +4,7 @@ from pickle import FALSE
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from tealives.models import Logged_in
 from django.contrib.auth.tokens import default_token_generator
 #from django.contrib.sites.shortcuts import get_current_site
 #from django.core.mail import EmailMessage
@@ -63,7 +64,8 @@ def login(request):
                             theuser.is_active = True
                             theuser.save()
                         theuser.is_logged_in = True
-                        theuser.last_login = request.POST.get('date')
+                        #theuser.last_login = request.POST.get('date') NOt needed because of auto_now=true
+                        #logged_in = Logged_in()
                         if 'user-agent' in request.headers:
                             user_agent = request.headers['User-Agent']
                         else:
