@@ -16,6 +16,7 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import psycopg2
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
@@ -118,9 +119,13 @@ else:
     # to simplify initial setup. Longer term it's recommended to use Postgres locally too.
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'db.wbgdwfjzqhldnndtnhlx.supabase.co',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PORT': '5432',
+        'PASSWORD': 'H,A&-XCw$95t4GG',
+    }
     }
 
 
