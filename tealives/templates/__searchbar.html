@@ -12,6 +12,17 @@
         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
     </button>
 </div>
+<template id="search-box-template">
+    <a href="" class="search-box">
+      <div class="search-box-img">
+        <img class="search-img" src="" />
+      </div>
+      <div class="search-box-right">
+        <div class="search-top"></div>
+        <div class="search-middle"></div>
+      </div>
+    </a>
+  </template>
 <style>
     .search-bar{
         height: 60px;
@@ -99,7 +110,7 @@
 
 </style>
 
-<script defer src="{% static 'tealives/scripts/templates-nice.js' %}"></script>
+<script defer src="{% static '/general/general.js' %}"></script>
 <script>
 
 
@@ -176,15 +187,16 @@
         }
     })
 
-    
-        // Use this to show the people found throught the search
+   // const clone = (el) => el.content.cloneNode(true);
+
+        // Use this to show the people found through the search
         function cloneSearchUser(data) {
             if (data == false) {
                 document.querySelector(".notFound").style.display = "flex";
             } else {
-
+                let searchBox = clone(document.querySelector("#search-box-template"))
                 var searchContainer = document.querySelector(".search-container");
-                searchContainer.innerHTML = searchContainer.innerHTML + searchBox;
+                searchContainer.appendChild(searchBox);
 
                 //console.log(searchBox);
                 boxLink = searchContainer.querySelectorAll('.search-box');
@@ -195,6 +207,7 @@
                 boxLink[boxLink.length - 1].href = "/" + data.username;
                 boxTop[boxTop.length - 1].innerText = data.username;
                 boxMiddle[boxMiddle.length - 1].innerText = data.first_name + " " + data.last_name;
+                boxImg[boxImg.length - 1].src = data.dp;
             }
         }
 

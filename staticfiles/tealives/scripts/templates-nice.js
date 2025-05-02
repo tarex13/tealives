@@ -1,5 +1,5 @@
 // JavaScript source code
-var actions = () =>
+var actions =
     '<div class="post-actions">' +
     '<a href="javascript:void(0)" class="post-action" onclick="heartClicked(event)">' +
     '<svg stroke="currentColor" stroke-width="2" class="heart" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">' +
@@ -23,10 +23,10 @@ var actions = () =>
     '</a>' +
     '</div>';
 
-var commActions = () =>
+var commActions =
     '<div class="post-actions"><a href="javascript:void(0)" class="post-action" onclick="heartClicked(event)"><svg stroke="currentColor" stroke-width="2" class="heart" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path></svg><span class="post-likes">1</span></a><a href="javascript:void(0)" class="post-action new" onclick="commentClicked(event)"><svg stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path></svg>20</a><a href="javascript:void(0)" class="post-action"><svg stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"></path><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"></path><path d="M21 13v2a4 4 0 01-4 4H3"></path></svg>13</a></div>'; 
 
-window.head = () =>
+var head =
     '<div class="post-cont">' +
     '<div class="post box">' +
     '<div class="post-main">' +
@@ -58,7 +58,7 @@ window.head = () =>
     '<div class="context-item context-name close" onclick="hideUnhideContextMenu(this)">Close</div>' +
     '</div>';
 
-window.comment = () => '<div class="comment box">' +
+var comment = '<div class="comment box">' +
     '    <div class="comment-top">' +
     '        <div class="back" onclick="commentClicked(event)">' +
     '                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="72pt" version="1.1" viewBox="0 0 72 72" width="72pt">' +
@@ -95,9 +95,9 @@ window.comment = () => '<div class="comment box">' +
     '</div> ' +
     '</div>';
 
-var ctext = '<div class="comment-text"><label class="comment-user"></label><label class="comm-text"></label>' + commActions() + '</div>';
+var ctext = '<div class="comment-text"><label class="comment-user"></label><label class="comm-text"></label>' + commActions + '</div>';
 
-window.temp1 = () =>
+var temp1 =
     '<!--Template 1-->' +
     head +
     '<div class="post-content temp2">' +
@@ -108,10 +108,10 @@ window.temp1 = () =>
     '</div>' +
     '</div>' +
     '</div>' +
-    actions() +
-    '</div>' + comment()
+    actions +
+    '</div>' + comment
     ;
-window.temp2 = () =>
+var temp2 =
     '<!--Template 2-->' +
     head +
     '<div class="post-content temp2">' +
@@ -125,10 +125,10 @@ window.temp2 = () =>
     '</div>' +
     '</div>' +
     '</div>' +
-    actions() +
-    '</div>' + comment()
+    actions +
+    '</div>' + comment
     ;
-window.temp5 = () =>
+var temp5 =
     '<!--Template 3-->' +
     head +
     '<div class="post-content temp1" > ' +
@@ -143,10 +143,10 @@ window.temp5 = () =>
     '</div>' +
     '</div>' +
     '</div>' +
-    actions() +
-    '</div > ' + comment()
+    actions +
+    '</div > ' + comment
     ;
-window.temp3 = () =>
+var temp3 =
     '<!--Template 3--> ' +
     head +
     '<div class="post-content temp4">' +
@@ -162,12 +162,12 @@ window.temp3 = () =>
     '</div>' +
     '</div>' +
     '</div>' +
-    actions() +
-    '</div>' + comment()
+    actions +
+    '</div>' + comment
     ;
 
 
-window.searchBox = () => '<a href="" class="search-box"><div class="search-box-img"><img class="search-img" src="" /></div><div class="search-box-right"><div class="search-top">tarex_13</div><div class="search-middle">Tara Emmanuel</div></div></a>';
+var searchBox = '<a href="" class="search-box"><div class="search-box-img"><img class="search-img" src="" /></div><div class="search-box-right"><div class="search-top">tarex_13</div><div class="search-middle">Tara Emmanuel</div></div></a>';
 
-window.sideContact = () => '<div class="user" onclick="contactsUrl(this)"><img src="" class="user-img" /><div class="username"><label></label><div class="user-status offline"></div></div><input class="room" value="" type="hidden"/></div > ';
+var sideContact = '<div class="user" onclick="contactsUrl(this)"><img src="" class="user-img" /><div class="username"><label></label><div class="user-status offline"></div></div><input class="room" value="" type="hidden"/></div > ';
 

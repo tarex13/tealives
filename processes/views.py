@@ -148,6 +148,8 @@ def user_search(request):
             elif src == "teabase":
                 user = User.objects.all().filter(Q(username__contains=q)|Q(first_name__contains=q)|Q(last_name__contains=q)).values("username", "first_name", "last_name")
                 users = list(user)
+                for user_ in users:
+                    user_["dp"]=User.objects.get(username=user_['username']).display_picture.uploadedFile.url
                 return JsonResponse(users, safe=False)
             else:
                 print("hi")

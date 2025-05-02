@@ -1966,7 +1966,6 @@
         //post-comment-actions = document.querySelector('#comment-actions-template');
         //post-actions = document.querySelector('#post-actions-template');
 
-        const clone = (el) => el.content.cloneNode(true);
 
         // Use this to add a new post through the temp html file created
         function clonePost(data) {
@@ -2017,8 +2016,9 @@
 
         // This method shows the side contacts(dm/chat)
         function cloneContact(data) {
-            var contacts = document.querySelector(".side-wrapper.contacts");
-            contacts.innerHTML += sideContact();
+            let contacts = document.querySelector(".side-wrapper.contacts");
+            let sideContact = clone(document.querySelector("#side-contact-template"));
+            contacts.appendChild(sideContact);
             var contact = document.querySelectorAll(".side-wrapper .user")[document.querySelectorAll(".side-wrapper .user").length - 1];
 
             var id = contact.querySelector(".room");
