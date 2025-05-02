@@ -173,12 +173,10 @@ USE_TZ = True
 LOGOUT_REDIRECT_URL = "lin"
 LOGIN_REDIRECT_URL = "lin"
 #STATIC_URL = "/files/"
-STATIC_ROOT = BASE_DIR / 'staticfiles' 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'  
 
 
-# Whitenoise Middleware for static files 
-#MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
