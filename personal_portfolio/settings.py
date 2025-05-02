@@ -107,7 +107,7 @@ if IS_HEROKU_APP:
     # https://devcenter.heroku.com/articles/provisioning-heroku-postgres#application-config-vars
     # https://github.com/jazzband/dj-database-url
     DATABASES = {
-       "default": dj_database_url.config(conn_max_age=600, ssl_require=True)
+       "default": dj_database_url.config(conn_max_age=0, ssl_require=True)
     }
 else:
     # When running locally in development or in CI, a sqlite database file will be used instead
