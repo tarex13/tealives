@@ -1,4 +1,5 @@
 from ast import Not
+import re
 import datetime
 from pickle import FALSE
 from django.shortcuts import render
@@ -96,13 +97,38 @@ def signup(request):
             regform = SignUpForm(request.POST)
             if (regform.is_valid()):
                 reg = regform.cleaned_data
+                username = reg['username'],
+                password = reg['password'],
+                email = reg['email'],
+                USERNAME_REGEX = re.compile(r'^[a-z](?!.*[_.]{2})[a-z0-9._]{2,29}(?<![_.])$')
+                PASSWORD_REGEX = re.compile(
+                    r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
+                )
+                EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+                if not USERNAME_REGEX.match(username):
+                    messages.info(request, 'Invalid username format')
+                    return redirect('/')
+                if not PASSWORD_REGEX.match(password):
+                    messages.info(request, 'Invalid password format')
+                    return redirect('/')
+                if not EMAIL_REGEX.match(email):
+                    messages.info(request, 'Invalid password format')
+                    return redirect('/')
+                user = User.objects.all().get(username=username)
+                if user:
+                    messages.info(request, 'Username already exists')
+                    return redirect('lin')
+                user = User.objects.all().get(email=email)
+                if user:
+                    messages.info(request, 'Invalid Email')
+                    return redirect('lin')
                 registration = User(
                     username = reg['username'],
                     email = reg['email'],
                     password = reg['password'],
                     is_logged_in = True,
                     is_disabled = False,
-                    is_active = True,
+                    is_active = False,
                     )
                 registration.set_password(registration.password)
                 registration.save()
@@ -175,6 +201,7 @@ def signup(request):
 
 @login_required(redirect_field_name='next', login_url='lin')
 def user_logout(request):
+    user = request.user
     logout(request)
     messages.success(request, 'You have successfully logged out!')
     return HttpResponseRedirect(reverse('lin'))

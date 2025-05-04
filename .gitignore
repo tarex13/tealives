@@ -10,6 +10,7 @@ blog/
 *.svg
 "heroku keys"
 *.json
+settings.py
 
 # Documents and heavy assets
 *.docx

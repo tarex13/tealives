@@ -44,7 +44,7 @@ class SignUpForm(forms.Form):
         attrs={
             "id": "uname",
             "autocomplete": "off",
-            "pattern": "/^[a-z0-9_.]+$/",
+            "pattern": "^[a-z](?!.*[_.]{2})[a-z0-9._]{2,29}(?<![_.])$",
             "minlength": "6",
             "required": "true",
             }
@@ -68,6 +68,7 @@ class SignUpForm(forms.Form):
                 "id":"pass",
                 "required":"true",
                 "minlength": "8",
+                "pattern":"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                 }
             )
         )

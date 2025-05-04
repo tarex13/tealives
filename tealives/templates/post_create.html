@@ -10,7 +10,6 @@
     <div class="container" x-data="{ rightSide: false, leftSide: false }">
         {%include '__leftbar.html'%}
         <div class="main">
-            {% include '__searchbar.html' %}
             <div class="main-container">
                 <div class="action">
                     <div class="action-menu">
@@ -351,72 +350,64 @@
                     <span>▼</span>
                 </span>
             </div>
-            <div class="side-wrapper details">
                 <form class="side_form">
-                    <div class="side-title">DETAILS</div>
-                    <div class="section section-details">
-                        <textarea placeholder="Add Url..." class="side_input side_url"></textarea>
-                        <textarea placeholder="Add Location..." class="side_input side_location"></textarea>
-                    </div>
-                    <div class="side-title">
-                        TAG
-                        <div class="switch_container">
-                            <div class="toggle">
-                                <input type="checkbox">
-                                <div class="left"></div>
-                                <div class="right"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--<div class="section section-tagging">
-                        <label class="side_ins">
-                            Click on the checkbox below to enable image tagging
-                        </label>
-                        <div class="image_tagging">
-                            <div class="image_tag">Image Tagging</div>
-                            <div class="switch_container">
-                                <div class="toggle">
-                                    <input type="checkbox">
-                                    <div class="left"></div>
-                                    <div class="right"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="or">
-                            <div class="text">
-                                OR
-                            </div>
-                            <div class="line"></div>
-                        </div>
-                        <label class="side_ins">
-                            Tag an account below.
-                        </label>
-                        <input type="text" placeholder="ex - @tealives" class="side_input side_tag">
-                    </div>-->
-                    <input class="description" name="desc">
-                    <input class="description">
-                    <div class="side-title">ACCESSIBILITY</div>
-                    <div class="section section-details">
-                        <textarea placeholder="Alt Text" class="side_input side_url"></textarea>
-                        <textarea placeholder="Add Location..." class="side_input side_location"></textarea>
-                    </div>
+                    
+                      <!-- RIGHT PANEL -->
+<div class="right-panel">
+    <h3>Extras</h3>
+  
+    <!-- Add Links -->
+    <div class="form-group">
+      <h4>Add Links</h4>
+      <input type="text" id="urlInput" placeholder="Add a valid URL and press Enter" />
+      <div id="urlList" class="url-list"></div>
+    </div>
+  
+    <!-- Add Tags -->
+    <div class="form-group">
+      <h4>Tags</h4>
+      <select id="tagSelect">
+        <option value="">Select a tag...</option>
+        <option value="Nature">Nature</option>
+        <option value="Music">Music</option>
+        <option value="Fitness">Fitness</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Photography">Photography</option>
+        <option value="Art">Art</option>
+      </select>
+      <div id="tagList" class="tag-list"></div>
+      <small id="tagLimitMsg" class="info-text" style="display:none;">You’ve reached the max of 5 tags.</small>
+    </div>
+  
+    <!-- Accessibility -->
+    <div class="form-group">
+      <h4>Accessibility <span title="Used by screen readers and for SEO">ⓘ</span></h4>
+      <textarea rows="2" placeholder="Alt text for your content..."></textarea>
+    </div>
+  
+    <!-- Visibility -->
+    <div class="form-group">
+      <h4>Visibility</h4>
+      <select>
+        <option>Public</option>
+        <option>Friends only</option>
+        <option>Private</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <h4>Schedule Post</h4>
+      <input type="datetime-local" id="scheduleInput" />
+    </div>
+  
+   
+    <!-- Reset -->
+    <div class="form-group">
+      <button id="clearSidebar">Reset</button>
+    </div>
+  </div>
+  
                 </form>
-            </div>
-            <div class="search-bar right-search">
-                <input type="text" placeholder="Search" />
-                <div class="search-bar-svgs">
-                    <svg stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="3" />
-                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
-                    </svg>
-                    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469.34 469.34">
-                        <path d="M456.84 76.17l-64-64.06c-16.13-16.13-44.18-16.17-60.37.04L45.77 301.67a10.73 10.73 0 00-2.7 4.59L.41 455.73a10.68 10.68 0 0013.19 13.2l149.33-42.7c1.73-.5 3.3-1.42 4.58-2.7l289.33-286.98c8.06-8.07 12.5-18.78 12.5-30.19s-4.44-22.12-12.5-30.2zM285.99 89.74L325.25 129l-205 205-14.7-29.44a10.67 10.67 0 00-9.55-5.9H78.92L286 89.75zM26.2 443.14l13.9-48.64 34.74 34.74-48.64 13.9zm123.14-35.18L98.3 422.54l-51.5-51.5L61.38 320H89.4l18.38 36.77a10.67 10.67 0 004.77 4.77l36.78 18.39v28.03zm21.33-17.54v-17.09c0-4.04-2.28-7.72-5.9-9.54l-29.43-14.7 205-205 39.26 39.26-208.93 207.07zm271.11-268.7l-47.03 46.61L301 74.6l46.59-47c8.06-8.07 22.1-8.07 30.16 0l64 64c4.03 4.03 6.25 9.38 6.25 15.08s-2.22 11.05-6.22 15.05z" />
-                    </svg>
-                    <svg stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        <path d="M12 5v14M5 12h14" />
-                    </svg>
-                </div>
-            </div>
         </div>
         <div class="overlay" @click="rightSide = false; leftSide = false" :class="{ 'active': rightSide || leftSide }"></div>
     </div>
@@ -1094,7 +1085,7 @@
             margin-top: 10px;
             position: relative;
             gap: 5px;
-            border: dashed 2px #bdbdbd;
+            border: dashed 2px #8F93B9;
         }
 
         .create-files {
@@ -1470,49 +1461,7 @@
             display: flex;
             flex-direction: column;
             gap: 1vw;
-        }
-
-        .side_input::placeholder {
-            color: #5c5d71;
-        }
-
-        .switch {
-            height: 100%;
-            width: 40%;
-            background: #a9a4b9;
-            border-radius: 50px;
-            padding: 0;
-            margin: 0;
-        }
-
-        .image_tagging {
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #5c5d71;
-        }
-
-        .or {
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            position: relative;
-        }
-
-        .text {
-            background: #151728;
-            z-index: 6;
-            font-size: 1.7vw;
-        }
-
-        .line {
-            width: 100%;
-            height: 1px;
-            position: absolute;
-            background-color: white;
-            top: 50%;
-            z-index: 2;
+            height: 100%;%
         }
 
         @media screen and (max-width: 480px) {
@@ -1539,55 +1488,6 @@
                 background: rgba(255, 255, 255, 0.1);
             }
 
-
-        .toggle {
-            width: 60px;
-            height: 30px;
-            background: #1b1b1b;
-            border-radius: 50px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-            .toggle input {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-                appearance: none;
-                -webkit-appearance: none;
-                z-index: 10;
-            }
-
-            .toggle .left, .toggle .right {
-                position: absolute;
-                width: 50%;
-                height: 100%;
-                background: #2b2b2b;
-                border-radius: 50px;
-                border: 10px solid rgb(19, 19, 19);
-                transform: translateX(-2px);
-                /* box-shadow: 10px 0 25px #272727; */
-                transition: all .2s;
-            }
-
-            .toggle input:checked ~ .left {
-                transform: translateY(-100%);
-            }
-
-            .toggle .right {
-                right: 0;
-                transform: translateY(100%);
-                transform: translateX(100%);
-                background: #9da1bd;
-                box-shadow: -10px 0 25px #9da1bd3b;
-                transition: all .2s;
-            }
-
-            .toggle input:checked ~ .right {
-                transform: translateY(0%);
-            }
 
         .temp {
             position: relative;
@@ -1742,6 +1642,121 @@
             .touch .search-middle {
                 color: #c2c2c7;
             }
+
+            .right-panel {
+                padding: 16px;
+                border-radius: 10px;
+                color: #B0B3D6;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                gap: 20px;
+              }
+              .right-panel h3 {
+                font-size: 16px;
+                margin-bottom: 10px;
+              }
+              .form-group h4 {
+                color: #8F93B9;
+                font-size: 13px;
+                margin-bottom: 6px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+              }
+              .form-group input,
+              .form-group select,
+              .form-group textarea {
+                background-color: #1F2230;
+                color: #C2C6FF;
+                border: none;
+                border-radius: 6px;
+                padding: 8px 12px;
+                font-size: 13px;
+                width: 100%;
+                box-shadow: inset 0 0 0 1px #2E3142;
+                margin-bottom: 8px;
+              }
+              .form-group input:focus,
+              .form-group select:focus,
+              .form-group textarea:focus {
+                outline: none;
+                box-shadow: 0 0 0 2px #725CFF;
+                background-color: #222538;
+              }
+              input.invalid {
+                box-shadow: 0 0 0 2px #ff4f4f;
+              }
+              .tag-list,
+              .url-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+              }
+              .tag {
+                background-color: #2C2F44;
+                color: #C2C6FF;
+                padding: 4px 10px;
+                border-radius: 20px;
+                font-size: 12px;
+                display: inline-flex;
+                align-items: center;
+              }
+              .tag .remove {
+                margin-left: 6px;
+                cursor: pointer;
+                font-weight: bold;
+                color: #888;
+              }
+              .tag .remove:hover {
+                color: #fff;
+              }
+              .url-chip {
+                background-color: transparent;
+                border-left: 3px solid #725CFF;
+                padding: 6px 10px;
+                color: #C2C6FF;
+                font-size: 13px;
+                white-space: nowrap;
+                position: relative;
+                width: 100%;
+              }
+              .url-chip .remove {
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-weight: bold;
+                cursor: pointer;
+                color: #888;
+              }
+              .url-chip .remove:hover {
+                color: #fff;
+              }
+              .info-text {
+                font-size: 12px;
+                color: #ffacac;
+              }
+              .summary-list {
+                font-size: 12px;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                color: #C2C6FF;
+              }
+              button#clearSidebar {
+                background-color: #2C2F44;
+                color: #C2C6FF;
+                padding: 8px 12px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+              }
+              button#clearSidebar:hover {
+                background-color: #3A3E5A;
+              }
+              
+
+              
     </style>
 
     <script defer src="{% static 'tealives/scripts/templates-create.js' %}"></script>
@@ -1787,8 +1802,107 @@
 
         //    })
         //})
+
+
+        
     </script>
 
+    <script>
+        const tagSelect = document.getElementById("tagSelect");
+        const tagList = document.getElementById("tagList");
+        const urlInput = document.getElementById("urlInput");
+        const urlList = document.getElementById("urlList");
+        const clearButton = document.getElementById("clearSidebar");
+        const tagLimitMsg = document.getElementById("tagLimitMsg");
+        const summaryTags = document.getElementById("summaryTags");
+        const summaryLinks = document.getElementById("summaryLinks");
+      
+        function isValidURL(url) {
+          const pattern = /^(https?:\/\/)?(www\.)?([a-zA-Z0-9-]+\.)+[a-z]{2,}(\/\S*)?$/;
+          return pattern.test(url);
+        }
+      
+        const updateSummary = () => {
+          summaryTags.textContent = tagList.children.length;
+          summaryLinks.textContent = urlList.children.length;
+        };
+      
+        const createTagChip = (text, container) => {
+          const span = document.createElement("span");
+          span.className = "tag";
+          span.textContent = "#" + text;
+          const x = document.createElement("span");
+          x.className = "remove";
+          x.textContent = "×";
+          x.onclick = () => {
+            container.removeChild(span);
+            tagLimitMsg.style.display = "none";
+            updateSummary();
+          };
+          span.appendChild(x);
+          container.appendChild(span);
+          updateSummary();
+        };
+      
+        const createURLBlock = (url, container) => {
+          const div = document.createElement("div");
+          div.className = "url-chip";
+          div.textContent = url;
+          const x = document.createElement("span");
+          x.className = "remove";
+          x.textContent = "×";
+          x.onclick = () => {
+            container.removeChild(div);
+            updateSummary();
+          };
+          div.appendChild(x);
+          container.appendChild(div);
+          updateSummary();
+        };
+      
+        urlInput.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            const url = urlInput.value.trim();
+            if (!isValidURL(url)) {
+              urlInput.classList.add("invalid");
+              setTimeout(() => urlInput.classList.remove("invalid"), 1500);
+              return;
+            }
+            if (![...urlList.children].some(el => el.textContent.includes(url))) {
+              createURLBlock(url, urlList);
+              urlInput.value = "";
+            }
+          }
+        });
+      
+        tagSelect.addEventListener("change", function () {
+          const tag = this.value;
+          if (
+            tag &&
+            tagList.children.length < 5 &&
+            ![...tagList.children].some(el => el.textContent.toLowerCase().includes(tag.toLowerCase()))
+          ) {
+            createTagChip(tag, tagList);
+            tagLimitMsg.style.display = "none";
+          } else if (tagList.children.length >= 5) {
+            tagLimitMsg.style.display = "block";
+          }
+          this.value = "";
+        });
+      
+        clearButton.addEventListener("click", () => {
+          tagList.innerHTML = "";
+          urlList.innerHTML = "";
+          document.querySelector('textarea').value = "";
+          document.getElementById("scheduleInput").value = "";
+          document.querySelector('select').value = "";
+          tagLimitMsg.style.display = "none";
+          updateSummary();
+        });
+      </script>
+      
+      
     <script>
         var templates = you = [].slice.call(document.querySelectorAll("#templates .temp"));
         var action_menu_link = document.querySelectorAll(".action-menu-link");
